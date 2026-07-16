@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy | JMC</title>
+    <style>
+        :root{--navy:#102a55;--blue:#2e6eb5;--pale:#edf5fc;--ink:#1d2a3a;--muted:#5e6d7d}
+        body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.7}
+        .wrap{width:min(800px,90%);margin:50px auto}
+        h1{color:var(--navy);border-bottom:2px solid var(--pale);padding-bottom:10px}
+        h2{color:var(--navy);margin-top:30px}
+        .lang-switch{text-align:right;margin-bottom:20px}
+        button{padding:5px 10px;cursor:pointer;background:#fff;border:1px solid var(--navy)}
+        button.active{background:var(--navy);color:#fff}
+        html[lang="ja"] .en { display: none !important; }
+        html[lang="en"] .ja { display: none !important; }
+        .back{margin-top:40px;display:inline-block;color:var(--blue);text-decoration:none;font-weight:bold}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="lang-switch">
+            <button id="jaBtn" class="active" onclick="setLang('ja')">日本語</button>
+            <button id="enBtn" onclick="setLang('en')">English</button>
+        </div>
+
+        <div class="ja">
+            <h1>個人情報保護方針</h1>
+            <p>Japan Medical Concierge（以下「当社」）は、お客様の個人情報の保護を重要視し、以下の通りプライバシーポリシーを定めます。</p>
+            <h2>1. 収集する情報</h2>
+            <p>当社は、お問い合わせフォームを通じて、お名前、メールアドレス、およびお問い合わせ内容を収集します。</p>
+            <h2>2. 利用目的</h2>
+            <p>収集した情報は、お客様からのご質問への回答、およびサービスの案内・調整のためにのみ利用します。</p>
+            <h2>3. 第三者への提供</h2>
+            <p>当社は、お客様の同意がある場合、または法令に基づく場合を除き、個人情報を第三者に提供しません。ただし、サービス提供に必要な範囲で日本側の提携パートナー（医療機関・旅行代理店）と情報を共有する場合があります。</p>
+            <h2>4. 安全管理</h2>
+            <p>当社は、収集した情報の漏洩や紛失を防止するため、適切な管理体制を維持します。</p>
+            <a href="index.html" class="back">← ホームに戻る</a>
+        </div>
+
+        <div class="en">
+            <h1>Privacy Policy</h1>
+            <p>Japan Medical Concierge ("JMC") values your privacy. This policy outlines how we handle your personal information.</p>
+            <h2>1. Information We Collect</h2>
+            <p>We collect your name, email address, and message details through our contact form.</p>
+            <h2>2. Purpose of Use</h2>
+            <p>The information collected is used solely to respond to your inquiries and to facilitate our coordination services.</p>
+            <h2>3. Third-Party Disclosure</h2>
+            <p>We do not share personal information with third parties unless we have your consent or are required by law. We may share necessary details with our partners in Japan (medical facilities and travel agents) to provide our services.</p>
+            <h2>4. Data Security</h2>
+            <p>We maintain appropriate administrative measures to protect your information from unauthorized access, loss, or leakage.</p>
+            <a href="index.html" class="back">← Back to Home</a>
+        </div>
+    </div>
+    <script>    
+        function setLang(l){
+            document.documentElement.lang=l;
+            document.getElementById('jaBtn').classList.toggle('active',l==='ja');
+            document.getElementById('enBtn').classList.toggle('active',l==='en');
+        }
+
+        // Auto-detect language from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        if (langParam === 'en' || langParam === 'ja') {
+            setLang(langParam);
+        } else {
+            setLang('ja'); // Default
+        }
+    </script>
+</body>
+</html>
