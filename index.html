@@ -651,28 +651,39 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="wrap">
-                <div class="heading">
-                    <h2 class="ja">お問い合わせ</h2>
-                    <h2 class="en">Contact JMC</h2>
-                    <div class="line"></div>
-                </div>
-                <form>
-                    <label class="ja">お名前</label><label class="en">Name</label>
-                    <input required>
-                    <label class="ja">メールアドレス</label><label class="en">Email</label>
-                    <input type="email" required>
-                    <label class="ja">ご用件</label><label class="en">Message</label>
-                    <textarea required></textarea>
-                    <button type="submit" class="ja">送信する</button>
-                    <button type="submit" class="en">Send Message</button>
-                        <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="ja">送信することで、当社の<a href="privacy.html?lang=ja" target="_blank" rel="noopener">個人情報保護方針</a>に同意したものとみなされます。</p>
-                        <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="en">By submitting, you agree to our<a href="privacy.html?lang=en" target="_blank" rel="noopener">Privacy Policy</a>.</p>
-                </form>
-            </div>
-        </section>
+        <!-- Contact Form section -->
+<form id="jmc-contact-form" action="https://formspree.io/f/yourformid" method="POST">
+  <label for="name">お名前 / Name</label>
+  <input id="name" name="name" type="text" required placeholder="山本 太郎 / Taro Yamamoto">
+
+  <label for="email">メールアドレス / Email</label>
+  <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+  <label for="inquiry_type">お問い合わせの目的 / Purpose</label>
+  <select id="inquiry_type" name="inquiry_type" required>
+    <option value="">選択してください / Select one</option>
+    <option value="ningen">人間ドック（健診） / Ningen Dock</option>
+    <option value="specialist">専門医受診予約 / Specialist appointment</option>
+    <option value="documents">書類・翻訳 / Documents & Translation</option>
+    <option value="travel">渡航・滞在手配 / Travel & Accommodation</option>
+    <option value="other">その他 / Other</option>
+  </select>
+
+  <label for="message">ご用件 / Message (短く) — 例：希望時期・主治医の有無</label>
+  <textarea id="message" name="message" rows="5" placeholder="例：6月上旬希望／主治医あり（○○病院）" required></textarea>
+
+  <!-- Hidden field to indicate preferred language (optional: set via JS if you implement language toggle) -->
+  <input type="hidden" name="preferred_language" id="preferred_language" value="ja">
+
+  <p class="form-note">通常48時間以内にバンクーバー時間でご返信します。We typically reply within 48 hours (Vancouver time).</p>
+
+  <small>
+    <input type="checkbox" id="consent" name="consent" required>
+    <label for="consent">送信により、当社の <a href="/privacy">個人情報保護方針</a> に同意したものとみなされます。By submitting you agree to our Privacy Policy.</label>
+  </small>
+
+  <button type="submit">無料ヒアリングを申し込む（15分） / Request 15‑min intake</button>
+</form>
     </main>
 
     <!-- Footer -->
