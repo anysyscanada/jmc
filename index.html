@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JMC | Japan Medical Concierge</title>
-    
+
     <!-- Base Styles -->
     <style>
         :root {
@@ -14,23 +14,23 @@
             --ink: #1d2a3a;
             --muted: #5e6d7d;
         }
-        
+
         * {
             box-sizing: border-box;
         }
-        
+
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", sans-serif;
             color: var(--ink);
             line-height: 1.75;
         }
-        
+
         .wrap {
             width: min(1120px, 90%);
             margin: auto;
         }
-        
+
         header {
             position: sticky;
             top: 0;
@@ -38,53 +38,53 @@
             border-bottom: 1px solid #dce4ec;
             z-index: 2;
         }
-        
+
         .nav {
             height: 78px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .logo {
             font-weight: 800;
             color: var(--navy);
             font-size: 26px;
         }
-        
+
         .logo small {
             display: block;
             font-size: 10px;
             font-weight: 500;
             letter-spacing: .16em;
         }
-        
+
         .lang button {
             padding: 8px 13px;
             background: #fff;
             border: 1px solid var(--navy);
             cursor: pointer;
         }
-        
+
         .lang button.active {
             background: var(--navy);
             color: #fff;
         }
-        
+
         html[lang="ja"] .en {
             display: none !important;
         }
-        
+
         html[lang="en"] .ja {
             display: none !important;
         }
-        
+
         .hero {
             background: linear-gradient(130deg, #0c2550, #174d87);
             color: #fff;
             padding: 100px 0;
         }
-        
+
         .hero-grid,
         .dark-grid {
             display: grid;
@@ -92,37 +92,39 @@
             gap: 44px;
             align-items: center;
         }
-        
+
         .eyebrow {
             letter-spacing: .14em;
             font-size: 12px;
             text-transform: uppercase;
             color: #a9d4ff;
         }
-        
+
         .hero h1 {
             font-size: clamp(35px, 5vw, 58px);
             line-height: 1.25;
             margin: 13px 0 20px;
         }
-        
+
         .hero h1 span {
             color: #a9d4ff;
         }
-        
+
         .lead {
             font-size: 19px;
             color: #e4f1ff;
         }
-        
+
+        /* Updated Notice Box: Glassmorphism Style */
         .notice {
             font-size: 13px;
-            background: #ffff1c;
+            background: rgba(255, 255, 255, 0.1);
             border-left: 3px solid #a9d4ff;
             padding: 13px 16px;
             margin: 28px 0;
+            color: #fff;
         }
-        
+
         .button {
             display: inline-block;
             background: #fff;
@@ -132,7 +134,7 @@
             text-decoration: none;
             border-radius: 4px;
         }
-        
+
         .metrics,
         .cards,
         .value,
@@ -141,60 +143,68 @@
             display: grid;
             gap: 18px;
         }
-        
+
         .metrics {
             grid-template-columns: 1fr 1fr;
         }
-        
+
+        /* Updated Metric Cards: Glassmorphism Style */
         .metric {
-            padding: 22px 10px;
+            padding: 30px 10px;
             text-align: center;
-            border: 1px solid #ffff44;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            background: #ffff14;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
         }
-        
+
         .metric b {
             font-size: 27px;
             display: block;
-            color: #b8dcff;
+            color: #fff;
+            margin-bottom: 5px;
         }
-        
+
+        .metric span {
+            color: #e4f1ff;
+            font-size: 14px;
+        }
+
         section {
             padding: 82px 0;
         }
-        
+
         .heading {
             text-align: center;
             margin-bottom: 42px;
         }
-        
+
         .heading h2 {
             font-size: 32px;
             margin: 0;
             color: var(--navy);
         }
-        
+
         .line {
             width: 54px;
             height: 3px;
             background: var(--blue);
             margin: 15px auto;
         }
-        
+
         .cards {
             grid-template-columns: repeat(3, 1fr);
         }
-        
+
         .value {
             grid-template-columns: repeat(2, 1fr);
         }
-        
+
         .steps,
         .price {
             grid-template-columns: repeat(4, 1fr);
         }
-        
+
         .card,
         .value-card {
             background: #f8fbfe;
@@ -202,49 +212,49 @@
             border-radius: 10px;
             padding: 27px;
         }
-        
+
         .num {
             color: var(--blue);
             font-size: 24px;
             font-family: Georgia, serif;
             font-weight: bold;
         }
-        
+
         .card h3,
         .value-card h3 {
             color: var(--navy);
         }
-        
+
         .soft {
             background: var(--pale);
         }
-        
+
         .dark {
             background: #13253d;
             color: #fff;
         }
-        
+
         .dark h2 {
             font-size: 32px;
             line-height: 1.4;
         }
-        
+
         .dark p {
             color: #d1dbe7;
         }
-        
+
         .partner {
-            border: 1px solid #4b617d;
-            background: #ffff0d;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 10px;
         }
-        
+
         .step {
             text-align: center;
             padding: 10px;
         }
-        
+
         .circle {
             background: var(--navy);
             color: #fff;
@@ -256,23 +266,23 @@
             margin: 0 auto 14px;
             font-weight: bold;
         }
-        
+
         .price div {
             border: 1px solid #d7e2ee;
             padding: 20px;
             text-align: center;
             border-radius: 8px;
         }
-        
+
         .price b {
             display: block;
             color: var(--navy);
         }
-        
+
         .contact {
             background: var(--pale);
         }
-        
+
         form {
             max-width: 670px;
             margin: auto;
@@ -281,14 +291,14 @@
             border-radius: 12px;
             box-shadow: 0 8px 30px #29456318;
         }
-        
+
         label {
             font-size: 14px;
             font-weight: 700;
             display: block;
             margin-top: 15px;
         }
-        
+
         input,
         textarea {
             width: 100%;
@@ -297,11 +307,11 @@
             border-radius: 4px;
             font: inherit;
         }
-        
+
         textarea {
             height: 120px;
         }
-        
+
         form button {
             width: 100%;
             padding: 14px;
@@ -313,19 +323,19 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
+
         footer {
             padding: 38px 0;
             text-align: center;
             color: var(--muted);
             font-size: 12px;
         }
-        
+
         footer p {
             max-width: 900px;
             margin: 10px auto;
         }
-        
+
         @media (max-width: 760px) {
             .hero-grid,
             .dark-grid,
@@ -335,40 +345,32 @@
             .price {
                 grid-template-columns: 1fr;
             }
-            
+
             .hero {
                 padding: 70px 0;
             }
-            
+
             .metrics {
                 display: none;
             }
-            
+
             .nav {
                 height: 70px;
             }
-            
+
             section {
                 padding: 60px 0;
             }
         }
-        
-        .eyebrow .ja,
-        .eyebrow .en {
-            display: inline-block;
-        }
     </style>
-    
-    <!-- Language Display Styles -->
-    <style>
-        html[lang="ja"] .en {
-            display: none !important;
+
+    <script>
+        function setLang(l) {
+            document.documentElement.lang = l;
+            document.getElementById('jaBtn').classList.toggle('active', l === 'ja');
+            document.getElementById('enBtn').classList.toggle('active', l === 'en');
         }
-        
-        html[lang="en"] .ja {
-            display: none !important;
-        }
-    </style>
+    </script>
 </head>
 
 <body>
@@ -392,20 +394,14 @@
             <div class="wrap hero-grid">
                 <div>
                     <div class="ja">
-                        <div class="eyebrow">
-                            <span class="ja">Japan Medical Concierge</span>
-                            <span class="en">Japan Medical Concierge</span>
-                        </div>
+                        <div class="eyebrow">Japan Medical Concierge</div>
                         <h1>カナダから、日本の<br><span>「安心」と「健康」</span>へ。</h1>
                         <p class="lead">日本での人間ドック・高度医療を、もっと身近な選択肢に。カナダ在住の皆様が日本での医療を検討される際、煩雑な実務を丁寧にサポートします。</p>
                         <p class="notice">JMCは医療機関ではありません。非医療コーディネーターとして、情報共有、予約・書類・渡航に関する実務支援を提供します。</p>
                         <a class="button" href="#contact">お問い合わせ</a>
                     </div>
                     <div class="en">
-                        <div class="eyebrow">
-                            <span class="ja">Japan Medical Concierge</span>
-                            <span class="en">Japan Medical Concierge</span>
-                        </div>
+                        <div class="eyebrow">Japan Medical Concierge</div>
                         <h1>From Canada to Japan's<br><span>“peace of mind” and “health.”</span></h1>
                         <p class="lead">A bridge to Japan’s Ningen Dock (comprehensive preventive health screening) and advanced care. We provide careful, practical support for Japanese-speaking residents of Canada who are considering medical care in Japan.</p>
                         <p class="notice">JMC is not a medical clinic. As a non-clinical coordinator, we provide administrative support and practical assistance for information sharing, appointments, documents, and travel.</p>
@@ -498,51 +494,11 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about">
-            <div class="wrap">
-                <div class="heading">
-                    <h2 class="ja">私たちについて</h2>
-                    <h2 class="en">About Us</h2>
-                    <div class="line"></div>
-                </div>
-                <div class="value">
-                    <article class="value-card">
-                        <h3 class="ja">このサービスを始めた理由</h3>
-                        <h3 class="en">Why We Launched JMC</h3>
-                        <p class="ja">カナダで暮らす日本語話者にとって、日本の人間ドックや医療を選択肢として検討する際、情報、言葉、書類、渡航の手配を一人で進めることは簡単ではありません。JMCは、その実務上の負担を整理し、安心して次の一歩を考えられるようにするために生まれました。</p>
-                        <p class="en">For Japanese-speaking residents of Canada, considering health screenings or care in Japan can mean navigating information, language, documentation, and travel arrangements alone. JMC was created to make those practical steps clearer and more manageable.</p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="ja">JMCらしさ</h3>
-                        <h3 class="en">The JMC Difference</h3>
-                        <p class="ja">JMCはカナダを拠点とし、日本語で直接お話しできる、「顔の見える」コーディネートを大切にしています。メールでのやり取りだけでなく、バンクーバー近郊での対面相談や、オンラインでの丁寧なヒアリングにも対応しています。役割の範囲と費用の内訳を事前に分けて提示し、何に費用がかかるのかを分かりやすくします。</p>
-                        <p class="en">JMC is Canada-based, Japanese-speaking, and available for direct, person-to-person consultation—face to face where appropriate, or online. Rather than leaving clients to navigate an overseas process remotely, we explain our role and present costs in clear, separate categories before arrangements proceed.</p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="ja">地域に根ざした窓口</h3>
-                        <h3 class="en">A Local Point of Contact</h3>
-                        <p class="ja">カナダ在住者ならではの生活習慣や時間帯、現地の医療事情を理解した上で、日本との橋渡しをさせていただきます。医療上の判断は患者様と医師に委ね、JMCは非医療の立場で調整を行います。</p>
-                        <p class="en">We coordinate with an understanding of life in Canada, local time zones, and the importance of continuity with a client's Canadian physician. Clinical decisions always remain between the patient and licensed professionals; JMC's role is strictly non-clinical.</p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="ja">分かりやすい費用</h3>
-                        <h3 class="en">Clear Costs, Up Front</h3>
-                        <p class="ja">医療費、JMCの調整・事務支援費用、渡航・滞在費、その他の実費を区分してご案内します。医療費に見えない形で費用を含めるのではなく、事前に全体像を確認いただくことを大切にしています。</p>
-                        <p class="en">Medical fees, JMC coordination support, travel and accommodation, and other out-of-pocket expenses are shown separately. We believe clients should be able to understand the overall cost picture before moving forward.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- From the Founder Section -->
         <section class="dark">
             <div class="wrap dark-grid">
                 <div>
-                    <div class="eyebrow">
-                        <span class="ja">設立者から一言</span>
-                        <span class="en">FROM THE FOUNDER</span>
-                    </div>
+                    <div class="eyebrow">FROM THE FOUNDER</div>
                     <div class="ja">
                         <p>私は2009年からバンクーバーに暮らしています。私自身、カナダで専門医の受診を待機し不安を感じた経験があります。同じ悩みを持つ方々が、日本の優れた医療をスムーズに選択肢に入れられるよう、JMCを設立しました。</p>
                         <p>日本では脳神経外科教授の秘書を5年間務め、医療現場での事務・調整実務に従事した経験を活かし、非医療側のコーディネーターとして、予約や書類、渡航手配などの煩雑なプロセスを一つひとつ丁寧に整理・サポートさせていただきます。</p>
@@ -613,29 +569,21 @@
                         <div class="circle">1</div>
                         <b class="ja">お問い合わせ</b>
                         <b class="en">Initial Inquiry</b>
-                        <p class="ja">フォームまたはメールでご連絡ください。</p>
-                        <p class="en">Contact us by form or email.</p>
                     </div>
                     <div class="step">
                         <div class="circle">2</div>
                         <b class="ja">ご要望の確認</b>
                         <b class="en">Needs Assessment</b>
-                        <p class="ja">ご希望の検査内容・日程・ご予算を確認します。</p>
-                        <p class="en">We discuss your goals, timing, and budget.</p>
                     </div>
                     <div class="step">
                         <div class="circle">3</div>
                         <b class="ja">日本側との調整</b>
                         <b class="en">Japan-Side Coordination</b>
-                        <p class="ja">医療機関と旅行関連の実務を調整します。</p>
-                        <p class="en">We coordinate appointments and travel logistics in Japan.</p>
                     </div>
                     <div class="step">
                         <div class="circle">4</div>
                         <b class="ja">渡航・受診・結果共有</b>
                         <b class="en">Travel, Screening & Follow-up</b>
-                        <p class="ja">帰国後の結果書類の整理まで支援します。</p>
-                        <p class="en">We support document organization after your return.</p>
                     </div>
                 </div>
             </div>
@@ -649,28 +597,15 @@
                     <h2 class="en">Contact JMC</h2>
                     <div class="line"></div>
                 </div>
-                <form onsubmit="event.preventDefault();alert(document.documentElement.lang==='ja'?'これはプレビュー用フォームです。送信先の設定が必要です。':'This is a preview form. A delivery destination must be configured.');">
-                    <label class="ja">お名前</label>
-                    <label class="en">Name</label>
+                <form>
+                    <label class="ja">お名前</label><label class="en">Name</label>
                     <input required>
-                    
-                    <label class="ja">メールアドレス</label>
-                    <label class="en">Email</label>
+                    <label class="ja">メールアドレス</label><label class="en">Email</label>
                     <input type="email" required>
-                    
-                    <label class="ja">ご用件</label>
-                    <label class="en">Message</label>
+                    <label class="ja">ご用件</label><label class="en">Message</label>
                     <textarea required></textarea>
-                    
                     <button type="submit" class="ja">送信する</button>
                     <button type="submit" class="en">Send Message</button>
-                    
-                    <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="ja">
-                        送信することで、当社の<a href="privacy.html?lang=ja">個人情報保護方針</a>に同意したものとみなされます。
-                    </p>
-                    <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="en">
-                        By submitting, you agree to our <a href="privacy.html?lang=en">Privacy Policy</a>.
-                    </p>
                 </form>
             </div>
         </section>
@@ -680,21 +615,9 @@
     <footer>
         <div class="wrap">
             © 2026 Japan Medical Concierge (JMC)<br>
-            <a href="privacy.html?lang=ja" class="ja">個人情報保護方針 (Privacy Policy)</a>
-            <a href="privacy.html?lang=en" class="en">Privacy Policy</a>
             <p class="ja">JMCは医療機関ではなく、医療上の助言・診断・治療の推奨は行いません。すべての医療的判断は、ご本人と資格を持つ医師との間で決定されるものとします。</p>
             <p class="en">JMC does not provide medical advice, diagnosis, or treatment recommendations. All medical decisions remain between the patient and licensed healthcare professionals.</p>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        function setLang(l) {
-            document.documentElement.lang = l;
-            document.getElementById('jaBtn').classList.toggle('active', l === 'ja');
-            document.getElementById('enBtn').classList.toggle('active', l === 'en');
-        }
-        setLang('ja');
-    </script>
 </body>
 </html>
