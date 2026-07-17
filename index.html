@@ -651,44 +651,26 @@
             </div>
         </section>
 
-        <!-- Contact Section (Japanese Only) -->
-<h2 id="contact">お問い合わせ</h2>
-
-<div class="notice" role="note" aria-live="polite" style="border-left:4px solid #2b7; padding:10px; margin:10px 0;">
-  <strong>ご注意:</strong>
-  JMCは医療機関ではありません。診断・治療・医療判断は資格を持つ医師が行います。JMCは非医療の立場で予約・書類・渡航手配などの実務支援を行います。
-</div>
-
-<form id="jmc-contact-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
-  <label for="name">お名前 *</label>
-  <input id="name" name="name" type="text" required placeholder="例：山本 太郎">
-
-  <label for="email">メールアドレス *</label>
-  <input id="email" name="email" type="email" required placeholder="例：taro.yamamoto@example.com">
-
-  <label for="inquiry_type">お問い合わせの目的 *</label>
-  <select id="inquiry_type" name="inquiry_type" required>
-    <option value="">選択してください</option>
-    <option value="ningen">人間ドック（健診）</option>
-    <option value="specialist">専門医受診予約</option>
-    <option value="documents">書類・翻訳</option>
-    <option value="travel">渡航・滞在手配</option>
-    <option value="other">その他</option>
-  </select>
-
-  <label for="message">ご用件 *</label>
-  <textarea id="message" name="message" rows="5" placeholder="例：6月上旬希望、主治医あり（○○クリニック）" required></textarea>
-
-  <p style="font-size:0.9em; color:#555;">通常48時間以内にご返信いたします（バンクーバー時間）。</p>
-
-  <small>
-    <input type="checkbox" id="consent" name="consent" required>
-    <label for="consent">送信により、当社の <a href="/privacy">個人情報保護方針</a> に同意したものとみなされます。</label>
-  </small>
-
-  <br><br>
-  <button type="submit">無料ヒアリングを申し込む（15分）</button>
-</form>
+         <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="wrap">
+                <div class="heading">
+                    <h2 class="ja">お問い合わせ</h2>
+                    <h2 class="en">Contact JMC</h2>
+                    <div class="line"></div>
+                </div>
+                <form>
+                    <label class="ja">お名前</label><label class="en">Name</label>
+                    <input required>
+                    <label class="ja">メールアドレス</label><label class="en">Email</label>
+                    <input type="email" required>
+                    <label class="ja">ご用件</label><label class="en">Message</label>
+                    <textarea required></textarea>
+                    <button type="submit" class="ja">送信する</button>
+                    <button type="submit" class="en">Send Message</button>
+                        <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="ja">送信することで、当社の<a href="privacy.html?lang=ja" target="_blank" rel="noopener">個人情報保護方針</a>に同意したものとみなされます。</p>
+                        <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="en">By submitting, you agree to our<a href="privacy.html?lang=en" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+                </form>
 
 <div style="margin-top:20px;">
   <h4>初回にお知らせください</h4>
