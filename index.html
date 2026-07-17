@@ -651,39 +651,55 @@
             </div>
         </section>
 
-        <!-- Contact Form section -->
-<form id="jmc-contact-form" action="https://formspree.io/f/yourformid" method="POST">
-  <label for="name">お名前 / Name</label>
-  <input id="name" name="name" type="text" required placeholder="山本 太郎 / Taro Yamamoto">
+        <!-- Contact Section (Japanese Only) -->
+<h2 id="contact">お問い合わせ</h2>
 
-  <label for="email">メールアドレス / Email</label>
-  <input id="email" name="email" type="email" required placeholder="you@example.com">
+<div class="notice" role="note" aria-live="polite" style="border-left:4px solid #2b7; padding:10px; margin:10px 0;">
+  <strong>ご注意:</strong>
+  JMCは医療機関ではありません。診断・治療・医療判断は資格を持つ医師が行います。JMCは非医療の立場で予約・書類・渡航手配などの実務支援を行います。
+</div>
 
-  <label for="inquiry_type">お問い合わせの目的 / Purpose</label>
+<form id="jmc-contact-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+  <label for="name">お名前 *</label>
+  <input id="name" name="name" type="text" required placeholder="例：山本 太郎">
+
+  <label for="email">メールアドレス *</label>
+  <input id="email" name="email" type="email" required placeholder="例：taro.yamamoto@example.com">
+
+  <label for="inquiry_type">お問い合わせの目的 *</label>
   <select id="inquiry_type" name="inquiry_type" required>
-    <option value="">選択してください / Select one</option>
-    <option value="ningen">人間ドック（健診） / Ningen Dock</option>
-    <option value="specialist">専門医受診予約 / Specialist appointment</option>
-    <option value="documents">書類・翻訳 / Documents & Translation</option>
-    <option value="travel">渡航・滞在手配 / Travel & Accommodation</option>
-    <option value="other">その他 / Other</option>
+    <option value="">選択してください</option>
+    <option value="ningen">人間ドック（健診）</option>
+    <option value="specialist">専門医受診予約</option>
+    <option value="documents">書類・翻訳</option>
+    <option value="travel">渡航・滞在手配</option>
+    <option value="other">その他</option>
   </select>
 
-  <label for="message">ご用件 / Message (短く) — 例：希望時期・主治医の有無</label>
-  <textarea id="message" name="message" rows="5" placeholder="例：6月上旬希望／主治医あり（○○病院）" required></textarea>
+  <label for="message">ご用件 *</label>
+  <textarea id="message" name="message" rows="5" placeholder="例：6月上旬希望、主治医あり（○○クリニック）" required></textarea>
 
-  <!-- Hidden field to indicate preferred language (optional: set via JS if you implement language toggle) -->
-  <input type="hidden" name="preferred_language" id="preferred_language" value="ja">
-
-  <p class="form-note">通常48時間以内にバンクーバー時間でご返信します。We typically reply within 48 hours (Vancouver time).</p>
+  <p style="font-size:0.9em; color:#555;">通常48時間以内にご返信いたします（バンクーバー時間）。</p>
 
   <small>
     <input type="checkbox" id="consent" name="consent" required>
-    <label for="consent">送信により、当社の <a href="/privacy">個人情報保護方針</a> に同意したものとみなされます。By submitting you agree to our Privacy Policy.</label>
+    <label for="consent">送信により、当社の <a href="/privacy">個人情報保護方針</a> に同意したものとみなされます。</label>
   </small>
 
-  <button type="submit">無料ヒアリングを申し込む（15分） / Request 15‑min intake</button>
+  <br><br>
+  <button type="submit">無料ヒアリングを申し込む（15分）</button>
 </form>
+
+<div style="margin-top:20px;">
+  <h4>初回にお知らせください</h4>
+  <ul>
+    <li>希望時期（例：2026年6月上旬）</li>
+    <li>希望内容（人間ドック／専門診療 など）</li>
+    <li>パスポート国籍（日本／カナダ など）</li>
+    <li>主治医の有無（あれば病院名）</li>
+  </ul>
+</div>
+
     </main>
 
     <!-- Footer -->
