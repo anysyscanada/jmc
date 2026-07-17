@@ -395,7 +395,7 @@
                     <div class="ja">
                         <h1>カナダから、日本の<br><span>「安心」と「健康」</span>へ。</h1>
                         <p class="lead">日本での人間ドック・高度医療を、もっと身近な選択肢に。カナダ在住の皆様が日本での医療を検討される際、煩雑な実務を丁寧にサポートします。</p>
-                        <p class="notice">JMCは医療機関ではありません。非医療コーディネーターとして、情報共有、予約・書類・渡航に関する実務支援を提供します。</p>
+                        <p class="notice">JMCは医療機関ではなく、非医療のコーディネーターです。予約・書類・翻訳・渡航手配などの実務を一貫してサポートします。</p>
                         <a class="button" href="#contact">お問い合わせ</a>
                     </div>
                     <div class="en">                        
@@ -651,26 +651,68 @@
             </div>
         </section>
 
-         <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="wrap">
-                <div class="heading">
-                    <h2 class="ja">お問い合わせ</h2>
-                    <h2 class="en">Contact JMC</h2>
-                    <div class="line"></div>
-                </div>
-                <form>
-                    <label class="ja">お名前</label><label class="en">Name</label>
-                    <input required>
-                    <label class="ja">メールアドレス</label><label class="en">Email</label>
-                    <input type="email" required>
-                    <label class="ja">ご用件</label><label class="en">Message</label>
-                    <textarea required></textarea>
-                    <button type="submit" class="ja">送信する</button>
-                    <button type="submit" class="en">Send Message</button>
-                        <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="ja">送信することで、当社の<a href="privacy.html?lang=ja" target="_blank" rel="noopener">個人情報保護方針</a>に同意したものとみなされます。</p>
-                        <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="en">By submitting, you agree to our<a href="privacy.html?lang=en" target="_blank" rel="noopener">Privacy Policy</a>.</p>
-                </form>
+      <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="wrap">
+        <div class="heading">
+            <h2 class="ja">無料ヒアリングを申し込む（15分）</h2>
+            <h2 class="en">Request 15‑min Free Intake</h2>
+            <div class="line"></div>
+        </div>
+
+        <!-- 役割の明確化（非医療の注意書き） -->
+        <div class="notice ja" style="border-left:4px solid var(--primary); padding:10px; margin-bottom:20px; font-size:0.9em;">
+            <strong>ご注意：</strong> JMCは医療機関ではありません。実務（予約・書類・渡航）のコーディネートを行います。
+        </div>
+        <div class="notice en" style="border-left:4px solid var(--primary); padding:10px; margin-bottom:20px; font-size:0.9em;">
+            <strong>Note:</strong> JMC is not a medical clinic. We provide non-clinical coordination for logistics and documentation.
+        </div>
+
+        <!-- 送信先(action)にFormspreeなどのIDを入れてください -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            
+            <!-- お名前 (必須) -->
+            <label class="ja">お名前 *</label>
+            <label class="en">Name *</label>
+            <input type="text" name="name" required placeholder="Taro Yamamoto / 山本 太郎">
+
+            <!-- メールアドレス (必須) -->
+            <label class="ja">メールアドレス *</label>
+            <label class="en">Email *</label>
+            <input type="email" name="email" required placeholder="example@mail.com">
+
+            <!-- お問い合わせの目的 (追加を推奨) -->
+            <label class="ja">お問い合わせの目的 *</label>
+            <label class="en">Purpose *</label>
+            <select name="purpose" required>
+                <option value="" class="ja">選択してください</option>
+                <option value="" class="en">Please select</option>
+                <option value="Ningen Dock">人間ドック / Ningen Dock</option>
+                <option value="Specialist">専門医予約 / Specialist Appointment</option>
+                <option value="Documentation">書類・翻訳 / Documents & Translation</option>
+                <option value="Other">その他 / Other</option>
+            </select>
+
+            <!-- ご用件 (必須) -->
+            <label class="ja">ご用件 *</label>
+            <label class="en">Message *</label>
+            <textarea name="message" required placeholder="Preferred date, etc. / 希望時期など"></textarea>
+
+            <!-- 送信ボタン -->
+            <button type="submit" class="ja">無料ヒアリングを申し込む</button>
+            <button type="submit" class="en">Request Free Intake</button>
+
+            <!-- 同意文 -->
+            <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="ja">
+                通常48時間以内に返信いたします。送信により、当社の<a href="privacy.html?lang=ja" target="_blank" rel="noopener">個人情報保護方針</a>に同意したものとみなされます。
+            </p>
+            <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="en">
+                We typically reply within 48 hours. By submitting, you agree to our<a href="privacy.html?lang=en" target="_blank" rel="noopener">Privacy Policy</a>.
+            </p>
+        </form>
+    </div>
+</section>
+
     </main>
 
     <!-- Footer -->
