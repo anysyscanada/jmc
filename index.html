@@ -200,29 +200,14 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
- / Steps: grid for steps only */
-.steps {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-gap: 24px;
-align-items: start;
+ .flow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px; /* カード間の余白 */
+  align-items: start;
 }
-
-/* Price: keep original 4-column layout (or adjust separately) */
-.price {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 18px;
-}
-
-/* Responsive breakpoints /
-@media (max-width: 1100px) {
-.steps { grid-template-columns: repeat(3, 1fr); }
-.price { grid-template-columns: repeat(2, 1fr); } / adjust as needed /
-}
-@media (max-width: 760px) {
-.steps { grid-template-columns: 1fr; }
-.price { grid-template-columns: 1fr; }
+.flow-item {
+  text-align: center;
 }
 
         .card,
