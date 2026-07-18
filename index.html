@@ -1,12 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JMC | Japan Medical Concierge</title>
-
-    <!-- Base Styles -->
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>JMC | Japan Medical Concierge</title>
+<!-- Base Styles -->
+<style>
         :root {
             --navy: #102a55;
             --blue: #2e6eb5;
@@ -364,372 +364,321 @@
             }
         }
     </style>
-
-    <script>
+<script>
         function setLang(l) {
             document.documentElement.lang = l;
             document.getElementById('jaBtn').classList.toggle('active', l === 'ja');
             document.getElementById('enBtn').classList.toggle('active', l === 'en');
         }
     </script>
-</head>
-
+<style>
+/* JMC conversion and clarity enhancements */
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.button.secondary{background:transparent;border:1px solid rgba(255,255,255,.72);color:#fff}.button.secondary:hover{background:rgba(255,255,255,.12)}
+.trust-strip{background:var(--navy);color:#fff;padding:21px 0}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:center}.trust-item{font-size:.91rem;line-height:1.45}.trust-item b{display:block;font-size:1rem;margin-bottom:3px;color:#fff}
+.section-intro{max-width:760px;margin:0 auto 28px;text-align:center;color:var(--muted)}
+.price-note{max-width:850px;margin:26px auto 0;padding:18px 20px;background:var(--pale);border-left:4px solid var(--blue);text-align:center}.price-note p{margin:0 0 10px}.text-link{color:var(--blue);font-weight:700;text-decoration:none}.text-link:hover{text-decoration:underline}
+.flow-container{max-width:850px;margin:0 auto}.flow-step{display:grid;grid-template-columns:56px 1fr;gap:18px;min-height:135px}.flow-rail{display:flex;flex-direction:column;align-items:center}.flow-step .circle{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800}.flow-line{width:2px;flex:1;margin:8px 0 0;background:#c9d9e9}.flow-content{padding:0 0 26px}.flow-content b{display:block;font-size:1.08rem;color:var(--navy);margin:4px 0 6px}.flow-content p{margin:0;color:var(--muted);font-size:.94rem}.intake-box{max-width:800px;margin:0 auto 26px;padding:22px 24px;background:var(--pale);border:1px solid #d6e5f2;border-radius:4px}.intake-box h3{margin:0 0 8px;color:var(--navy);font-size:1.08rem}.intake-box ul{margin:0 0 10px;padding-left:1.2em}.intake-box p{margin:0;color:var(--muted);font-size:.9rem}.faq{background:var(--pale)}.faq-list{max-width:850px;margin:0 auto}.faq details{background:#fff;border:1px solid #dce4ec;margin-bottom:10px;border-radius:3px}.faq summary{padding:15px 18px;cursor:pointer;font-weight:700;color:var(--navy)}.faq details p{padding:0 18px 16px;margin:0;color:var(--muted)}.founder-role{display:block;margin-top:4px;font-size:.9rem;color:#c9d9e9}
+@media(max-width:760px){.trust-grid{grid-template-columns:1fr;gap:14px}.flow-step{grid-template-columns:46px 1fr;gap:13px}.flow-step .circle{width:36px;height:36px;flex-basis:36px}.hero-actions{flex-direction:column;align-items:flex-start}}
+</style></head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="wrap nav">
-            <div class="logo">
+<!-- Header -->
+<header>
+<div class="wrap nav">
+<div class="logo">
                 JMC<small>JAPAN MEDICAL CONCIERGE</small>
-            </div>
-            <div class="lang">
-                <button id="jaBtn" class="active" onclick="setLang('ja')">日本語</button>
-                <button id="enBtn" onclick="setLang('en')">English</button>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="wrap hero-grid">
-                <div>
-                    <div class="ja">
-                        <h1>カナダから、日本の<br><span>「安心」と「健康」</span>へ。</h1>
-                        <p class="lead">日本での人間ドック・高度医療を、もっと身近な選択肢に。カナダ在住の皆様が日本での医療を検討される際、煩雑な実務を丁寧にサポートします。</p>
-                        <p class="notice">JMCは医療機関ではなく、非医療のコーディネーターです。予約・書類・翻訳・渡航手配などの実務を一貫してサポートします。</p>
-                        <a class="button" href="#contact">お問い合わせ</a>
-                    </div>
-                    <div class="en">                        
-                        <h1>From Canada to Japan's<br><span>“peace of mind” and “health”.</span></h1>
-                        <p class="lead">A bridge to Japan’s Ningen Dock (comprehensive preventive health screening) and advanced care. We provide careful, practical support for Japanese-speaking residents of Canada who are considering medical care in Japan.</p>
-                        <p class="notice">JMC is not a medical clinic. As a non-clinical coordinator, we provide administrative support and practical assistance for information sharing, appointments, documents, and travel.</p>
-                        <a class="button" href="#contact">Contact JMC</a>
-                    </div>
-                </div>
-                <aside class="metrics">
-                    <div class="metric">
-                        <b>Clear</b>
-                        <span class="ja">役割と費用の透明性</span>
-                        <span class="en">Roles & pricing</span>
-                    </div>
-                    <div class="metric">
-                        <b>Japan</b>
-                        <span class="ja">現地運営パートナー</span>
-                        <span class="en">Operational support</span>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section>
-            <div class="wrap">
-                <div class="heading">
-                    <h2 class="ja">サービス案内</h2>
-                    <h2 class="en">Our Services</h2>
-                    <div class="line"></div>
-                </div>
-                <div class="cards">
-                    <article class="card">
-                        <div class="num">01.</div>
-                        <h3 class="ja">人間ドック・専門医予約</h3>
-                        <h3 class="en">Ningen Dock & Appointments</h3>
-                        <p class="ja">日本の医療機関での健診・精密検査の予約調整を支援します。</p>
-                        <p class="en">Support with appointment coordination for health screenings and diagnostic examinations in Japan.</p>
-                    </article>
-                    <article class="card">
-                        <div class="num">02.</div>
-                        <h3 class="ja">書類・医療翻訳の調整</h3>
-                        <h3 class="en">Documents & Translation Coordination</h3>
-                        <p class="ja">問診票や医療情報の準備、診断結果の翻訳など、書類に関する実務をコーディネートします。</p>
-                        <p class="en">Coordination for medical questionnaires, records, and translation of relevant documents.</p>
-                    </article>
-                    <article class="card">
-                        <div class="num">03.</div>
-                        <h3 class="ja">渡航・滞在ロジスティクス</h3>
-                        <h3 class="en">Travel Logistics</h3>
-                        <p class="ja">提携の旅行代理店と連携し、航空券や宿泊先の手配など、渡航に関わるロジスティクスを整理・サポートします。</p>
-                        <p class="en">Travel-related logistics, including flights and accommodation, coordinated with travel professionals.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose JMC Section -->
-        <section class="soft">
-            <div class="wrap">
-                <div class="heading">
-                    <h2 class="ja">JMCを選ぶ理由</h2>
-                    <h2 class="en">Why Choose JMC?</h2>
-                    <div class="line"></div>
-                </div>
-                <div class="value">
-                    <article class="value-card">
-                        <h3 class="ja">長い待機時間への選択肢提供</h3>
-                        <h3 class="en">Options when wait times are long</h3>
-                        <p class="ja">カナダでは専門医の受診や精密検査に数か月〜半年かかる場合があり、不安や対応の遅れにつながることがあります。日本には比較的短期間で検査や精密診断を受けられる施設が多く、早期発見・早期対応の一つの選択肢になります。JMCは予約や手続きなどの実務を代行し、無理なく検討できるようご案内します。</p>
-                        <p class="en">In Canada, seeing a specialist or getting advanced diagnostic tests can sometimes take months to half a year, causing anxiety and delays in care. Many Japanese facilities can arrange tests and detailed diagnostics on a much shorter timeline, offering a practical option for earlier detection and treatment. JMC handles the scheduling and administrative tasks so you can consider this option without undue burden.</p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="ja">包括的な「人間ドック」へのアクセス</h3>
-                        <h3 class="en">Access to comprehensive "Ningen Dock" screenings</h3>
-                        <p class="ja">日本の人間ドックは複数の検査を短期間で受けられるため、全身の状態を効率的に把握できます。施設ごとの検査内容や特徴を比較し、ご希望に合ったプログラムを分かりやすくご提案します。</p>
-                        <p class="en">Japan’s Ningen Dock lets you take multiple examinations in a short period, making it an efficient way to assess overall health. We compare programs and facility features and clearly recommend the option that best matches your needs.</p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="ja">言語・文化の壁を取り除く</h3>
-                        <h3 class="en">Removing language and cultural barriers</h3>
-                        <p class="ja">医療機関との連絡、問診票の記入、結果の読み取りなどは言語や慣習の違いで負担になりがちです。JMCが日本語で窓口を担当し、必要に応じて日英双方の翻訳や要点の要約を提供します。</p>
-                        <p class="en">Communicating with clinics, completing medical questionnaires, and interpreting results can be difficult because of language and cultural differences. JMC serves as a Japanese‑language point of contact and provides translation and bilingual summaries of key findings as needed.</p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="ja">カナダの主治医との連携を支援</h3>
-                        <h3 class="en">Support for continuity with your Canadian physician</h3>
-                        <p class="ja">帰国後に日本での検査結果を有効に活用できるよう、カナダの主治医に渡せる形式で書類や翻訳を整えます。必要に応じて主治医向けの要約文も作成します（医療判断は医師同士で行われます）。</p>
-                        <p class="en">To ensure your test results are useful after you return, we prepare documents and translations in a format your Canadian doctor can use. We can also prepare a concise summary intended for your physician. (Final medical decisions are made between physicians and patients.)</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
+</div>
+<div class="lang">
+<button class="active" id="jaBtn" onclick="setLang('ja')">日本語</button>
+<button id="enBtn" onclick="setLang('en')">English</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="hero"><div class="wrap hero-grid">
+<div>
+<div class="ja">
+<h1>カナダ在住の日本語話者のための<br/><span>日本・人間ドック手配サポート</span></h1>
+<p class="lead">施設選び、予約、書類準備、渡航の実務、結果書類の整理まで。JMCがカナダと日本の間を、非医療の立場で丁寧に調整します。</p>
+<p class="notice">JMCは医療機関ではありません。診断・治療方針・検査内容の医学的判断は行わず、予約・書類・翻訳・渡航に関する実務を支援します。</p>
+<div class="hero-actions"><a class="button" href="#contact">15分無料ヒアリングを申し込む</a><a class="button secondary" href="#process">ご利用の流れを見る</a></div>
+</div>
+<div class="en">
+<h1>Japan Ningen Dock Coordination<br/><span>for Japanese-Speaking Residents of Canada</span></h1>
+<p class="lead">From appointment coordination and documentation to travel logistics and organizing result records, JMC provides practical non-clinical support between Canada and Japan.</p>
+<p class="notice">JMC is not a medical clinic. We do not provide diagnoses, treatment recommendations, or clinical decisions; we coordinate appointments, documents, translation, and travel-related logistics.</p>
+<div class="hero-actions"><a class="button" href="#contact">Request a Free 15-Minute Intake</a><a class="button secondary" href="#process">See How It Works</a></div>
+</div>
+</div>
+<aside class="metrics">
+<div class="metric"><b>Vancouver</b><span class="ja">カナダを拠点とした窓口</span><span class="en">Canada-based point of contact</span></div>
+<div class="metric"><b>Japan</b><span class="ja">日本側の運営サポート</span><span class="en">Japan-side operational support</span></div>
+<div class="metric"><b>Clear</b><span class="ja">役割と費用を事前に整理</span><span class="en">Clear scope and cost categories</span></div>
+<div class="metric"><b>Non-clinical</b><span class="ja">医療判断は医師と患者様の間で</span><span class="en">Medical decisions remain with patients and clinicians</span></div>
+</aside>
+</div></section><section class="trust-strip"><div class="wrap trust-grid">
+<div class="trust-item"><b class="ja">日本語で直接対応</b><b class="en">Japanese-language coordination</b><span class="ja">カナダ側の窓口として実務を整理します。</span><span class="en">A Canada-based point of contact for practical coordination.</span></div>
+<div class="trust-item"><b class="ja">日本側の実務体制</b><b class="en">Japan-side operational support</b><span class="ja">現役の医療ツーリズム事業者と連携します。</span><span class="en">Coordinated with an active medical-tourism operator in Japan.</span></div>
+<div class="trust-item"><b class="ja">費用を項目別にご案内</b><b class="en">Costs explained by category</b><span class="ja">医療費・JMC費用・渡航費等を分けて確認します。</span><span class="en">Medical, coordination, and travel costs are explained separately.</span></div>
+</div></section>
+<!-- Services Section -->
+<section>
+<div class="wrap">
+<div class="heading">
+<h2 class="ja">サービス案内</h2>
+<h2 class="en">Our Services</h2>
+<div class="line"></div>
+</div><p class="section-intro ja">現在は、人間ドックの調整を主な入口サービスとしてご案内しています。専門医受診や書類・渡航に関する実務も、必要に応じて調整します。</p><p class="section-intro en">Ningen Dock coordination is JMC’s primary starting service. Specialist appointments, documentation, and travel-related logistics can be coordinated as needed.</p>
+<div class="cards">
+<article class="card">
+<div class="num">01.</div>
+<h3 class="ja">人間ドック・専門医予約</h3>
+<h3 class="en">Ningen Dock &amp; Appointments</h3>
+<p class="ja">日本の医療機関での健診・精密検査の予約調整を支援します。</p>
+<p class="en">Support with appointment coordination for health screenings and diagnostic examinations in Japan.</p>
+</article>
+<article class="card">
+<div class="num">02.</div>
+<h3 class="ja">書類・医療翻訳の調整</h3>
+<h3 class="en">Documents &amp; Translation Coordination</h3>
+<p class="ja">問診票や医療情報の準備、診断結果の翻訳など、書類に関する実務をコーディネートします。</p>
+<p class="en">Coordination for medical questionnaires, records, and translation of relevant documents.</p>
+</article>
+<article class="card">
+<div class="num">03.</div>
+<h3 class="ja">渡航・滞在ロジスティクス</h3>
+<h3 class="en">Travel Logistics</h3>
+<p class="ja">提携の旅行代理店と連携し、航空券や宿泊先の手配など、渡航に関わるロジスティクスを整理・サポートします。</p>
+<p class="en">Travel-related logistics, including flights and accommodation, coordinated with travel professionals.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- Why Choose JMC Section -->
+<section class="soft">
+<div class="wrap">
+<div class="heading">
+<h2 class="ja">JMCを選ぶ理由</h2>
+<h2 class="en">Why Choose JMC?</h2>
+<div class="line"></div>
+</div>
+<div class="value">
+<article class="value-card">
+<h3 class="ja">長い待機時間への選択肢提供</h3>
+<h3 class="en">Options when wait times are long</h3>
+<p class="ja">カナダでは専門医の受診や精密検査に数か月〜半年かかる場合があり、不安や対応の遅れにつながることがあります。日本には比較的短期間で検査や精密診断を受けられる施設が多く、早期発見・早期対応の一つの選択肢になります。JMCは予約や手続きなどの実務を代行し、無理なく検討できるようご案内します。</p>
+<p class="en">In Canada, seeing a specialist or getting advanced diagnostic tests can sometimes take months to half a year, causing anxiety and delays in care. Many Japanese facilities can arrange tests and detailed diagnostics on a much shorter timeline, offering a practical option for earlier detection and treatment. JMC handles the scheduling and administrative tasks so you can consider this option without undue burden.</p>
+</article>
+<article class="value-card">
+<h3 class="ja">包括的な「人間ドック」へのアクセス</h3>
+<h3 class="en">Access to comprehensive "Ningen Dock" screenings</h3>
+<p class="ja">日本の人間ドックは複数の検査を短期間で受けられるため、全身の状態を効率的に把握できます。施設ごとの検査内容や特徴を比較し、ご希望に合ったプログラムを分かりやすくご提案します。</p>
+<p class="en">Japan’s Ningen Dock lets you take multiple examinations in a short period, making it an efficient way to assess overall health. We compare programs and facility features and clearly recommend the option that best matches your needs.</p>
+</article>
+<article class="value-card">
+<h3 class="ja">言語・文化の壁を取り除く</h3>
+<h3 class="en">Removing language and cultural barriers</h3>
+<p class="ja">医療機関との連絡、問診票の記入、結果の読み取りなどは言語や慣習の違いで負担になりがちです。JMCが日本語で窓口を担当し、必要に応じて日英双方の翻訳や要点の要約を提供します。</p>
+<p class="en">Communicating with clinics, completing medical questionnaires, and interpreting results can be difficult because of language and cultural differences. JMC serves as a Japanese‑language point of contact and provides translation and bilingual summaries of key findings as needed.</p>
+</article>
+<article class="value-card">
+<h3 class="ja">カナダの主治医との連携を支援</h3>
+<h3 class="en">Support for continuity with your Canadian physician</h3>
+<p class="ja">帰国後に日本での検査結果を有効に活用できるよう、カナダの主治医に渡せる形式で書類や翻訳を整えます。必要に応じて主治医向けの要約文も作成します（医療判断は医師同士で行われます）。</p>
+<p class="en">To ensure your test results are useful after you return, we prepare documents and translations in a format your Canadian doctor can use. We can also prepare a concise summary intended for your physician. (Final medical decisions are made between physicians and patients.)</p>
+</article>
+</div>
+</div>
+</section>
 <!-- About Us Section (insert inside <main>) -->
 <section id="about">
-  <div class="wrap">
-    <div class="heading">
-      <h2 class="ja">私たちについて</h2>
-      <h2 class="en">About Us</h2>
-      <div class="line"></div>
-    </div>
-
-    <div class="value">
-      <article class="value-card">
-        <h3 class="ja">このサービスを始めた理由</h3>
-        <h3 class="en">Why we started this service</h3>
-        <p class="ja">
+<div class="wrap">
+<div class="heading">
+<h2 class="ja">私たちについて</h2>
+<h2 class="en">About Us</h2>
+<div class="line"></div>
+</div>
+<div class="value">
+<article class="value-card">
+<h3 class="ja">このサービスを始めた理由</h3>
+<h3 class="en">Why we started this service</h3>
+<p class="ja">
           カナダ在住の日本語話者が日本の人間ドックや医療を検討する際、情報収集・言語対応・書類準備・渡航手配を一人で進めるのは簡単ではありません。JMCはそうした実務上の負担を整理・代行し、安心して次の一歩を踏み出せるようお手伝いするために生まれました。
         </p>
-        <p class="en">
+<p class="en">
           For Japanese speakers living in Canada, exploring Japan’s Ningen Dock screenings or other medical options can be difficult to manage alone—between gathering information, handling language, preparing documents, and arranging travel. JMC was created to organize and handle those practical tasks so you can consider the next step with confidence.
         </p>
-      </article>
-
-      <article class="value-card">
-        <h3 class="ja">JMCらしさ</h3>
-        <h3 class="en">What makes JMC different</h3>
-        <p class="ja">
+</article>
+<article class="value-card">
+<h3 class="ja">JMCらしさ</h3>
+<h3 class="en">What makes JMC different</h3>
+<p class="ja">
           JMCはバンクーバーを拠点に、日本語で直接対応する「顔の見える」コーディネートを重視しています。メールだけでなく、バンクーバー近郊での対面相談やオンラインでの丁寧なヒアリングにも対応します。役割の範囲や費用の内訳は事前に分かりやすく提示し、何に費用がかかるかを明確にします。
         </p>
-        <p class="en">
+<p class="en">
 Based in Vancouver, JMC emphasizes personal, face‑to‑face coordination in Japanese. We offer more than email support: online consultations and in‑person meetings around the Vancouver area are available. We clearly explain the scope of our role and itemize costs in advance so you know exactly what you are paying for.
-        </p>  
-      </article>
-        
-        <article class="value-card">
-        <h3 class="ja">地域に根ざした窓口</h3>
-        <h3 class="en">A Local point of contact</h3>
-        <p class="ja">
+        </p>
+</article>
+<article class="value-card">
+<h3 class="ja">地域に根ざした窓口</h3>
+<h3 class="en">A Local point of contact</h3>
+<p class="ja">
           現地の生活習慣や時間帯、カナダの医療事情を理解した上で、日本側との橋渡しを行います。医療上の判断は必ず患者様と医師の間で行われ、JMCは非医療の立場で調整を担当します。
         </p>
-        <p class="en">
+<p class="en">
           We bridge the gap with Japan while taking into account local routines, time zones, and the Canadian healthcare context. Medical decisions are always made between the patient and physicians; JMC acts solely as a non‑clinical coordinator.
         </p>
-      </article>
-
-      <article class="value-card">
-        <h3 class="ja">分かりやすい費用</h3>
-        <h3 class="en">Transparent, easy‑to‑understand pricing</h3>
-        <p class="ja">
+</article>
+<article class="value-card">
+<h3 class="ja">分かりやすい費用</h3>
+<h3 class="en">Transparent, easy‑to‑understand pricing</h3>
+<p class="ja">
           医療費、JMCの調整・事務費、渡航・滞在費、その他実費を項目別に分けてご案内します。医療費に含めずに費用を隠すことはせず、事前に全体像を確認いただけるよう努めます。
         </p>
-        <p class="en">
+<p class="en">
           We present costs separately by category—medical fees, JMC coordination/administrative fees, travel and accommodation, and other out‑of‑pocket expenses. We do not hide charges inside medical fees; instead, we make the full cost picture available up front.
         </p>
-      </article>
-    </div>
-  </div>
+</article>
+</div>
+</div>
 </section>
-        
-        <!-- From the Founder Section -->
-        <section class="dark">
-            <div class="wrap dark-grid">
-                <div>
-                    <div class="eyebrow">Message From the Founder</div>
-                    <div class="ja">
-                        <p>2009年よりバンクーバー在住。私自身、カナダでの専門医待機に不安を感じた経験から、日本の医療をスムーズな選択肢にするための窓口を設けました。大学病院での5年間の教授秘書経験を活かし、非医療のコーディネーターとして、実務（予約・書類・渡航）を正確かつ丁寧にサポートいたします。皆様の「安心」への架け橋となれることを願っております。</p>
-                        <p style="margin-top:20px"><b>山本 崇</b></p>
-                    </div>
-                    <div class="en">
-                        <p>A Vancouver resident since 2009, I founded JMC after experiencing firsthand the challenges of wait times in the Canadian healthcare system. Leveraging five years of experience as an administrative secretary to a neurosurgery professor in Japan, I provide meticulous support for appointments, documentation, and logistics. I am dedicated to being your trusted bridge to peace of mind in Japan.</p>
-                        <p style="margin-top:20px"><b>Takashi Yamamoto</b><br>Founder</p>
-                    </div>
-                </div>
-                <aside class="partner">
-                    <h3 class="ja">日本側の運営体制</h3>
-                    <h3 class="en">Operations in Japan</h3>
-                    <p class="ja">日本国内の実務は、現役で医療ツーリズムを手がける会社をパートナーとして連携し、進めます。</p>
-                    <p class="en">Japan-side operations are supported through our partnership with an active medical tourism company in Japan.</p>
-                </aside>
-            </div>
-        </section>
-
-        <!-- Price Transparency Section -->
-        <section>
-            <div class="wrap">
-                <div class="heading">
-                    <h2 class="ja">費用の透明性</h2>
-                    <h2 class="en">Price Transparency</h2>
-                    <div class="line"></div>
-                    <p class="ja">医療費への上乗せではなく、費用の種類を分けて分かりやすく提示します。</p>
-                    <p class="en">Costs are separated clearly rather than hidden within medical fees.</p>
-                </div>
-                <div class="price">
-                    <div>
-                        <b>1. Medical Fee</b>
-                        <span class="ja">医療機関への実費</span>
-                        <span class="en">Direct clinical costs</span>
-                    </div>
-                    <div>
-                        <b>2. JMC Fee</b>
-                        <span class="ja">調整・事務支援費用</span>
-                        <span class="en">Coordination support</span>
-                    </div>
-                    <div>
-                        <b>3. Travel</b>
-                        <span class="ja">航空券・宿泊等</span>
-                        <span class="en">Flights & accommodation</span>
-                    </div>
-                    <div>
-                        <b>4. Incidentals</b>
-                        <span class="ja">現地移動などの実費</span>
-                        <span class="en">Local expenses</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section>
-            <div class="wrap">
-                <div class="heading">
-                    <h2 class="ja">ご利用の流れ</h2>
-                    <h2 class="en">How It Works</h2>
-                    <div class="line"></div>
-                </div>
-                <div class="steps">
-                    <div class="step">
-                        <div class="circle">1</div>
-                        <b class="ja">お問い合わせ</b>
-                        <b class="en">Contact</b>
-                        <p class="ja">まずはフォームまたはメールでご連絡ください。ご希望の検査やおおよその時期、予算などをお知らせください。
-                        <br>（所要目安：返信は通常48時間以内）</p>
-                    <p class="en">Please contact us via the form or email and tell us the screening or service you want, your preferred timing, and an approximate budget.<br>(Estimated response time: typically within 48 hours)</p>
-                    </div>
-                    <div class="step">
-                        <div class="circle">2</div>
-                        <b class="ja">ヒアリングと提案</b>
-                        <b class="en">Intake & Proposal</b>
-                         <p class="ja">ご提供いただいた情報をもとに、最適な検査プランや渡航スケジュール、概算費用を整理してご提案します。必要に応じてオンラインで詳しいヒアリングを行います。<br>（所要目安：1〜3営業日）</p>
-                    <p class="en">Based on the information you provide, we will prepare a recommended screening plan, travel schedule, and an estimated cost. We can arrange a more detailed online intake if needed.<br>(Estimated timeframe: 1–3 business days)</p>
-                    </div>
-                    <div class="step">
-                        <div class="circle">3</div>
-                        <b class="ja">日本側の手配・調整</b>
-                        <b class="en">Coordination with Japan</b>
-                        <p class="ja">ご承認後、提携先の医療機関や旅行代理店と連携して、検査日程・渡航手配・書類準備を進めます。問診票や必要書類の翻訳・確認も行います。<br>（所要目安：2〜6週間 ※検査内容や時期による）</p>
-                    <p class="en">After you approve the plan, we coordinate with partner medical facilities and travel providers to arrange the appointment, travel, and required paperwork. We also handle translation and review of questionnaires and documents as needed.<br>(Estimated timeframe: 2–6 weeks, depending on the type of screening and timing)</p>
-                    </div>
-                    <div class="step">
-                        <div class="circle">4</div>
-                        <b class="ja">渡航・受診サポート</b>
-                        <b class="en">Travel & Appointment Support</b>
-                          <p class="ja">渡航当日から受診までのスケジュール調整や現地の連絡窓口を担当します。必要に応じて通訳や現地サポートも手配します。<br>（所要目安：受診当日）</p>
-                    <p class="en">We manage the schedule and act as your local contact during travel and on the day of the appointment. Interpretation and local support can be arranged if required.<br>(Estimated timeframe: day of appointment)</p>
-                          <div class="step">
-                        <div class="circle">5</div>
-                        <b class="ja">結果の整理と帰国後フォロー</b>
-                        <b class="en">Results & Follow-up</b>
-                          <p class="ja">検査結果の翻訳・要約を作成し、カナダの主治医に渡せる形式でお渡しします。帰国後の相談や次の手続きについてのご案内も行います。<br>（所要目安：受診後1〜2週間）</p>
-                    <p class="en">We translate and summarize your test results into a format suitable for your Canadian physician. We also provide follow-up guidance and next-step information after you return home.<br>(Estimated timeframe: 1–2 weeks after the appointment)</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-      <!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="wrap">
-        <div class="heading">
-            <h2 class="ja">無料ヒアリングを申し込む（15分）</h2>
-            <h2 class="en">Request 15‑min Free Intake</h2>
-            <div class="line"></div>
-        </div>
-
-        <!-- 役割の明確化（非医療の注意書き） -->
+<!-- From the Founder Section -->
+<section class="dark">
+<div class="wrap dark-grid">
+<div>
+<div class="eyebrow">Message From the Founder</div>
+<div class="ja"><p>2009年よりバンクーバー在住。カナダでの専門医待機に不安を感じた経験から、日本の人間ドックを検討する際の実務窓口を設けました。大学病院での5年間の教授秘書経験を活かし、非医療コーディネーターとして予約・書類・渡航に関する実務を丁寧に支援します。</p><p style="margin-top:20px"><b>山本 崇</b><span class="founder-role">代表 / 非医療コーディネーター</span></p></div>
+<div class="en"><p>A Vancouver resident since 2009, I created JMC to provide a practical point of contact for people considering Ningen Dock in Japan. Drawing on five years of administrative-secretary experience in a Japanese university hospital, I support appointments, documentation, and travel logistics as a non-clinical coordinator.</p><p style="margin-top:20px"><b>Takashi Yamamoto</b><span class="founder-role">Founder / Non-clinical Coordinator</span></p></div>
+</div>
+<aside class="partner">
+<h3 class="ja">日本側の運営体制</h3>
+<h3 class="en">Operations in Japan</h3>
+<p class="ja">日本国内の実務は、現役で医療ツーリズムを手がける会社をパートナーとして連携し、進めます。</p>
+<p class="en">Japan-side operations are supported through our partnership with an active medical tourism company in Japan.</p>
+</aside>
+</div>
+</section>
+<!-- Price Transparency Section -->
+<section>
+<div class="wrap">
+<div class="heading">
+<h2 class="ja">費用の透明性</h2>
+<h2 class="en">Price Transparency</h2>
+<div class="line"></div>
+<p class="ja">医療費への上乗せではなく、費用の種類を分けて分かりやすく提示します。</p>
+<p class="en">Costs are separated clearly rather than hidden within medical fees.</p>
+</div>
+<div class="price">
+<div>
+<b>1. Medical Fee</b>
+<span class="ja">医療機関への実費</span>
+<span class="en">Direct clinical costs</span>
+</div>
+<div>
+<b>2. JMC Fee</b>
+<span class="ja">調整・事務支援費用</span>
+<span class="en">Coordination support</span>
+</div>
+<div>
+<b>3. Travel</b>
+<span class="ja">航空券・宿泊等</span>
+<span class="en">Flights &amp; accommodation</span>
+</div>
+<div>
+<b>4. Incidentals</b>
+<span class="ja">現地移動などの実費</span>
+<span class="en">Local expenses</span>
+</div>
+</div><div class="price-note"><p class="ja">ご提案前に、医療機関への支払い、JMCの調整・事務支援費用、渡航・滞在費、その他実費を分けてご案内します。全体の見通しを確認してから、次の段階へ進めます。</p><p class="en">Before you proceed, we explain medical-facility charges, JMC coordination and administrative fees, travel and accommodation, and other out-of-pocket costs separately so you can review the overall picture.</p><a class="text-link ja" href="#contact">費用の考え方を無料ヒアリングで確認する →</a><a class="text-link en" href="#contact">Discuss the cost framework in a free intake →</a></div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section id="process">
+<div class="wrap">
+<div class="heading">
+<h2 class="ja">ご利用の流れ</h2>
+<h2 class="en">How It Works</h2>
+<div class="line"></div>
+</div>
+<div class="flow-container">
+<div class="flow-step"><div class="flow-rail"><div class="circle">1</div><div class="flow-line"></div></div><div class="flow-content"><b class="ja">お問い合わせ</b><b class="en">Contact</b><p class="ja">フォームまたはメールで、ご希望の時期・都市・検査の目的などをお知らせください。通常48時間以内に返信します。</p><p class="en">Use the form or email to tell us your preferred timing, city, and purpose. We typically reply within 48 hours.</p></div></div>
+<div class="flow-step"><div class="flow-rail"><div class="circle">2</div><div class="flow-line"></div></div><div class="flow-content"><b class="ja">ヒアリングと進め方のご案内</b><b class="en">Intake &amp; Practical Outline</b><p class="ja">ご希望とJMCが対応できる実務範囲を確認し、進め方と次のステップを整理します。医療上の判断は行いません。</p><p class="en">We confirm your goals and the practical coordination JMC can provide, then outline the process and next steps. JMC does not make clinical decisions.</p></div></div>
+<div class="flow-step"><div class="flow-rail"><div class="circle">3</div><div class="flow-line"></div></div><div class="flow-content"><b class="ja">日本側との手配・調整</b><b class="en">Coordination with Japan</b><p class="ja">ご承認後、医療機関および旅行関連の関係先と連携し、日程、必要書類、渡航に関する実務を進めます。</p><p class="en">After your approval, we coordinate scheduling, required documents, and travel-related logistics with relevant medical facilities and travel providers.</p></div></div>
+<div class="flow-step"><div class="flow-rail"><div class="circle">4</div><div class="flow-line"></div></div><div class="flow-content"><b class="ja">渡航・受診に向けた実務支援</b><b class="en">Travel &amp; Appointment Logistics</b><p class="ja">受診までの予定確認、連絡窓口、必要に応じた通訳や現地支援の手配を行います。</p><p class="en">We help coordinate schedules, points of contact, and—when required—interpretation or local support arrangements.</p></div></div>
+<div class="flow-step"><div class="flow-rail"><div class="circle">5</div></div><div class="flow-content"><b class="ja">結果書類の整理と帰国後のご案内</b><b class="en">Result-Document Organization &amp; Follow-up</b><p class="ja">必要に応じて結果書類の翻訳・要点整理を支援し、カナダの主治医に共有しやすい形に整えます。医療判断は患者様と資格を持つ医療者の間で行われます。</p><p class="en">As needed, we support translation and organization of result documents in a form that is easier to share with your Canadian physician. Medical decisions remain between you and licensed healthcare professionals.</p></div></div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="faq"><div class="wrap"><div class="heading"><h2 class="ja">よくあるご質問</h2><h2 class="en">Frequently Asked Questions</h2><div class="line"></div></div><div class="faq-list">
+<details><summary class="ja">カナダ在住でも日本の人間ドックを受けられますか？</summary><summary class="en">Can I arrange a Ningen Dock screening while living in Canada?</summary><p class="ja">受診可否や条件は施設ごとに異なります。JMCは、ご希望に沿って施設への確認や予約に関する実務を調整します。</p><p class="en">Eligibility and requirements vary by facility. JMC can coordinate practical inquiries and booking-related arrangements based on your preferences.</p></details>
+<details><summary class="ja">どのくらい前から準備が必要ですか？</summary><summary class="en">How far in advance should I begin planning?</summary><p class="ja">時期・施設・検査内容により異なります。渡航を伴うため、余裕を持って早めにご相談いただくことをおすすめします。</p><p class="en">Timing depends on the season, facility, and screening type. Because travel is involved, it is helpful to contact us as early as possible.</p></details>
+<details><summary class="ja">JMCは医療上のアドバイスをしますか？</summary><summary class="en">Does JMC provide medical advice?</summary><p class="ja">いいえ。JMCは非医療のコーディネーターです。診断・治療方針・医学的に適切な検査の判断は行いません。</p><p class="en">No. JMC is a non-clinical coordinator and does not provide diagnoses, treatment recommendations, or decisions about medically appropriate testing.</p></details>
+<details><summary class="ja">カナダの主治医に結果を渡すための書類整理はできますか？</summary><summary class="en">Can JMC help organize documents for my Canadian physician?</summary><p class="ja">必要に応じて、結果書類の翻訳や要点整理に関する実務を支援します。医療内容の評価は医師にご相談ください。</p><p class="en">As needed, JMC can support translation and practical organization of result documents. Please consult a licensed clinician for medical interpretation.</p></details>
+<details><summary class="ja">JMC費用には何が含まれますか？</summary><summary class="en">What is included in JMC’s fee?</summary><p class="ja">調整・事務支援の範囲はご依頼内容により異なります。医療費、JMC費用、渡航・滞在費、その他実費を分けてご案内します。</p><p class="en">The scope of coordination and administrative support varies by request. Medical, JMC, travel/accommodation, and other costs are explained separately.</p></details>
+<details><summary class="ja">バンクーバー以外からも利用できますか？</summary><summary class="en">Can I use JMC from outside Vancouver?</summary><p class="ja">はい。オンラインでのヒアリングを中心に、カナダ各地の日本語話者からのご相談に対応します。</p><p class="en">Yes. We can support Japanese-speaking residents across Canada primarily through online intake and communication.</p></details>
+</div></div></section><section class="contact" id="contact">
+<div class="wrap">
+<div class="heading">
+<h2 class="ja">無料ヒアリングを申し込む（15分）</h2>
+<h2 class="en">Request 15‑min Free Intake</h2>
+<div class="line"></div>
+</div>
+<!-- 役割の明確化（非医療の注意書き） -->
 <div class="notice ja" style="border-top: 1px solid var(--primary); border-bottom: 1px solid var(--primary); padding: 15px 10px; margin-bottom: 30px; font-size: 0.9em; color: var(--primary); text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-    <strong>ご注意：</strong> JMCは医療機関ではありません。実務（予約・書類・渡航）のコーディネートを行います。
+<strong>ご注意：</strong> JMCは医療機関ではありません。実務（予約・書類・渡航）のコーディネートを行います。
 </div>
 <div class="notice en" style="border-top: 1px solid var(--primary); border-bottom: 1px solid var(--primary); padding: 15px 10px; margin-bottom: 30px; font-size: 0.9em; color: var(--primary); text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-    <strong>Note:</strong> JMC is not a medical clinic. We provide non-clinical coordination for logistics and documentation.
+<strong>Note:</strong> JMC is not a medical clinic. We provide non-clinical coordination for logistics and documentation.
 </div>
-
-        <!-- 送信先(action)にFormspreeなどのIDを入れてください -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            
-            <!-- お名前 (必須) -->
-            <label class="ja">お名前 *</label>
-            <label class="en">Name *</label>
-            <input type="text" name="name" required placeholder="Taro Yamamoto / 山本 太郎">
-
-            <!-- メールアドレス (必須) -->
-            <label class="ja">メールアドレス *</label>
-            <label class="en">Email *</label>
-            <input type="email" name="email" required placeholder="example@mail.com">
-
-            <!-- お問い合わせの目的 (追加を推奨) -->
-            <label class="ja">お問い合わせの目的 *</label>
-            <label class="en">Purpose *</label>
-            <select name="purpose" required>
-                <option value="" class="ja">選択してください</option>
-                <option value="" class="en">Please select</option>
-                <option value="Ningen Dock">人間ドック / Ningen Dock</option>
-                <option value="Specialist">専門医予約 / Specialist Appointment</option>
-                <option value="Documentation">書類・翻訳 / Documents & Translation</option>
-                <option value="Other">その他 / Other</option>
-            </select>
-
-            <!-- ご用件 (必須) -->
-            <label class="ja">ご用件 *</label>
-            <label class="en">Message *</label>
-            <textarea name="message" required placeholder="Preferred date, etc. / 希望時期など"></textarea>
-
-            <!-- 送信ボタン -->
-            <button type="submit" class="ja">無料ヒアリングを申し込む</button>
-            <button type="submit" class="en">Request Free Intake</button>
-
-            <!-- 同意文 -->
-            <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="ja">
-                通常48時間以内に返信いたします。送信により、当社の<a href="privacy.html?lang=ja" target="_blank" rel="noopener">個人情報保護方針</a>に同意したものとみなされます。
+<!-- 送信先(action)にFormspreeなどのIDを入れてください -->
+<div class="intake-box"><h3 class="ja">15分の無料ヒアリングで確認すること</h3><h3 class="en">What we cover in your 15-minute free intake</h3><ul class="ja"><li>ご希望の時期・都市・検査の目的</li><li>JMCで対応できる非医療の実務範囲</li><li>おおまかな進め方と次のステップ</li></ul><ul class="en"><li>Your preferred timing, city, and purpose</li><li>The non-clinical coordination JMC can provide</li><li>A practical outline of the process and next steps</li></ul><p class="ja">JMCは医療上の助言や検査内容の判断を行いません。必要な医療上の判断は、医療機関または担当医にご確認ください。</p><p class="en">JMC does not provide medical advice or determine which tests are medically appropriate. Please consult the medical facility or a licensed clinician for clinical decisions.</p></div><form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<!-- お名前 (必須) -->
+<label class="ja">お名前 *</label>
+<label class="en">Name *</label>
+<input name="name" placeholder="Taro Yamamoto / 山本 太郎" required="" type="text"/>
+<!-- メールアドレス (必須) -->
+<label class="ja">メールアドレス *</label>
+<label class="en">Email *</label>
+<input name="email" placeholder="example@mail.com" required="" type="email"/>
+<!-- お問い合わせの目的 (追加を推奨) -->
+<label class="ja">お問い合わせの目的 *</label>
+<label class="en">Purpose *</label>
+<select name="purpose" required="">
+<option class="ja" value="">選択してください</option>
+<option class="en" value="">Please select</option>
+<option value="Ningen Dock">人間ドック / Ningen Dock</option>
+<option value="Specialist">専門医予約 / Specialist Appointment</option>
+<option value="Documentation">書類・翻訳 / Documents &amp; Translation</option>
+<option value="Other">その他 / Other</option>
+</select>
+<!-- ご用件 (必須) -->
+<label class="ja">ご用件 *</label>
+<label class="en">Message *</label>
+<textarea name="message" placeholder="Preferred date, etc. / 希望時期など" required=""></textarea>
+<!-- 送信ボタン -->
+<button class="ja" type="submit">無料ヒアリングを申し込む</button>
+<button class="en" type="submit">Request Free Intake</button>
+<!-- 同意文 -->
+<p class="ja" style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;">
+                通常48時間以内に返信いたします。送信により、当社の<a href="privacy.html?lang=ja" rel="noopener" target="_blank">個人情報保護方針</a>に同意したものとみなされます。
             </p>
-            <p style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;" class="en">
-                We typically reply within 48 hours. By submitting, you agree to our<a href="privacy.html?lang=en" target="_blank" rel="noopener">Privacy Policy</a>.
+<p class="en" style="font-size:10px; text-align:center; color:var(--muted); margin-top:10px;">
+                We typically reply within 48 hours. By submitting, you agree to our <a href="privacy.html?lang=en" rel="noopener" target="_blank">Privacy Policy</a>.
             </p>
-        </form>
-    </div>
+</form>
+</div>
 </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="wrap">
-            © 2026 Japan Medical Concierge (JMC)<br>
-            <a href="privacy.html?lang=ja" class="ja">個人情報保護方針 (Privacy Policy)</a>
-            <a href="privacy.html?lang=en" class="en">Privacy Policy</a>
-
-            <p class="ja">JMCは医療機関ではなく、医療上の助言・診断・治療の推奨は行いません。すべての医療的判断は、ご本人と資格を持つ医師との間で決定されるものとします。</p>
-            <p class="en">JMC does not provide medical advice, diagnosis, or treatment recommendations. All medical decisions remain between the patient and licensed healthcare professionals.</p>
-        </div>
-    </footer>
+</main>
+<!-- Footer -->
+<footer>
+<div class="wrap">
+            © 2026 Japan Medical Concierge (JMC)<br/>
+<a class="ja" href="privacy.html?lang=ja">個人情報保護方針 (Privacy Policy)</a>
+<a class="en" href="privacy.html?lang=en">Privacy Policy</a>
+<p class="ja">JMCは医療機関ではなく、医療上の助言・診断・治療の推奨は行いません。すべての医療的判断は、ご本人と資格を持つ医師との間で決定されるものとします。</p>
+<p class="en">JMC does not provide medical advice, diagnosis, or treatment recommendations. All medical decisions remain between the patient and licensed healthcare professionals.</p>
+</div>
+</footer>
 </body>
 </html>
