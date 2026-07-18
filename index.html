@@ -336,73 +336,7 @@
             max-width: 900px;
             margin: 10px auto;
         }
-/* Vertical flow chart styles */
-.flow-container {
-display: block;
-max-width: 980px;
-margin: 0 auto;
-padding: 10px 20px;
-}
-.flow-step {
-display: flex;
-gap: 20px;
-align-items: flex-start;
-margin-bottom: 28px;
-}
-.flow-left {
-width: 80px;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.flow-left .circle {
-width: 56px;
-height: 56px;
-border-radius: 50%;
-background: var(--navy);
-color: #fff;
-display: grid;
-place-items: center;
-font-weight: bold;
-font-size: 18px;
-}
-.flow-left .vline {
-width: 2px;
-background: linear-gradient(to bottom, rgba(16,42,85,0.9), rgba(46,110,181,0.6));
-flex: 1;
-margin-top: 8px;
-align-self: stretch;
-}
-.flow-content {
-flex: 1;
-padding-top: 4px;
-}
-.flow-content h4 {
-margin: 0 0 8px 0;
-font-size: 18px;
-color: var(--navy);
-}
-.flow-content p {
-margin: 0;
-color: var(--muted);
-line-height: 1.6;
-}
 
-/* make sure language switching still works */
-html[lang="ja"] .en { display: none !important; }
-html[lang="en"] .ja { display: none !important; }
-
-/* responsive */
-@media (max-width: 760px) {
-.flow-step {
-flex-direction: row;
-gap: 12px;
-}
-.flow-left { width: 56px; }
-.flow-left .circle { width: 46px; height: 46px; font-size: 16px; }
-.flow-content h4 { font-size: 16px; }
-.flow-content p { font-size: 14px; }
-}
         @media (max-width: 760px) {
             .hero-grid,
             .dark-grid,
