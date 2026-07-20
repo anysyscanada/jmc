@@ -85,6 +85,11 @@
         .about-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
         .about-card h3 { color: #4facfe; margin-bottom: 15px; font-size: 19px; }
 
+        /* Add this anywhere inside your <style> tags */
+        #screening-intro {
+        scroll-margin-top: 100px;
+        }
+
         #ningen-dock,
         #pet-scan {
         scroll-margin-top: 96px;
@@ -170,10 +175,10 @@
     <div class="nav-inner">
         <a href="#top" class="logo">JMC<small>Japan Medical Concierge</small></a>
         <nav>
-            <ul>
+            <ul>                
                 <li><a href="#about" class="ja">JMCについて</a><a href="#about" class="en">About</a></li>
-                <li><a href="#ningen-dock" class="ja">人間ドック</a><a href="#ningen-dock" class="en">Ningen Dock</a></li>
-                <li><a href="#pet-scan" class="ja">PET検査</a><a href="#pet-scan" class="en">PET Scan</a></li>
+                <li><a href="#screening-intro" class="ja">人間ドック</a><a href="#screening-intro" class="en">Ningen Dock</a></li>
+                <li><a href="#screening-intro" class="ja">PET検査</a><a href="#screening-intro" class="en">PET Scan</a></li>
                 <li><a href="#flow" class="ja">ご利用の流れ</a><a href="#flow" class="en">Flow</a></li>
                 <li><a href="#contact" class="ja">お問い合わせ</a><a href="#contact" class="en">Contact</a></li>
                 <li>
@@ -229,7 +234,7 @@
 </section>
 
 <!-- Ningen Dock & PET -->
-<section class="screening-section">
+<section id="screening-intro" class="screening-section">
     <div class="wrap">
         <div class="heading">
             <h2 class="ja">人間ドック・PET検査について</h2>
