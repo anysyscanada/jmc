@@ -213,6 +213,17 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-weight: 800; flex-shrink: 0;
         }
+        
+        /* FAQ styles */
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: #fbfdff; border: 1px solid #dee7ef; border-radius: 8px; margin-bottom: 12px; }
+        .faq-item summary { 
+            padding: 20px; cursor: pointer; font-weight: 700; color: var(--navy); 
+            display: flex; flex-direction: column; list-style: none;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-content { padding: 0 20px 20px; color: var(--ink); border-top: 1px solid #eff3f6; padding-top: 15px; }
+        .faq-item[open] summary { border-bottom: 1px solid transparent; }
 
         /* Contact */
         .contact-section { background: var(--pale); }
@@ -302,6 +313,7 @@
         <li><a href="#ningen-dock" onclick="closeMenu()" class="ja">人間ドック</a><a href="#ningen-dock" onclick="closeMenu()" class="en">Ningen Dock</a></li>
         <li><a href="#pet-scan" onclick="closeMenu()" class="ja">PET検査</a><a href="#pet-scan" onclick="closeMenu()" class="en">PET Scan</a></li>
         <li><a href="#flow" onclick="closeMenu()" class="ja">ご利用の流れ</a><a href="#flow" onclick="closeMenu()" class="en">Flow</a></li>
+        <li><a href="#faq" onclick="closeMenu()" class="ja">よくある質問</a><a href="#faq" onclick="closeMenu()" class="en">FAQ</a></li>
         <li><a href="#contact" onclick="closeMenu()" class="ja">お問い合わせ</a><a href="#contact" onclick="closeMenu()" class="en">Contact</a></li>
     </ul>
     <div class="mobile-lang-switch">
@@ -477,6 +489,60 @@
                 <p class="ja">検査結果の翻訳・要約を作成し、カナダの主治医に渡せる形式でお渡しします。帰国後の相談にも対応します。</p>
                 <p class="en">We prepare a translated summary of your results in a format suitable for your Canadian physician, and remain available for post-visit questions.</p>
             </div>
+        </div>
+    </div>
+</section>
+<!-- FAQ Section -->
+<section id="faq" style="background:#fff; border-top: 1px solid #eee;">
+    <div class="wrap">
+        <div class="heading">
+            <h2 class="ja">よくある質問</h2><h2 class="en">FAQ</h2>
+            <div class="line"></div>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>
+                    <span class="ja">カナダ在住でも日本の人間ドックを受けられますか？</span>
+                    <span class="en">Can I take a Ningen Dock screening while living in Canada?</span>
+                </summary>
+                <div class="faq-content">
+                    <p class="ja">はい、可能です。一時帰国のスケジュールに合わせて、効率よく受診できるよう調整いたします。海外在住者の場合、日本の健康保険は適用されず全額自費となりますが、その点も含めて事前に費用をご案内します。</p>
+                    <p class="en">Yes, absolutely. We coordinate your screening to fit efficiently into your travel schedule. As a resident of Canada, please note that Japanese national health insurance typically does not apply and you will be self-paying; we provide clear cost estimates beforehand.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span class="ja">JMCの調整費用はどのくらいかかりますか？</span>
+                    <span class="en">How much does JMC’s coordination service cost?</span>
+                </summary>
+                <div class="faq-content">
+                    <p class="ja">基本調整費を別途いただいております。医療機関への支払いとは別に、事務手数料・翻訳料・調整料として項目を分けて明示いたします。ヒアリング後に詳細な見積もりを提示しますので、ご安心ください。</p>
+                    <p class="en">We charge a separate coordination fee. This is clearly itemized apart from clinical fees and covers administrative tasks, translation, and scheduling. A detailed quote will be provided after your initial consultation.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span class="ja">検査結果は英語でもらえますか？</span>
+                    <span class="en">Can I receive the results in English?</span>
+                </summary>
+                <div class="faq-content">
+                    <p class="ja">日本のクリニックが発行する原本は日本語ですが、JMCがその要約翻訳を作成し、カナダの主治医に共有しやすい形式でお渡しします。正式な診断書の英訳が必要な場合は、別途翻訳手配も可能です。</p>
+                    <p class="en">The original reports from Japanese clinics are in Japanese, but JMC provides a translated summary formatted for your Canadian family doctor. Formal certified English translations can also be arranged if required.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span class="ja">医療相談や診断はしてくれますか？</span>
+                    <span class="en">Do you provide medical advice or diagnosis?</span>
+                </summary>
+                <div class="faq-content">
+                    <p class="ja">いいえ。JMCは非医療のコーディネーターであり、医療上の判断や診断は一切行いません。すべての医療的な判断は、日本の受診先医師、またはカナダの主治医の間で行われる必要があります。</p>
+                    <p class="en">No. JMC is a non-clinical coordinator and does not provide medical advice or interpretation. All clinical decisions and diagnoses remain between the patient and the licensed physicians in Japan or Canada.</p>
+                </div>
+            </details>
         </div>
     </div>
 </section>
