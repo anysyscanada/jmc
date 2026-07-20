@@ -36,14 +36,94 @@
         }
         .logo { text-decoration: none; color: var(--navy); font-weight: 800; font-size: 20px; }
         .logo small { display: block; font-size: 10px; color: var(--muted); letter-spacing: 0.1em; }
-        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
-        nav a { text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 600; transition: 0.3s; }
-        nav a:hover { color: var(--blue); }
+
+        /* Desktop nav */
+        .desktop-nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        .desktop-nav a { text-decoration: none; color: var(--ink); font-size: 13px; font-weight: 600; transition: 0.3s; }
+        .desktop-nav a:hover { color: var(--blue); }
+
+        /* Lang switch */
         .lang-switch button {
             padding: 4px 10px; font-size: 11px; border: 1px solid var(--navy);
             background: transparent; cursor: pointer; border-radius: 4px; font-weight: bold;
         }
         .lang-switch button.active { background: var(--navy); color: #fff; }
+
+        /* Hamburger button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1100;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile nav drawer */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(16, 42, 85, 0.97);
+            z-index: 1050;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-nav.open {
+            display: flex;
+            opacity: 1;
+        }
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+        .mobile-nav ul li {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav ul li:last-child { border-bottom: none; }
+        .mobile-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+        .mobile-nav a:hover { color: #4facfe; }
+        .mobile-lang-switch {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        .mobile-lang-switch button {
+            padding: 8px 20px; font-size: 13px;
+            border: 1px solid rgba(255,255,255,0.5);
+            background: transparent; color: #fff;
+            cursor: pointer; border-radius: 4px; font-weight: bold;
+        }
+        .mobile-lang-switch button.active {
+            background: #fff; color: var(--navy);
+        }
 
         /* Lang toggle */
         html[lang="ja"] .en { display: none !important; }
@@ -89,10 +169,7 @@
         .screening-section { background: #fff; }
         .screening-section.alt { background: #f8fbff; }
 
-        /* scroll offset for sticky header */
-        #ningen-dock, #pet-scan {
-            scroll-margin-top: 90px;
-        }
+        #ningen-dock, #pet-scan { scroll-margin-top: 90px; }
 
         .screening-content {
             display: grid;
@@ -114,19 +191,13 @@
             background: var(--pale); border-radius: 14px; padding: 28px;
             border-top: 4px solid var(--blue);
         }
-        .screening-highlights h4 {
-            color: var(--navy); font-size: 15px; margin-bottom: 14px;
-        }
-        .screening-highlights ul {
-            list-style: none; padding: 0;
-        }
+        .screening-highlights h4 { color: var(--navy); font-size: 15px; margin-bottom: 14px; }
+        .screening-highlights ul { list-style: none; padding: 0; }
         .screening-highlights ul li {
             padding: 7px 0; border-bottom: 1px solid #dce8f5; font-size: 14px;
         }
         .screening-highlights ul li:last-child { border-bottom: none; }
-        .screening-highlights ul li::before {
-            content: "✓ "; color: var(--blue); font-weight: 700;
-        }
+        .screening-highlights ul li::before { content: "✓ "; color: var(--blue); font-weight: 700; }
         .screening-note { font-size: 12px; color: var(--muted); margin-top: 30px; text-align: center; }
 
         /* Flow */
@@ -180,11 +251,14 @@
         }
         .form-footer a { color: var(--blue); }
 
-        @media (max-width: 700px) {
-            nav { display: none; }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .hamburger { display: flex; }
             .screening-content { grid-template-columns: 1fr; }
             .form-grid { grid-template-columns: 1fr; }
             .contact-box { padding: 25px; }
+            section { padding: 60px 20px; }
         }
     </style>
 </head>
@@ -193,7 +267,9 @@
 <header>
     <div class="nav-inner">
         <a href="#top" class="logo">JMC<small>Japan Medical Concierge</small></a>
-        <nav>
+
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#about" class="ja">JMCについて</a><a href="#about" class="en">About</a></li>
                 <li><a href="#ningen-dock" class="ja">人間ドック</a><a href="#ningen-dock" class="en">Ningen Dock</a></li>
@@ -208,8 +284,28 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav" id="mobile-nav">
+    <ul>
+        <li><a href="#about" onclick="closeMenu()" class="ja">JMCについて</a><a href="#about" onclick="closeMenu()" class="en">About</a></li>
+        <li><a href="#ningen-dock" onclick="closeMenu()" class="ja">人間ドック</a><a href="#ningen-dock" onclick="closeMenu()" class="en">Ningen Dock</a></li>
+        <li><a href="#pet-scan" onclick="closeMenu()" class="ja">PET検査</a><a href="#pet-scan" onclick="closeMenu()" class="en">PET Scan</a></li>
+        <li><a href="#flow" onclick="closeMenu()" class="ja">ご利用の流れ</a><a href="#flow" onclick="closeMenu()" class="en">Flow</a></li>
+        <li><a href="#contact" onclick="closeMenu()" class="ja">お問い合わせ</a><a href="#contact" onclick="closeMenu()" class="en">Contact</a></li>
+    </ul>
+    <div class="mobile-lang-switch">
+        <button onclick="setLang('ja'); updateMobileLang();" id="mobile-btn-ja" class="active">JP</button>
+        <button onclick="setLang('en'); updateMobileLang();" id="mobile-btn-en">EN</button>
+    </div>
+</div>
 
 <!-- Hero -->
 <section class="hero">
@@ -483,6 +579,29 @@
         document.documentElement.lang = lang;
         document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        updateMobileLang();
+    }
+
+    function updateMobileLang() {
+        const lang = document.documentElement.lang;
+        document.getElementById('mobile-btn-ja').classList.toggle('active', lang === 'ja');
+        document.getElementById('mobile-btn-en').classList.toggle('active', lang === 'en');
+    }
+
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-nav');
+        const btn = document.getElementById('hamburger');
+        menu.classList.toggle('open');
+        btn.classList.toggle('open');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+        const menu = document.getElementById('mobile-nav');
+        const btn = document.getElementById('hamburger');
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        document.body.style.overflow = '';
     }
 </script>
 </body>
