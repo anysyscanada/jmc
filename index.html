@@ -85,11 +85,6 @@
         .about-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
         .about-card h3 { color: #4facfe; margin-bottom: 15px; font-size: 19px; }
 
-        /* Add this anywhere inside your <style> tags */
-        #screening-intro {
-        scroll-margin-top: 100px;
-        }
-
         /* Screening */
         .screening-section { background: #fff; }
         .screening-grid {
@@ -100,6 +95,7 @@
         .screening-card {
             padding: 32px; background: var(--pale);
             border-radius: 14px; border-top: 4px solid var(--blue);
+            scroll-margin-top: 90px;
         }
         .screening-card h3 { color: var(--navy); font-size: 20px; margin-bottom: 14px; }
         .screening-card p + p { margin-top: 16px; }
@@ -172,8 +168,8 @@
         <nav>
             <ul>                
                 <li><a href="#about" class="ja">JMCについて</a><a href="#about" class="en">About</a></li>
-                <li><a href="#screening-intro" class="ja">人間ドック</a><a href="#screening-intro" class="en">Ningen Dock</a></li>
-                <li><a href="#screening-intro" class="ja">PET検査</a><a href="#screening-intro" class="en">PET Scan</a></li>
+                <li><a href="#ningen-dock" class="ja">人間ドック</a><a href="#ningen-dock" class="en">Ningen Dock</a></li>
+                <li><a href="#pet-scan" class="ja">PET検査</a><a href="#pet-scan" class="en">PET Scan</a></li>
                 <li><a href="#flow" class="ja">ご利用の流れ</a><a href="#flow" class="en">Flow</a></li>
                 <li><a href="#contact" class="ja">お問い合わせ</a><a href="#contact" class="en">Contact</a></li>
                 <li>
@@ -229,11 +225,11 @@
 </section>
 
 <!-- Ningen Dock & PET -->
-<section id="screening-intro" class="screening-section">
+<section class="screening-section" style="padding-top: 80px;">
     <div class="wrap">
         <div class="heading">
             <h2 class="ja">人間ドック・PET検査について</h2>
-            <h2 class="en">About Ningen Dock &amp; PET Scans</h2>
+            <h2 class="en">About Ningen Dock & PET Scans</h2>
             <div class="line"></div>
         </div>
         <div class="screening-grid">
@@ -275,7 +271,7 @@
         <div class="flow-step">
             <div class="flow-num">2</div>
             <div>
-                <h4 class="ja">ヒアリングとプラン提案</h4><h4 class="en">Consultation &amp; Proposal</h4>
+                <h4 class="ja">ヒアリングとプラン提案</h4><h4 class="en">Consultation & Proposal</h4>
                 <p class="ja">ご希望の検査内容・渡航スケジュール・予算をもとに、クリニック候補と概算費用をご提案します。</p>
                 <p class="en">Based on your needs, travel schedule, and budget, we present clinic options and a cost estimate.</p>
             </div>
@@ -291,7 +287,7 @@
         <div class="flow-step">
             <div class="flow-num">4</div>
             <div>
-                <h4 class="ja">渡航・受診サポート</h4><h4 class="en">Travel &amp; Visit Support</h4>
+                <h4 class="ja">渡航・受診サポート</h4><h4 class="en">Travel & Visit Support</h4>
                 <p class="ja">渡航当日から受診までのスケジュール調整や現地連絡窓口を担当します。必要に応じて通訳や現地サポートも手配します。</p>
                 <p class="en">We manage scheduling from arrival to your appointment and serve as your local point of contact. Interpretation and on-site support can be arranged.</p>
             </div>
@@ -299,7 +295,7 @@
         <div class="flow-step">
             <div class="flow-num">5</div>
             <div>
-                <h4 class="ja">結果の整理と帰国後フォロー</h4><h4 class="en">Results &amp; Follow-up</h4>
+                <h4 class="ja">結果の整理と帰国後フォロー</h4><h4 class="en">Results & Follow-up</h4>
                 <p class="ja">検査結果の翻訳・要約を作成し、カナダの主治医に渡せる形式でお渡しします。帰国後の相談にも対応します。</p>
                 <p class="en">We prepare a translated summary of your results in a format suitable for your Canadian physician, and remain available for post-visit questions.</p>
             </div>
@@ -317,31 +313,26 @@
         <div class="contact-box">
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-grid">
-                    <!-- Name -->
                     <div>
                         <label class="ja">お名前 <span style="color:red">*</span></label>
                         <label class="en">Full Name <span style="color:red">*</span></label>
                         <input type="text" name="name" required placeholder="山本 太郎 / Taro Yamamoto">
                     </div>
-                    <!-- Email -->
                     <div>
                         <label class="ja">メールアドレス <span style="color:red">*</span></label>
                         <label class="en">Email Address <span style="color:red">*</span></label>
                         <input type="email" name="email" required placeholder="example@mail.com">
                     </div>
-                    <!-- City -->
                     <div>
                         <label class="ja">お住まいの都市・州</label>
                         <label class="en">City / Province</label>
                         <input type="text" name="city" placeholder="Vancouver, BC">
                     </div>
-                    <!-- Travel timing -->
                     <div>
                         <label class="ja">日本への渡航予定時期</label>
                         <label class="en">Planned Travel to Japan</label>
                         <input type="text" name="travel_timing" placeholder="2025年秋 / Fall 2025">
                     </div>
-                    <!-- Service interest -->
                     <div>
                         <label class="ja">ご希望のサービス</label>
                         <label class="en">Service of Interest</label>
@@ -358,7 +349,6 @@
                             <option value="other" class="en">Other</option>
                         </select>
                     </div>
-                    <!-- Consultation method -->
                     <div>
                         <label class="ja">ご希望の相談方法</label>
                         <label class="en">Preferred Consultation</label>
@@ -373,13 +363,11 @@
                             <option value="email" class="en">Email only</option>
                         </select>
                     </div>
-                    <!-- Budget -->
                     <div>
                         <label class="ja">ご予算の目安（任意）</label>
                         <label class="en">Approximate Budget (optional)</label>
                         <input type="text" name="budget" placeholder="¥200,000 / CAD 2,000">
                     </div>
-                    <!-- Message -->
                     <div class="form-full">
                         <label class="ja">ご質問・ご希望・補足事項</label>
                         <label class="en">Questions / Notes</label>
@@ -408,7 +396,7 @@
 </section>
 
 <footer style="text-align:center; padding:40px; font-size:12px; color:var(--muted); background:#fdfdfd;">
-    &copy; 2026 JMC - Japan Medical Concierge. All Rights Reserved.
+    © 2026 JMC - Japan Medical Concierge. All Rights Reserved.
 </footer>
 
 <script>
@@ -420,3 +408,4 @@
 </script>
 </body>
 </html>
+
