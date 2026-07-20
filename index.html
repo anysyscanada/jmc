@@ -85,21 +85,49 @@
         .about-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
         .about-card h3 { color: #4facfe; margin-bottom: 15px; font-size: 19px; }
 
-        /* Screening */
+        /* Screening sections */
         .screening-section { background: #fff; }
-        .screening-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 25px;
-        }
-        .screening-card {
-            padding: 32px; background: var(--pale);
-            border-radius: 14px; border-top: 4px solid var(--blue);
+        .screening-section.alt { background: #f8fbff; }
+
+        /* scroll offset for sticky header */
+        #ningen-dock, #pet-scan {
             scroll-margin-top: 90px;
         }
-        .screening-card h3 { color: var(--navy); font-size: 20px; margin-bottom: 14px; }
-        .screening-card p + p { margin-top: 16px; }
-        .screening-note { font-size: 12px; color: var(--muted); margin-top: 22px; text-align: center; }
+
+        .screening-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .screening-text h3 {
+            color: var(--navy); font-size: 22px; margin-bottom: 16px;
+            border-left: 4px solid var(--blue); padding-left: 14px;
+        }
+        .screening-text p + p { margin-top: 14px; }
+        .screening-badge {
+            display: inline-block; background: var(--blue); color: #fff;
+            font-size: 11px; font-weight: 700; padding: 4px 10px;
+            border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.05em;
+        }
+        .screening-highlights {
+            background: var(--pale); border-radius: 14px; padding: 28px;
+            border-top: 4px solid var(--blue);
+        }
+        .screening-highlights h4 {
+            color: var(--navy); font-size: 15px; margin-bottom: 14px;
+        }
+        .screening-highlights ul {
+            list-style: none; padding: 0;
+        }
+        .screening-highlights ul li {
+            padding: 7px 0; border-bottom: 1px solid #dce8f5; font-size: 14px;
+        }
+        .screening-highlights ul li:last-child { border-bottom: none; }
+        .screening-highlights ul li::before {
+            content: "✓ "; color: var(--blue); font-weight: 700;
+        }
+        .screening-note { font-size: 12px; color: var(--muted); margin-top: 30px; text-align: center; }
 
         /* Flow */
         .flow-step {
@@ -154,7 +182,7 @@
 
         @media (max-width: 700px) {
             nav { display: none; }
-            .screening-grid { grid-template-columns: 1fr; }
+            .screening-content { grid-template-columns: 1fr; }
             .form-grid { grid-template-columns: 1fr; }
             .contact-box { padding: 25px; }
         }
@@ -166,7 +194,7 @@
     <div class="nav-inner">
         <a href="#top" class="logo">JMC<small>Japan Medical Concierge</small></a>
         <nav>
-            <ul>                
+            <ul>
                 <li><a href="#about" class="ja">JMCについて</a><a href="#about" class="en">About</a></li>
                 <li><a href="#ningen-dock" class="ja">人間ドック</a><a href="#ningen-dock" class="en">Ningen Dock</a></li>
                 <li><a href="#pet-scan" class="ja">PET検査</a><a href="#pet-scan" class="en">PET Scan</a></li>
@@ -224,32 +252,83 @@
     </div>
 </section>
 
-<!-- Ningen Dock & PET -->
-<section class="screening-section" style="padding-top: 80px;">
+<!-- Ningen Dock Section -->
+<section id="ningen-dock" class="screening-section">
     <div class="wrap">
         <div class="heading">
-            <h2 class="ja">人間ドック・PET検査について</h2>
-            <h2 class="en">About Ningen Dock & PET Scans</h2>
+            <h2 class="ja">人間ドックとは</h2>
+            <h2 class="en">What Is Ningen Dock?</h2>
             <div class="line"></div>
         </div>
-        <div class="screening-grid">
-            <article id="ningen-dock" class="screening-card">
-                <h3 class="ja">人間ドックとは</h3><h3 class="en">What Is Ningen Dock?</h3>
+        <div class="screening-content">
+            <div class="screening-text">
+                <span class="screening-badge ja">総合健康診断</span>
+                <span class="screening-badge en">Comprehensive Screening</span>
                 <p class="ja">人間ドックは、問診・身体測定・血液検査・画像検査などを組み合わせ、短期間で全身の状態を確認する日本の総合的な健康診断です。検査内容や所要時間は施設・コースによって異なります。</p>
                 <p class="en">Ningen Dock is Japan's comprehensive health-screening format, combining a medical history review, physical measurements, laboratory tests, and imaging to assess overall health in a short period. Test menus and timing vary by clinic and programme.</p>
                 <p class="ja">JMCは、ご希望・滞在日程・予算を伺った上で、複数の検査施設・コースから検討しやすい選択肢をご案内し、予約や必要書類などの実務を調整します。</p>
                 <p class="en">After discussing your preferences, travel schedule, and budget, JMC can present suitable options from multiple clinics and coordinate non-clinical logistics such as appointments and required documents.</p>
-            </article>
-            <article id="pet-scan" class="screening-card">
-                <h3 class="ja">PET検査とは</h3><h3 class="en">What Is a PET Scan?</h3>
+            </div>
+            <div class="screening-highlights">
+                <h4 class="ja">主な検査項目の例</h4>
+                <h4 class="en">Typical Screening Items</h4>
+                <ul>
+                    <li class="ja">問診・身体測定・血圧</li>
+                    <li class="en">Medical history, measurements & blood pressure</li>
+                    <li class="ja">血液検査・尿検査</li>
+                    <li class="en">Blood & urine tests</li>
+                    <li class="ja">胸部X線・心電図</li>
+                    <li class="en">Chest X-ray & ECG</li>
+                    <li class="ja">腹部超音波検査</li>
+                    <li class="en">Abdominal ultrasound</li>
+                    <li class="ja">胃カメラ・大腸検査（オプション）</li>
+                    <li class="en">Gastroscopy / colonoscopy (optional)</li>
+                    <li class="ja">MRI・CT（コースによる）</li>
+                    <li class="en">MRI / CT (course-dependent)</li>
+                </ul>
+            </div>
+        </div>
+        <p class="screening-note ja">※検査内容、予約状況、費用および受診可否は、各医療機関の確認・判断によります。</p>
+        <p class="screening-note en">Availability, pricing, test content, and eligibility are subject to confirmation and clinical determination by each medical provider.</p>
+    </div>
+</section>
+
+<!-- PET Scan Section -->
+<section id="pet-scan" class="screening-section alt">
+    <div class="wrap">
+        <div class="heading">
+            <h2 class="ja">PET検査とは</h2>
+            <h2 class="en">What Is a PET Scan?</h2>
+            <div class="line"></div>
+        </div>
+        <div class="screening-content">
+            <div class="screening-text">
+                <span class="screening-badge ja">高精度がん検診</span>
+                <span class="screening-badge en">Advanced Cancer Screening</span>
                 <p class="ja">PET検査は、体内の糖代謝などを画像化する検査です。PET-CTなどの機器を用いるコースでは、必要に応じて解剖学的な画像情報とあわせて確認します。適した検査かどうかは、既往歴や目的により異なります。</p>
                 <p class="en">PET imaging visualizes metabolic activity in the body. Programmes using PET-CT may combine this with anatomical images when appropriate. Whether it is suitable depends on your health history and the purpose of the examination.</p>
                 <p class="ja">JMCは医療上の適応判断や結果の診断は行いません。検査の選択や結果に関するご相談は、受診先の医療専門職およびカナダの主治医にご確認ください。</p>
                 <p class="en">JMC does not provide medical advice, determine clinical suitability, or interpret results. Please discuss test selection and results with the treating clinical professionals and your Canadian physician.</p>
-            </article>
+            </div>
+            <div class="screening-highlights">
+                <h4 class="ja">PET検査の特徴</h4>
+                <h4 class="en">Key Features of PET</h4>
+                <ul>
+                    <li class="ja">全身のがんリスクを一度に確認</li>
+                    <li class="en">Whole-body cancer risk assessment in one scan</li>
+                    <li class="ja">微細な代謝異常を早期に検出</li>
+                    <li class="en">Early detection of subtle metabolic changes</li>
+                    <li class="ja">PET-CTで解剖学的情報も同時取得</li>
+                    <li class="en">PET-CT combines metabolic & anatomical imaging</li>
+                    <li class="ja">通常1〜2時間程度で完了</li>
+                    <li class="en">Typically completed in 1–2 hours</li>
+                    <li class="ja">カナダでは自費での受診が困難な検査</li>
+                    <li class="en">Difficult to access privately in Canada</li>
+                </ul>
+            </div>
         </div>
-        <p class="screening-note ja">※検査内容、予約状況、費用および受診可否は、各医療機関の確認・判断によります。</p>
-        <p class="screening-note en">Availability, pricing, test content, and eligibility are subject to confirmation and clinical determination by each medical provider.</p>
+        <p class="screening-note ja">※PET検査の適応・結果の解釈は必ず医師にご相談ください。JMCは非医療のコーディネーターです。</p>
+        <p class="screening-note en">Please consult a physician regarding PET scan suitability and result interpretation. JMC is a non-clinical coordinator.</p>
     </div>
 </section>
 
