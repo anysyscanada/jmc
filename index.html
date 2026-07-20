@@ -137,10 +137,12 @@
         .heading .line { width: 40px; height: 3px; background: var(--blue); margin: 0 auto; }
 
         /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-            color: #fff; text-align: center; padding: 100px 20px;
-        }
+       .hero {
+    background: linear-gradient(rgba(10, 30, 60, 0.6), rgba(10, 30, 60, 0.6)), 
+                url('airport.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 120px 0;
+}
         .hero h1 { font-size: clamp(28px, 5vw, 44px); margin-bottom: 20px; line-height: 1.3; }
         .hero p { font-size: 17px; margin-bottom: 40px; opacity: 0.95; }
         .cta-btn {
@@ -380,6 +382,7 @@
                 <p class="en">Ningen Dock is Japan's comprehensive health-screening format, combining a medical history review, physical measurements, laboratory tests, and imaging to assess overall health in a short period. Test menus and timing vary by clinic and programme.</p>
                 <p class="ja">JMCは、ご希望・滞在日程・予算を伺った上で、複数の検査施設・コースから検討しやすい選択肢をご案内し、予約や必要書類などの実務を調整します。</p>
                 <p class="en">After discussing your preferences, travel schedule, and budget, JMC can present suitable options from multiple clinics and coordinate non-clinical logistics such as appointments and required documents.</p>
+                <img src="ningen_dock.jpg" alt="Health Screening" class="service-img">
             </div>
             <div class="screening-highlights">
                 <h4 class="ja">主な検査項目の例</h4>
@@ -421,6 +424,9 @@
                 <p class="en">PET imaging visualizes metabolic activity in the body. Programmes using PET-CT may combine this with anatomical images when appropriate. Whether it is suitable depends on your health history and the purpose of the examination.</p>
                 <p class="ja">JMCは医療上の適応判断や結果の診断は行いません。検査の選択や結果に関するご相談は、受診先の医療専門職およびカナダの主治医にご確認ください。</p>
                 <p class="en">JMC does not provide medical advice, determine clinical suitability, or interpret results. Please discuss test selection and results with the treating clinical professionals and your Canadian physician.</p>
+                <!-- PET検査の解説文のすぐ下に挿入 -->
+        <img src="pet_scan_device.jpg" alt="PET-CT Scan Device" class="service-img">
+
             </div>
             <div class="screening-highlights">
                 <h4 class="ja">PET検査の特徴</h4>
@@ -451,6 +457,9 @@
             <h2 class="ja">ご利用の流れ</h2><h2 class="en">The Process</h2>
             <div class="line"></div>
         </div>
+        <!-- 「ご利用の流れ」の見出しと、フロー図の間に挿入 -->
+<img src="jmc_coordination_lobby.jpg" alt="Coordination Support" class="service-img">
+
         <div class="flow-step">
             <div class="flow-num">1</div>
             <div>
