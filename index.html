@@ -169,7 +169,10 @@
         .screening-section { background: #fff; }
         .screening-section.alt { background: #f8fbff; }
 
-        #ningen-dock, #pet-scan { scroll-margin-top: 90px; }
+        /* Anchor targets: align each section heading just below the sticky header. */
+        #about, #ningen-dock, #pet-scan, #flow, #contact {
+            scroll-margin-top: 0;
+        }
 
         .screening-content {
             display: grid;
@@ -278,8 +281,8 @@
                 <li><a href="#contact" class="ja">お問い合わせ</a><a href="#contact" class="en">Contact</a></li>
                 <li>
                     <div class="lang-switch">
-                        <button onclick="setLang('ja')" id="btn-ja" class="active">JP</button>
-                        <button onclick="setLang('en')" id="btn-en">EN</button>
+                    <button onclick="setLang('ja')" id="btn-ja" class="active">JP</button>
+                    <button onclick="setLang('en')" id="btn-en">EN</button>
                     </div>
                 </li>
             </ul>
@@ -489,64 +492,64 @@
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-grid">
                     <div>
-                        <label class="ja">お名前 <span style="color:red">*</span></label>
-                        <label class="en">Full Name <span style="color:red">*</span></label>
-                        <input type="text" name="name" required placeholder="山本 太郎 / Taro Yamamoto">
+                    <label class="ja">お名前 <span style="color:red">*</span></label>
+                    <label class="en">Full Name <span style="color:red">*</span></label>
+                    <input type="text" name="name" required placeholder="山本 太郎 / Taro Yamamoto">
                     </div>
                     <div>
-                        <label class="ja">メールアドレス <span style="color:red">*</span></label>
-                        <label class="en">Email Address <span style="color:red">*</span></label>
-                        <input type="email" name="email" required placeholder="example@mail.com">
+                    <label class="ja">メールアドレス <span style="color:red">*</span></label>
+                    <label class="en">Email Address <span style="color:red">*</span></label>
+                    <input type="email" name="email" required placeholder="example@mail.com">
                     </div>
                     <div>
-                        <label class="ja">お住まいの都市・州</label>
-                        <label class="en">City / Province</label>
-                        <input type="text" name="city" placeholder="Vancouver, BC">
+                    <label class="ja">お住まいの都市・州</label>
+                    <label class="en">City / Province</label>
+                    <input type="text" name="city" placeholder="Vancouver, BC">
                     </div>
                     <div>
-                        <label class="ja">日本への渡航予定時期</label>
-                        <label class="en">Planned Travel to Japan</label>
-                        <input type="text" name="travel_timing" placeholder="2025年秋 / Fall 2025">
+                    <label class="ja">日本への渡航予定時期</label>
+                    <label class="en">Planned Travel to Japan</label>
+                    <input type="text" name="travel_timing" placeholder="2025年秋 / Fall 2025">
                     </div>
                     <div>
-                        <label class="ja">ご希望のサービス</label>
-                        <label class="en">Service of Interest</label>
-                        <select name="service">
-                            <option value="" class="ja">選択してください</option>
-                            <option value="" class="en">Please select</option>
-                            <option value="ningen" class="ja">人間ドック</option>
-                            <option value="ningen" class="en">Ningen Dock</option>
-                            <option value="pet" class="ja">PET検査</option>
-                            <option value="pet" class="en">PET Scan</option>
-                            <option value="both" class="ja">両方を検討</option>
-                            <option value="both" class="en">Both</option>
-                            <option value="other" class="ja">その他</option>
-                            <option value="other" class="en">Other</option>
-                        </select>
+                    <label class="ja">ご希望のサービス</label>
+                    <label class="en">Service of Interest</label>
+                    <select name="service">
+                    <option value="" class="ja">選択してください</option>
+                    <option value="" class="en">Please select</option>
+                    <option value="ningen" class="ja">人間ドック</option>
+                    <option value="ningen" class="en">Ningen Dock</option>
+                    <option value="pet" class="ja">PET検査</option>
+                    <option value="pet" class="en">PET Scan</option>
+                    <option value="both" class="ja">両方を検討</option>
+                    <option value="both" class="en">Both</option>
+                    <option value="other" class="ja">その他</option>
+                    <option value="other" class="en">Other</option>
+                    </select>
                     </div>
                     <div>
-                        <label class="ja">ご希望の相談方法</label>
-                        <label class="en">Preferred Consultation</label>
-                        <select name="consultation">
-                            <option value="" class="ja">選択してください</option>
-                            <option value="" class="en">Please select</option>
-                            <option value="online" class="ja">オンライン</option>
-                            <option value="online" class="en">Online</option>
-                            <option value="inperson" class="ja">バンクーバー近郊での対面</option>
-                            <option value="inperson" class="en">In-person (Metro Vancouver)</option>
-                            <option value="email" class="ja">メールのみ</option>
-                            <option value="email" class="en">Email only</option>
-                        </select>
+                    <label class="ja">ご希望の相談方法</label>
+                    <label class="en">Preferred Consultation</label>
+                    <select name="consultation">
+                    <option value="" class="ja">選択してください</option>
+                    <option value="" class="en">Please select</option>
+                    <option value="online" class="ja">オンライン</option>
+                    <option value="online" class="en">Online</option>
+                    <option value="inperson" class="ja">バンクーバー近郊での対面</option>
+                    <option value="inperson" class="en">In-person (Metro Vancouver)</option>
+                    <option value="email" class="ja">メールのみ</option>
+                    <option value="email" class="en">Email only</option>
+                    </select>
                     </div>
                     <div>
-                        <label class="ja">ご予算の目安（任意）</label>
-                        <label class="en">Approximate Budget (optional)</label>
-                        <input type="text" name="budget" placeholder="¥200,000 / CAD 2,000">
+                    <label class="ja">ご予算の目安（任意）</label>
+                    <label class="en">Approximate Budget (optional)</label>
+                    <input type="text" name="budget" placeholder="¥200,000 / CAD 2,000">
                     </div>
                     <div class="form-full">
-                        <label class="ja">ご質問・ご希望・補足事項</label>
-                        <label class="en">Questions / Notes</label>
-                        <textarea name="message" rows="5" placeholder="ご自由にお書きください / Feel free to write in Japanese or English"></textarea>
+                    <label class="ja">ご質問・ご希望・補足事項</label>
+                    <label class="en">Questions / Notes</label>
+                    <textarea name="message" rows="5" placeholder="ご自由にお書きください / Feel free to write in Japanese or English"></textarea>
                     </div>
                 </div>
 
@@ -557,12 +560,12 @@
 
                 <div class="form-footer">
                     <p class="ja">
-                        送信することで、当社の<a href="privacy.html?lang=ja" target="_blank" rel="noopener">個人情報保護方針</a>に同意したものとみなされます。<br>
-                        ※JMCは医療機関ではありません。予約・書類・翻訳・渡航等の実務を調整する、非医療のコーディネーターです。
+                    送信することで、当社の<a href="privacy.html?lang=ja" target="_blank" rel="noopener">個人情報保護方針</a>に同意したものとみなされます。<br>
+                    ※JMCは医療機関ではありません。予約・書類・翻訳・渡航等の実務を調整する、非医療のコーディネーターです。
                     </p>
                     <p class="en">
-                        By submitting this form, you agree to our <a href="privacy.html?lang=en" target="_blank" rel="noopener">Privacy Policy</a>.<br>
-                        JMC is not a medical clinic. We are a non-clinical coordinator handling appointments, documents, translation, and travel logistics.
+                    By submitting this form, you agree to our <a href="privacy.html?lang=en" target="_blank" rel="noopener">Privacy Policy</a>.<br>
+                    JMC is not a medical clinic. We are a non-clinical coordinator handling appointments, documents, translation, and travel logistics.
                     </p>
                 </div>
             </form>
@@ -606,4 +609,3 @@
 </script>
 </body>
 </html>
-
