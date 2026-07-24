@@ -839,9 +839,253 @@
     </div>
 </section>
 
-<footer style="text-align:center; padding:40px; font-size:12px; color:var(--muted); background:#fdfdfd;">
-    © 2026 JMC - Japan Medical Concierge. All Rights Reserved.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JMC Footer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f5f5f5; }
+
+  :root {
+    --muted: #888;
+    --accent: #1a3a5c;
+    --light: #e8f0f7;
+  }
+
+  footer {
+    background: #1a3a5c;
+    color: #cdd8e3;
+    font-size: 13px;
+    padding: 48px 40px 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 36px;
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .footer-col p {
+    line-height: 1.75;
+    color: #b0bec5;
+    font-size: 12.5px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-col ul li a {
+    color: #b0bec5;
+    text-decoration: none;
+    font-size: 12.5px;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover {
+    color: #ffffff;
+  }
+
+  .footer-col ul li a::before {
+    content: '›  ';
+    color: #5b8db8;
+  }
+
+  .hours-table {
+    width: 100%;
+    font-size: 12px;
+    color: #b0bec5;
+    border-collapse: collapse;
+  }
+
+  .hours-table td {
+    padding: 3px 0;
+    vertical-align: top;
+  }
+
+  .hours-table td:first-child {
+    color: #cdd8e3;
+    font-weight: 500;
+    padding-right: 12px;
+    white-space: nowrap;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(91,141,184,0.25);
+    color: #90caf9;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 11.5px;
+    color: #78909c;
+  }
+
+  .footer-bottom .disclaimer {
+    font-size: 10.5px;
+    color: #607d8b;
+    max-width: 520px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .lang-note {
+    font-size: 11px;
+    color: #78909c;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-bottom .disclaimer {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    footer {
+      padding: 36px 24px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand / About -->
+    <div class="footer-col">
+      <h4>Japan Medical Concierge</h4>
+      <p>
+        Bilingual medical coordination for Japanese-speaking residents in Canada seeking health screenings and advanced medical care in Japan.
+      </p>
+      <p class="lang-note" style="margin-top:10px;">日本語・英語対応 ／ Bilingual: Japanese & English</p>
+      <p style="margin-top:14px; color:#b0bec5;">
+        📍 Burnaby, British Columbia, Canada
+      </p>
+    </div>
+
+    <!-- Sitemap: Services -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#ningen-dock">Ningen Dock Screening</a></li>
+        <li><a href="#pet-ct">PET-CT Imaging</a></li>
+        <li><a href="#radiation">Radiation Therapy</a></li>
+        <li><a href="#regenerative">Regenerative Medicine</a></li>
+        <li><a href="#gamma-knife">Gamma Knife</a></li>
+        <li><a href="#coordination">Coordination Services</a></li>
+      </ul>
+    </div>
+
+    <!-- Sitemap: Company -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About JMC</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#partners">Our Partners</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#cost">Cost Simulator</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Hours & Contact -->
+    <div class="footer-col">
+      <h4>Hours & Inquiries</h4>
+      <table class="hours-table">
+        <tr>
+          <td>Inquiries</td>
+          <td>24 / 7 <span class="badge">ONLINE</span></td>
+        </tr>
+        <tr><td colspan="2" style="padding-top:8px;"></td></tr>
+        <tr>
+          <td colspan="2" style="color:#cdd8e3; font-weight:500; padding-bottom:4px;">Office Hours</td>
+        </tr>
+        <tr>
+          <td>Mon – Fri</td>
+          <td>8:30 am – 5:00 pm</td>
+        </tr>
+        <tr>
+          <td>Sat / Sun</td>
+          <td>Closed</td>
+        </tr>
+        <tr>
+          <td>Stat Holidays</td>
+          <td>Closed</td>
+        </tr>
+      </table>
+      <p style="margin-top:14px; font-size:11.5px; color:#78909c;">
+        All times Pacific Time (PT)
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <p>© 2026 JMC – Japan Medical Concierge. All Rights Reserved.</p>
+    <p class="disclaimer">
+      JMC is a non-clinical coordination service. We do not provide medical advice, diagnosis, or treatment. All medical decisions are made by licensed physicians and medical institutions.
+    </p>
+  </div>
 </footer>
+
+</body>
+</html>
+
+
 
 <script>
     function setLang(lang) {
