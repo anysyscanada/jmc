@@ -28,6 +28,8 @@
         .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
         .card{border:1px solid #eef4fb;padding:16px;border-radius:10px;background:#fff}
         .card h3{font-size:18px;margin-bottom:8px;color:var(--navy);line-height:1.3}
+        .card p, .card ul{color:var(--muted)}
+        .card ul{margin-top:8px;padding-left:18px}
         .conditions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
         .cond{padding:10px;border-radius:8px;background:#fbfdff;border:1px solid #eef6ff;font-size:14px}
         .about{max-width:1200px;margin:30px auto;padding:22px;border-radius:10px;background:#fbfbfd;border:1px solid #eef2f7}
@@ -45,9 +47,9 @@
         <a class="logo" href="#">JMC — Japan Medical Concierge</a>
         <div style="display:flex;align-items:center;gap:12px">
             <nav class="desktop-nav">
-                <a href="#services" style="margin-right:14px;color:var(--muted);text-decoration:none;font-weight:600">Services</a>
-                <a href="#faq" style="margin-right:14px;color:var(--muted);text-decoration:none;font-weight:600">FAQ</a>
-                <a href="#contact" style="color:var(--muted);text-decoration:none;font-weight:600">Contact</a>
+                <a href="#services" style="margin-right:14px;color:var(--muted);text-decoration:none;font-weight:600" data-i18n="nav_services">Services</a>
+                <a href="#faq" style="margin-right:14px;color:var(--muted);text-decoration:none;font-weight:600" data-i18n="nav_faq">FAQ</a>
+                <a href="#contact" style="color:var(--muted);text-decoration:none;font-weight:600" data-i18n="nav_contact">Contact</a>
             </nav>
             <div class="langs">
                 <button id="enBtn" class="active" onclick="switchLang('en')">EN</button>
@@ -82,36 +84,36 @@
             <div class="card">
                 <h3 data-i18n="svc_ningen">Ningen Dock — Comprehensive Screening</h3>
                 <img id="imgScreening1" src="https://placehold.co/600x400?text=Screening" alt="screening" style="width:100%;border-radius:8px;margin:8px 0;object-fit:cover" />
-                <p style="color:var(--muted)">Full-body checkups tailored to your schedule. Typical components: blood tests, ECG, abdominal ultrasound, chest X-ray, optional advanced imaging and specialist review. Ideal for annual check-ups and early detection of common conditions.</p>
-                <ul style="margin-top:8px;color:var(--muted)">
-                    <li>Same-day results available for many tests</li>
-                    <li>Optional add-ons: advanced blood panels, imaging</li>
-                    <li>Translated reports and a summary for your local physician</li>
+                <p data-i18n="svc_ningen_p">Full-body checkups tailored to your schedule. Typical components: blood tests, ECG, abdominal ultrasound, chest X-ray, optional advanced imaging and specialist review. Ideal for annual check-ups and early detection of common conditions.</p>
+                <ul>
+                    <li data-i18n="svc_ningen_li1">Same-day results available for many tests</li>
+                    <li data-i18n="svc_ningen_li2">Optional add-ons: advanced blood panels, imaging</li>
+                    <li data-i18n="svc_ningen_li3">Translated reports and a summary for your local physician</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h3 data-i18n="svc_pet">PET / Advanced Imaging</h3>
                 <img id="imgScreening2" src="https://placehold.co/600x400?text=Screening" alt="pet" style="width:100%;border-radius:8px;margin:8px 0;object-fit:cover" />
-                <p style="color:var(--muted)">Fast scheduling for PET-CT and other specialty imaging. Helpful when local wait times are long or when you want a second-opinion imaging review from Japanese specialists.</p>
-                <ul style="margin-top:8px;color:var(--muted)">
-                    <li>PET-CT, MRI, CT angiography</li>
-                    <li>Radiology report translation and clinician summary</li>
-                    <li>Coordination with specialist consultations when needed</li>
+                <p data-i18n="svc_pet_p">Fast scheduling for PET-CT and other specialty imaging. Helpful when local wait times are long or when you want a second-opinion imaging review from Japanese specialists.</p>
+                <ul>
+                    <li data-i18n="svc_pet_li1">PET-CT, MRI, CT angiography</li>
+                    <li data-i18n="svc_pet_li2">Radiology report translation and clinician summary</li>
+                    <li data-i18n="svc_pet_li3">Coordination with specialist consultations when needed</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h3 data-i18n="svc_ortho">Orthopedic & Specialist Consultations</h3>
                 <img id="orthoImg" src="https://placehold.co/600x400?text=Orthopedics+Clinic" alt="orthopedics" style="width:100%;border-radius:8px;margin:8px 0;object-fit:cover" />
-                <p style="color:var(--muted)">Non-emergency orthopedic and mobility concerns coordinated into your trip. Japanese specialists review your records and recommend diagnostic or treatment plans during your visit.</p>
+                <p data-i18n="svc_ortho_p">Non-emergency orthopedic and mobility concerns coordinated into your trip. Japanese specialists review your records and recommend diagnostic or treatment plans during your visit.</p>
                 <div class="conditions">
-                    <div class="cond">Knee pain / osteoarthritis</div>
-                    <div class="cond">Hip pain / labral tears</div>
-                    <div class="cond">Shoulder rotator cuff</div>
-                    <div class="cond">Spine: chronic low back</div>
-                    <div class="cond">Hand & wrist conditions</div>
-                    <div class="cond">Foot & ankle conditions</div>
+                    <div class="cond" data-i18n="cond1">Knee pain / osteoarthritis</div>
+                    <div class="cond" data-i18n="cond2">Hip pain / labral tears</div>
+                    <div class="cond" data-i18n="cond3">Shoulder rotator cuff</div>
+                    <div class="cond" data-i18n="cond4">Spine: chronic low back</div>
+                    <div class="cond" data-i18n="cond5">Hand & wrist conditions</div>
+                    <div class="cond" data-i18n="cond6">Foot & ankle conditions</div>
                 </div>
             </div>
         </div>
@@ -126,9 +128,9 @@
             <div style="width:260px;padding:14px;border-radius:8px;background:#fff;border:1px solid #eef4fb">
                 <strong data-i18n="side_title">Regions served</strong>
                 <ul style="margin-top:8px;color:var(--muted)">
-                    <li>Vancouver (Greater Vancouver)</li>
-                    <li>Toronto</li>
-                    <li>Calgary</li>
+                    <li data-i18n="region1">Vancouver (Greater Vancouver)</li>
+                    <li data-i18n="region2">Toronto</li>
+                    <li data-i18n="region3">Calgary</li>
                 </ul>
             </div>
         </div>
@@ -168,7 +170,7 @@
                 <button type="submit" class="btn primary" data-i18n="btn_submit">Send inquiry</button>
                 <button type="reset" class="btn" style="background:#f6f8fa;border:1px solid #eef4fb">Reset</button>
             </div>
-            <p style="color:var(--muted);font-size:13px;margin-top:8px">By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.</p>
+            <p style="color:var(--muted);font-size:13px;margin-top:8px" data-i18n="consent">By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.</p>
         </form>
     </section>
 </main>
@@ -183,13 +185,91 @@
 <script>
     const i18n = {
         en: {
-            kicker: 'TRIP + HEALTH', hero_title: 'Already planning a trip to Japan? Come back healthier too.', hero_lead: 'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.', btn_get_started: 'Get started', btn_learn_more: 'Learn more', hero_image_title: 'Plan. Travel. Screen.', hero_image_sub: '(Replace with travel + clinic photo)', two_birds_bold: 'One trip, two gains:', two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.', services_title: 'Services', svc_ningen: 'Ningen Dock — Comprehensive Screening', svc_pet: 'PET / Advanced Imaging', svc_ortho: 'Orthopedic & Specialist Consultations', about_title: 'About Japan Medical Concierge', about_text: 'JMC is a non-clinical coordination service based in Vancouver that helps Canadian residents integrate health screenings and specialist consultations into their Japan trip. We handle scheduling, document translation, travel-friendly appointment coordination, and on-ground support in Japan. Japanese hospitals independently review clinical cases and decide on care — JMC only coordinates logistics.', side_title: 'Regions served', faq_title: 'FAQ', faq_q1: 'Do I need Japanese health insurance?', faq_a1: 'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.', faq_q2: 'Will JMC give medical advice?', faq_a2: 'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.', faq_q3: 'Can my local doctor refer a patient?', faq_a3: 'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.', contact_title: 'Contact & Intake', label_name: 'Full name', label_email: 'Email', label_service: 'Service interested in', opt_1: 'Ningen Dock (screening)', opt_2: 'PET / Imaging', opt_3: 'Orthopedic / Specialist', opt_4: 'Trip + Health package', label_message: 'Brief message / dates in Japan', btn_submit: 'Send inquiry'
+            nav_services: 'Services', nav_faq: 'FAQ', nav_contact: 'Contact',
+            kicker: 'TRIP + HEALTH',
+            hero_title: 'Already planning a trip to Japan? Come back healthier too.',
+            hero_lead: 'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.',
+            btn_get_started: 'Get started', btn_learn_more: 'Learn more',
+            two_birds_bold: 'One trip, two gains:', two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.',
+            services_title: 'Services',
+            svc_ningen: 'Ningen Dock — Comprehensive Screening',
+            svc_ningen_p: 'Full-body checkups tailored to your schedule. Typical components: blood tests, ECG, abdominal ultrasound, chest X-ray, optional advanced imaging and specialist review. Ideal for annual check-ups and early detection of common conditions.',
+            svc_ningen_li1: 'Same-day results available for many tests',
+            svc_ningen_li2: 'Optional add-ons: advanced blood panels, imaging',
+            svc_ningen_li3: 'Translated reports and a summary for your local physician',
+            svc_pet: 'PET / Advanced Imaging',
+            svc_pet_p: 'Fast scheduling for PET-CT and other specialty imaging. Helpful when local wait times are long or when you want a second-opinion imaging review from Japanese specialists.',
+            svc_pet_li1: 'PET-CT, MRI, CT angiography',
+            svc_pet_li2: 'Radiology report translation and clinician summary',
+            svc_pet_li3: 'Coordination with specialist consultations when needed',
+            svc_ortho: 'Orthopedic & Specialist Consultations',
+            svc_ortho_p: 'Non-emergency orthopedic and mobility concerns coordinated into your trip. Japanese specialists review your records and recommend diagnostic or treatment plans during your visit.',
+            cond1: 'Knee pain / osteoarthritis', cond2: 'Hip pain / labral tears', cond3: 'Shoulder rotator cuff',
+            cond4: 'Spine: chronic low back', cond5: 'Hand & wrist conditions', cond6: 'Foot & ankle conditions',
+            about_title: 'About Japan Medical Concierge',
+            about_text: 'JMC is a non-clinical coordination service based in Vancouver that helps Canadian residents integrate health screenings and specialist consultations into their Japan trip. We handle scheduling, document translation, travel-friendly appointment coordination, and on-ground support in Japan. Japanese hospitals independently review clinical cases and decide on care — JMC only coordinates logistics.',
+            side_title: 'Regions served', region1: 'Vancouver (Greater Vancouver)', region2: 'Toronto', region3: 'Calgary',
+            faq_title: 'FAQ', faq_q1: 'Do I need Japanese health insurance?', faq_a1: 'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.',
+            faq_q2: 'Will JMC give medical advice?', faq_a2: 'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.',
+            faq_q3: 'Can my local doctor refer a patient?', faq_a3: 'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.',
+            contact_title: 'Contact & Intake', label_name: 'Full name', label_email: 'Email', label_service: 'Service interested in',
+            opt_1: 'Ningen Dock (screening)', opt_2: 'PET / Imaging', opt_3: 'Orthopedic / Specialist', opt_4: 'Trip + Health package',
+            label_message: 'Brief message / dates in Japan', btn_submit: 'Send inquiry', consent: 'By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.'
         },
         zh: {
-            kicker: '旅行 + 健康', hero_title: '已经在计划去日本了？顺便把健康也带回来。', hero_lead: 'JMC 为您在日本行程中安排高精度健康检查与专科就诊，一站式协调、翻译与本地支援。', btn_get_started: '开始咨询', btn_learn_more: '了解更多', hero_image_title: '计划。旅行。检查。', hero_image_sub: '（请替换为旅行＋诊所照片）', two_birds_bold: '一趟行程，两重收获：', two_birds_text: '既享受日本之旅，也在旅途中完成重要健康检查或专科就诊。', services_title: '服务项目', svc_ningen: '人間ドック（综合体检）', svc_pet: 'PET / 高端影像', svc_ortho: '骨科与专科诊疗协调', about_title: '关于 Japan Medical Concierge', about_text: 'JMC 是一家位于温哥华的非临床协调服务，帮助加拿大居民在日本行程中安排体检与专科就诊。我们负责预约、资料翻译、行程友好的就诊安排以及日本现场支援。日本的医院将独立审阅病例并决定临床处理—JMC 仅负责后勤协调。', side_title: '服务地区', faq_title: '常见问题', faq_q1: '需要日本健康保险吗？', faq_a1: '大多数旅客需自费支付体检与专科就诊费用。如果您持有日本国民健康保险，请告知，我们会协助确认。', faq_q2: 'JMC 会提供医疗建议吗？', faq_a2: '不会。JMC 为非临床协调方。日本医院与医师将审阅病历并做出医疗决定。', faq_q3: '本地医生可以把病人推荐给你们吗？', faq_a3: '请本地医师将此视为提供患者的资讯性选项；避免使用商业推荐或合作等措辞。若患者愿意继续，将由患者直接联系 JMC。', contact_title: '联系与登记', label_name: '姓名', label_email: '电子邮件', label_service: '想咨询的服务', opt_1: '人間ドック（体检）', opt_2: 'PET / 影像', opt_3: '骨科/专科', opt_4: '旅行 + 健康 套餐', label_message: '简短信息 / 日本行程日期', btn_submit: '发送询问'
+            nav_services: '服务项目', nav_faq: '常见问题', nav_contact: '联系与登记',
+            kicker: '旅行 + 健康',
+            hero_title: '已经在计划去日本了？顺便把健康也带回来。',
+            hero_lead: 'JMC 为您在日本行程中安排高精度健康检查与专科就诊，一站式协调、翻译与本地支援。',
+            btn_get_started: '开始咨询', btn_learn_more: '了解更多',
+            two_birds_bold: '一趟行程，两重收获：', two_birds_text: '既享受日本之旅，也在旅途中完成重要健康检查或专科就诊。',
+            services_title: '服务项目',
+            svc_ningen: '人間ドック（综合体检）',
+            svc_ningen_p: '为您安排适合行程的全身检查。常见项目：血液检查、心电图、腹部超声、胸部X光，另可加选高级影像或专科审阅。适合年度体检及早期发现常见疾病。',
+            svc_ningen_li1: '多项检查可当日取得结果', svc_ningen_li2: '可选加项：高级血液项目、影像检查', svc_ningen_li3: '提供报告翻译与给本地医师的摘要',
+            svc_pet: 'PET / 高端影像',
+            svc_pet_p: '快速排期 PET-CT 与其他专科影像。适用于本地候诊时间长或需日本专科影像复核的情形。',
+            svc_pet_li1: 'PET-CT、MRI、CT 血管造影', svc_pet_li2: '放射科报告翻译与临床摘要', svc_pet_li3: '必要时协调专科门诊',
+            svc_ortho: '骨科与专科诊疗协调',
+            svc_ortho_p: '在旅程中安排非紧急的骨科与运动功能相关问题的诊疗。日本专科医师会审阅病历并提出检查或治疗建议。',
+            cond1: '膝痛 / 骨关节炎', cond2: '髋关节疼痛 / 臼唇损伤', cond3: '肩袖损伤',
+            cond4: '脊柱：慢性下背痛', cond5: '手与腕疾病', cond6: '足踝疾病',
+            about_title: '关于 Japan Medical Concierge', about_text: 'JMC 是一家位于温哥华的非临床协调服务，帮助加拿大居民在日本行程中安排体检与专科就诊。我们负责预约、资料翻译、行程友好的就诊安排以及日本现场支援。日本的医院将独立审阅病例并决定临床处理—JMC 仅负责后勤协调。',
+            side_title: '服务地区', region1: '温哥华（大温地区）', region2: '多伦多', region3: '卡尔加里',
+            faq_title: '常见问题', faq_q1: '需要日本健康保险吗？', faq_a1: '大多数旅客需自费支付体检与专科就诊费用。如果您持有日本国民健康保险，请告知，我们会协助确认。',
+            faq_q2: 'JMC 会提供医疗建议吗？', faq_a2: '不会。JMC 为非临床协调方。日本医院与医师将审阅病历并做出医疗决定。',
+            faq_q3: '本地医生可以把病人推荐给你们吗？', faq_a3: '请本地医师将此视为提供患者的资讯性选项；避免使用商业推荐或合作等措辞。若患者愿意继续，将由患者直接联系 JMC。',
+            contact_title: '联系与登记', label_name: '姓名', label_email: '电子邮件', label_service: '想咨询的服务',
+            opt_1: '人間ドック（体检）', opt_2: 'PET / 影像', opt_3: '骨科/专科', opt_4: '旅行 + 健康 套餐',
+            label_message: '简短信息 / 日本行程日期', btn_submit: '发送询问', consent: '提交后我们可能会就此询问与您联系。我们不提供医疗建议。'
         },
         jp: {
-            kicker: 'TRIP + HEALTH', hero_title: '日本へのご旅行を予定していますか？ 健康も一緒に持ち帰りましょう。', hero_lead: 'JMCは、日本旅行の行程に合わせた健康診断や専門診療の調整を行う非臨床コーディネートサービスです。予約、書類翻訳、現地サポートを提供します。', btn_get_started: '始める', btn_learn_more: '詳細を見る', hero_image_title: '計画・旅行・検査', hero_image_sub: '（旅行＋クリニック写真に差し替えてください）', two_birds_bold: '一度の旅で二つの得:', two_birds_text: '日本を楽しみながら、重要な健康診断や専門診療を行いましょう。', services_title: 'サービス', svc_ningen: '人間ドック（総合検診）', svc_pet: 'PET / 高度画像検査', svc_ortho: '整形外科・専門診療', about_title: 'Japan Medical Conciergeについて', about_text: 'JMCはバンクーバー拠点の非臨床コーディネーターで、カナダ在住者が日本で健康診断や専門診療を行えるよう支援します。診療の判断は日本の医療機関が行います。', side_title: '対応地域', faq_title: 'よくある質問', faq_q1: '日本の健康保険は必要ですか？', faq_a1: '多くの場合、検査や診療は自費となります。日本の国民健康保険をお持ちの場合はお知らせください。', faq_q2: 'JMCは医療アドバイスを行いますか？', faq_a2: 'いいえ。JMCは非臨床の調整役です。医療判断は日本の医師が行います。', faq_q3: 'かかりつけ医から紹介できますか？', faq_a3: '現地医師には、これは情報提供のオプションとして扱っていただくようお願いします。患者が進めたい場合、直接JMCにご連絡ください。', contact_title: 'お問い合わせ', label_name: '氏名', label_email: 'メール', label_service: 'ご希望のサービス', opt_1: '人間ドック（検診）', opt_2: 'PET / 画像検査', opt_3: '整形外科 / 専門診療', opt_4: '旅行 + 健康 パッケージ', label_message: '簡単なメッセージ / 日本での滞在日程', btn_submit: '送信する'
+            nav_services: 'サービス', nav_faq: 'よくある質問', nav_contact: 'お問い合わせ',
+            kicker: 'TRIP + HEALTH',
+            hero_title: '日本へのご旅行を予定していますか？ 健康も一緒に持ち帰りましょう。',
+            hero_lead: 'JMCは、日本旅行の行程に合わせた健康診断や専門診療の調整を行う非臨床コーディネートサービスです。予約、書類翻訳、現地サポートを提供します。',
+            btn_get_started: '始める', btn_learn_more: '詳細を見る',
+            two_birds_bold: '一度の旅で二つの得:', two_birds_text: '日本を楽しみながら、重要な健康診断や専門診療を行いましょう。',
+            services_title: 'サービス',
+            svc_ningen: '人間ドック（総合検診）',
+            svc_ningen_p: 'ご旅行の行程に合わせた全身検査を手配します。一般的な検査項目：血液検査、心電図、腹部超音波、胸部X線、必要に応じて高度画像や専門医の診察も追加可能です。年次検診や早期発見に適しています。',
+            svc_ningen_li1: '多くの検査は当日結果が出ます', svc_ningen_li2: '追加オプション：高度血液検査、画像検査', svc_ningen_li3: '報告書翻訳とご帰国後の説明書を提供',
+            svc_pet: 'PET / 高度画像検査',
+            svc_pet_p: 'PET-CTやその他の専門的な画像検査を迅速に手配します。現地の待ち時間が長い場合や、日本の専門家による画像セカンドオピニオンを希望する方に適しています。',
+            svc_pet_li1: 'PET-CT、MRI、CT血管造影', svc_pet_li2: '放射線科報告書の翻訳と臨床要約', svc_pet_li3: '必要に応じて専門医との連携を行います',
+            svc_ortho: '整形外科・専門診療',
+            svc_ortho_p: '非緊急の整形外科的問題や運動器のご相談を旅行中に手配します。日本の専門医が病歴を確認し、検査や治療の方針を提案します。',
+            cond1: '膝の痛み / 変形性関節症', cond2: '股関節の痛み / 臼蓋唇損傷', cond3: '肩の腱板損傷',
+            cond4: '脊椎：慢性的な腰痛', cond5: '手・手首の疾患', cond6: '足・足首の疾患',
+            about_title: 'Japan Medical Conciergeについて',
+            about_text: 'JMCはバンクーバー拠点の非臨床コーディネーターで、カナダ在住者が日本で健康診断や専門診療を行えるよう支援します。診療の判断は日本の医療機関が行います。',
+            side_title: '対応地域', region1: 'バンクーバー（大バンクーバー）', region2: 'トロント', region3: 'カルガリー',
+            faq_title: 'よくある質問', faq_q1: '日本の健康保険は必要ですか？', faq_a1: '多くの場合、検査や診療は自費となります。日本の国民健康保険をお持ちの場合はお知らせください。',
+            faq_q2: 'JMCは医療アドバイスを行いますか？', faq_a2: 'いいえ。JMCは非臨床の調整役です。医療判断は日本の医師が行います。',
+            faq_q3: 'かかりつけ医から紹介できますか？', faq_a3: '現地の医師には情報提供のオプションとして扱っていただくようお願いします。患者様が進めたい場合は、患者様ご自身が直接JMCへご連絡ください。',
+            contact_title: 'お問い合わせ', label_name: '氏名', label_email: 'メール', label_service: 'ご希望のサービス',
+            opt_1: '人間ドック（検診）', opt_2: 'PET / 画像検査', opt_3: '整形外科 / 専門診療', opt_4: '旅行 + 健康 パッケージ',
+            label_message: '簡単なメッセージ / 日本での滞在日程', btn_submit: '送信する', consent: '送信により、この問い合わせについてJMCからご連絡する場合があることに同意したとみなします。JMCは医療助言を行いません。'
         }
     };
 
@@ -238,13 +318,10 @@
         return false;
     }
 
-    // Generate images via the image tool: hero + orthopedics. We'll simulate and then replace placeholders with generated image URLs.
+    // placeholder image assignment; replace with generated or uploaded images later
     async function generateImages(){
-        // Call image generation via assistant (this is a placeholder hook in the playground). In this file we only update srcs to generated URLs after generation.
-        // For demo we use distinct placehold images with descriptive text. In live use, the assistant will run the image tool and replace these URLs.
         const heroUrl = 'https://placehold.co/1200x600?text=Japan+travel+with+clinic+support';
         const orthoUrl = 'https://placehold.co/1200x800?text=Orthopedics+clinic+visit';
-        // set same screening image for both screening and PET
         const screeningUrl = 'https://placehold.co/1200x800?text=Health+screening+clinic';
         document.getElementById('heroImgEl').src = heroUrl;
         document.getElementById('orthoImg').src = orthoUrl;
@@ -252,7 +329,6 @@
         document.getElementById('imgScreening2').src = screeningUrl;
     }
 
-    // Run generateImages to set placeholders (in real flow the assistant will generate and then update these)
     generateImages();
 </script>
 </body>
