@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Japan Medical Concierge — JMC</title>
+  <title>Japan Medical Concierge  JMC</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     :root{--navy:#102a55;--blue:#2e6eb5;--gold:#d4a83a;--muted:#5e6d7d;--pale:#f7fbff}
@@ -77,7 +77,7 @@
 <body>
 <header>
   <div class="nav">
-    <a class="logo" href="#">JMC — Japan Medical Concierge</a>
+    <a class="logo" href="#">JMC  Japan Medical Concierge</a>
     <div style="display:flex;align-items:center;gap:12px">
       <nav class="desktop-nav">
         <a href="#services" data-i18n="nav_services">Services</a>
@@ -87,8 +87,8 @@
       </nav>
       <div class="langs" aria-hidden="false">
         <button id="enBtn" class="active" onclick="switchLang('en')">EN</button>
-        <button id="zhBtn" onclick="switchLang('zh')">简体</button>
-        <button id="jpBtn" onclick="switchLang('jp')">日本語</button>
+        <button id="zhBtn" onclick="switchLang('zh')">\u7b80\u4f53</button>
+        <button id="jpBtn" onclick="switchLang('jp')">\u65e5\u672c\u8a9e</button>
       </div>
       <button class="menu-btn" id="openMenu" aria-label="Open menu"><i class="fa fa-bars"></i></button>
     </div>
@@ -108,8 +108,8 @@
     <div style="margin-top:10px">Languages</div>
     <div style="display:flex;gap:8px;margin-top:8px">
       <button onclick="switchLang('en')">EN</button>
-      <button onclick="switchLang('zh')">简体</button>
-      <button onclick="switchLang('jp')">日本語</button>
+      <button onclick="switchLang('zh')">\u7b80\u4f53</button>
+      <button onclick="switchLang('jp')">\u65e5\u672c\u8a9e</button>
     </div>
   </div>
 </nav>
@@ -119,34 +119,34 @@
     <div class="hero-left">
       <span class="kicker" data-i18n="kicker">TRIP + HEALTH</span>
       <h1 data-i18n="hero_title">Already planning a trip to Japan? Come back healthier too.</h1>
-      <p class="lead" data-i18n="hero_lead">JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.</p>
+      <p class="lead" data-i18n="hero_lead">JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary  seamless logistics, translation, and local support.</p>
       <div class="cta">
         <button class="btn primary" onclick="document.getElementById('contact').scrollIntoView()" data-i18n="btn_get_started">Get started</button>
         <button class="btn ghost" onclick="document.getElementById('services').scrollIntoView()" data-i18n="btn_learn_more">Learn more</button>
       </div>
     </div>
-    <div class="hero-right"><img id="heroImgEl" src="https://placehold.co/840x560" alt="Travel + clinic hero (airport + city)" /></div>
+    <div class="hero-right"><img id="heroImgEl" src="airport.jpg" alt="Airport arrival, travel + clinic" /></div>
   </section>
 
-  <div class="two-birds"> <strong data-i18n="two_birds_bold">One trip, two gains:</strong> <span data-i18n="two_birds_text">Enjoy Japan and take care of important health screenings or specialist visits while you’re there.</span></div>
+  <div class="two-birds"> <strong data-i18n="two_birds_bold">One trip, two gains:</strong> <span data-i18n="two_birds_text">Enjoy Japan and take care of important health screenings or specialist visits while youre there.</span></div>
 
   <section id="services" class="services">
     <h2 style="color:var(--navy);margin-bottom:12px" data-i18n="services_title">Services</h2>
     <div class="grid">
       <div class="card">
         <h3 data-i18n="svc_ningen">Ningen Dock</h3>
-        <img src="https://placehold.co/600x400" alt="Ningen Dock" />
-        <p data-i18n="svc_ningen_p">Full-body checkups tailored to your schedule. Typical components: blood tests, ECG, abdominal ultrasound, chest X-ray, optional advanced imaging and specialist review. Ideal for annual check-ups and early detection of common conditions.</p>
+        <img src="ningen_dock.jpg" alt="Ningen Dock" />
+        <p data-i18n="svc_ningen_p">Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.</p>
       </div>
       <div class="card">
         <h3 data-i18n="svc_pet">PET / Advanced Imaging</h3>
-        <img src="https://placehold.co/600x400" alt="PET" />
-        <p data-i18n="svc_pet_p">Fast scheduling for PET-CT and other specialty imaging. Helpful when local wait times are long or when you want a second-opinion imaging review from Japanese specialists.</p>
+        <img src="pet_scan_device.jpg" alt="PET Scanner" />
+        <p data-i18n="svc_pet_p">Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.</p>
       </div>
       <div class="card">
         <h3 data-i18n="svc_ortho">Orthopedic & Specialist Consultations</h3>
-        <img src="https://placehold.co/600x400" alt="Orthopedics" />
-        <p data-i18n="svc_ortho_p">Non-emergency orthopedic and mobility concerns coordinated into your trip. Japanese specialists review your records and recommend diagnostic or treatment plans during your visit.</p>
+        <img src="ortho_consult.jpg" alt="Orthopedic consultation" />
+        <p data-i18n="svc_ortho_p">Coordination of non-emergency specialist visits (orthopedics, orthopedics surgery consults, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.</p>
       </div>
     </div>
   </section>
@@ -189,14 +189,14 @@
         <p style="color:var(--muted);font-size:13px;margin-top:8px" data-i18n="consent">By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.</p>
       </form>
 
-      <div class="contact-img"><img src="https://placehold.co/680x453" alt="JMC lobby"/></div>
+      <div class="contact-img"><img src="jmc_coordination_lobby.jpg" alt="JMC lobby"/></div>
     </div>
   </section>
 </main>
 
 <footer>
   <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:8px 16px;gap:12px;flex-wrap:wrap">
-    <div style="color:var(--muted)">© Japan Medical Concierge — Vancouver • Toronto • Calgary</div>
+    <div style="color:var(--muted)">\u00a9 Japan Medical Concierge \u2014 Vancouver \u2022 Toronto \u2022 Calgary</div>
     <div style="color:var(--muted);display:flex;gap:12px;align-items:center">
       <a href="privacy.html" style="color:var(--muted);text-decoration:none" data-i18n="nav_privacy">Privacy</a>
       <div data-i18n="non_clinical_tag">Non-clinical coordination service</div>
@@ -247,14 +247,14 @@
     if(!emailVal||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){document.getElementById('emailError').style.display='block';isValid=false;}else{document.getElementById('emailError').style.display='none'}
     return isValid;
   }
-  function handleSubmit(e){e.preventDefault();const name=document.getElementById('name').value.trim();const email=document.getElementById('email').value.trim();if(!validateForm(name,email))return false;alert(i18n[current]&&i18n[current].btn_submit?i18n[current].btn_submit+' — demo':'Inquiry sent — demo');e.target.reset();return false}
+  function handleSubmit(e){e.preventDefault();const name=document.getElementById('name').value.trim();const email=document.getElementById('email').value.trim();if(!validateForm(name,email))return false;alert(i18n[current]&&i18n[current].btn_submit?i18n[current].btn_submit+' \u2014 demo':'Inquiry sent \u2014 demo');e.target.reset();return false}
 
   // provide fallback i18n data when not available in this playground
   function i18nDataFallback(){
     return {
-      en:{nav_services:'Services',nav_faq:'FAQ',nav_contact:'Contact',nav_privacy:'Privacy',kicker:'TRIP + HEALTH',hero_title:'Already planning a trip to Japan? Come back healthier too.',hero_lead:'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.',btn_get_started:'Get started',btn_learn_more:'Learn more',two_birds_bold:'One trip, two gains:',two_birds_text:'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.',services_title:'Services',svc_ningen:'Ningen Dock',svc_ningen_p:'Full-body checkups tailored to your schedule.',svc_pet:'PET / Advanced Imaging',svc_pet_p:'Fast scheduling for PET-CT and other specialty imaging.',svc_ortho:'Orthopedic & Specialist Consultations',svc_ortho_p:'Non-emergency orthopedic and mobility concerns coordinated into your trip.',faq_title:'FAQ',faq_q1:'Do I need Japanese health insurance?',faq_a1:'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.',faq_q2:'Will JMC give medical advice?',faq_a2:'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.',faq_q3:'Can my local doctor refer a patient?',faq_a3:'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.',contact_title:'Contact & Intake',label_name:'Full name',label_email:'Email',label_service:'Service interested in',opt_1:'Ningen Dock (screening)',opt_2:'PET / Imaging',opt_3:'Orthopedic / Specialist',opt_4:'Trip + Health package',label_message:'Brief message / dates in Japan',btn_submit:'Send inquiry',consent:'By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.',non_clinical_tag:'Non-clinical coordination service'},
-      zh:{nav_services:'服务项目',nav_faq:'常见问题',nav_contact:'联系',nav_privacy:'隐私',kicker:'旅行 + 健康',hero_title:'已经在计划去日本了？顺便把健康也带回来。',hero_lead:'JMC 为您在日本行程中安排健康检查与专科就诊的一站式协调、翻译与本地支援。',btn_get_started:'开始咨询',btn_learn_more:'了解更多',two_birds_bold:'一趟行程，两重收获：',two_birds_text:'既享受日本之旅，也在旅途中完成重要健康检查或专科就诊。',services_title:'服务项目',svc_ningen:'人間ドック（体检）',svc_ningen_p:'为您安排适合行程的全身检查。',svc_pet:'PET / 高端影像',svc_pet_p:'快速排期 PET-CT 与其他专科影像。',svc_ortho:'骨科与专科诊疗',svc_ortho_p:'在旅程中安排非紧急的骨科与运动功能相关问题的诊疗。',faq_title:'常见问题',faq_q1:'需要日本健康保险吗？',faq_a1:'大多数旅客需自费支付体检与专科就诊费用。如果您持有日本国民健康保险，请告知，我们会协助确认。',faq_q2:'JMC 会提供医疗建议吗？',faq_a2:'不会。JMC 为非临床协调方。',faq_q3:'本地医生可以把病人推荐给你们吗？',faq_a3:'请本地医师将此视为信息性选项；若患者愿意继续，将由患者直接联系 JMC。',contact_title:'联系与登记',label_name:'姓名',label_email:'电子邮件',label_service:'想咨询的服务',opt_1:'人間ドック（体检）',opt_2:'PET / 影像',opt_3:'骨科/专科',opt_4:'旅行 + 健康 套餐',label_message:'简短信息 / 日本行程日期',btn_submit:'发送询问',consent:'提交后我们可能会就此询问与您联系。我们不提供医疗建议。',non_clinical_tag:'非临床协调服务'},
-      jp:{nav_services:'サービス',nav_faq:'よくある質問',nav_contact:'お問い合わせ',nav_privacy:'プライバシー',kicker:'TRIP + HEALTH',hero_title:'日本へのご旅行を予定していますか？ 健康も一緒に持ち帰りましょう。',hero_lead:'JMCは、日本旅行の行程に合わせた健康診断や専門診療の調整を行う非臨床コーディネートサービスです。',btn_get_started:'始める',btn_learn_more:'詳細を見る',two_birds_bold:'一度の旅で二つの得:',two_birds_text:'日本を楽しみながら、重要な健康診断や専門診療を行いましょう。',services_title:'サービス',svc_ningen:'人間ドック',svc_ningen_p:'ご旅行の行程に合わせた全身検査を手配します。',svc_pet:'PET / 高度画像検査',svc_pet_p:'PET-CTやその他の専門的な画像検査を迅速に手配します。',svc_ortho:'整形外科・専門診療',svc_ortho_p:'非緊急の整形外科的問題を旅行中に手配します。',faq_title:'よくある質問',faq_q1:'日本の健康保険は必要ですか？',faq_a1:'多くの場合、検査や診療は自費となります。',faq_q2:'JMCは医療アドバイスを行いますか？',faq_a2:'いいえ。JMCは非臨床の調整役です。',faq_q3:'かかりつけ医から紹介できますか？',faq_a3:'現地の医師には情報提供のオプションとして扱っていただくようお願いします。',contact_title:'お問い合わせ',label_name:'氏名',label_email:'メール',label_service:'ご希望のサービス',opt_1:'人間ドック（検診）',opt_2:'PET / 画像検査',opt_3:'整形外科 / 専科',opt_4:'旅行 + 健康 パッケージ',label_message:'簡単なメッセージ / 滞在日程',btn_submit:'送信する',consent:'送信により、この問い合わせについてJMCからご連絡する場合があることに同意したとみなします。',non_clinical_tag:'非臨床の調整役'}
+      en:{nav_services:'Services',nav_faq:'FAQ',nav_contact:'Contact',nav_privacy:'Privacy',kicker:'TRIP + HEALTH',hero_title:'Already planning a trip to Japan? Come back healthier too.',hero_lead:'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary \u2014 seamless logistics, translation, and local support.',btn_get_started:'Get started',btn_learn_more:'Learn more',two_birds_bold:'One trip, two gains:',two_birds_text:'Enjoy Japan and take care of important health screenings or specialist visits while you\u2019re there.',services_title:'Services',svc_ningen:'Ningen Dock',svc_ningen_p:'Comprehensive multi-item health checkups (ningen dock) for early detection and baseline health assessment. Typical items: blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons include advanced blood panels, tumor markers, and specialist exam coordination. We schedule these to fit your travel dates, assist with translations, and ensure you receive clear reports after the visit.',svc_pet:'PET / Advanced Imaging',svc_pet_p:'Scheduling for PET-CT, MRI, and other advanced imaging with faster lead times than typical domestic waits. We take care of pre-test instructions, radiology appointment booking, and obtaining digital copies of images and formal reports for your records or for review by clinicians back home.',svc_ortho:'Orthopedic & Specialist Consultations',svc_ortho_p:'Coordination of non-emergency specialist consultations (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect prior imaging and records, arrange interpreter-supported consultations, and follow up on recommended next steps such as further tests, rehabilitation, or scheduling procedures if desired.',faq_title:'FAQ',faq_q1:'Do I need Japanese health insurance?',faq_a1:'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.',faq_q2:'Will JMC give medical advice?',faq_a2:'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.',faq_q3:'Can my local doctor refer a patient?',faq_a3:'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.',contact_title:'Contact & Intake',label_name:'Full name',label_email:'Email',label_service:'Service interested in',opt_1:'Ningen Dock (screening)',opt_2:'PET / Imaging',opt_3:'Orthopedic / Specialist',opt_4:'Trip + Health package',label_message:'Brief message / dates in Japan',btn_submit:'Send inquiry',consent:'By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.',non_clinical_tag:'Non-clinical coordination service'},
+      zh:{nav_services:'\u670d\u52a1\u9879\u76ee',nav_faq:'\u5e38\u89c1\u95ee\u9898',nav_contact:'\u8054\u7cfb',nav_privacy:'\u9690\u79c1',kicker:'\u65c5\u884c + \u5065\u5eb7',hero_title:'\u5df2\u7ecf\u5728\u8ba1\u5212\u53bb\u65e5\u672c\u5417\uff1f\u987a\u4fbf\u628a\u5065\u5eb7\u4e5f\u5e26\u56de\u6765\u3002',hero_lead:'JMC \u4e3a\u60a8\u5728\u65e5\u672c\u884c\u7a0b\u4e2d\u5b89\u6392\u5065\u5eb7\u68c0\u67e5\u4e0e\u4e13\u79d1\u5c31\u8bca\u7684\u4e00\u7ad9\u5f0f\u534f\u8c03\u3002',btn_get_started:'\u5f00\u59cb\u54a8\u8be2',btn_learn_more:'\u4e86\u89e3\u66f4\u591a',two_birds_bold:'\u4e00\u8d9f\u884c\u7a0b\uff0c\u4e24\u91cd\u6536\u83b7\uff1a',two_birds_text:'\u65e2\u4eab\u53d7\u65e5\u672c\u4e4b\u65c5\uff0c\u4e5f\u5728\u65c5\u9014\u4e2d\u5b8c\u6210\u91cd\u8981\u5065\u5eb7\u68c0\u67e5\u6216\u4e13\u79d1\u5c31\u8bca\u3002',services_title:'\u670d\u52a1\u9879\u76ee',svc_ningen:'\u4eba\u9593\u30c9\u30c3\u30af',svc_ningen_p:'\u5065\u5eb7\u68c0\u67e5\uff08\u4eba\u9593\u30c9\u30c3\u30af\uff09\uff0c\u5305\u62ec\u8840\u6d41\u3001\u80f8\u70b9X\u5149\u3001ECG\u3001\u80c3\u90e8\u8f6f\u7eba\u3001\u4e13\u79d1\u533b\u5e2b\u89c0\u5bdf\u7b49\u9879\u76ee\u3002\u6211\u4eec\u4f1a\u9884\u6392\u65e5\u671f\uff0c\u5e2e\u52a9\u7ffb\u8bd1\u548c\u62a5\u544a\u4ee5\u53ca\u4fdd\u5b58\u6570\u636e\u3002',svc_pet:'PET / \u9ad8\u7ea7\u5f71\u50cf',svc_pet_p:'\u63d0\u4f9b PET-CT\u3001MRI \u7b49\u5f71\u50cf\u8a3a\u65ad\u5b89\u63921\u5143\u4e0a\u7684\u6392\u671f\u53ca\u4e0e\u89c4\u5219',svc_ortho:'\u6574\u5f62\u5916\u79d1\u548c\u4e13\u79d1\u8bca\u7597',svc_ortho_p:'\u5728\u65c5\u7a0b\u4e2d\u7ecf\u7eaa\u7684\u5c1a\u4e0d\u7d27\u6025\u4e13\u79d1\u4f1a\u8ba2\u5b9a\u3002',faq_title:'\u5e38\u89c1\u95ee\u9898',faq_q1:'\u9700\u8981\u65e5\u672c\u5065\u5eb7\u4fdd\u9669\u5417\uff1f',faq_a1:'\u5927\u591a\u6570\u65c5\u5ba2\u9700\u81ea\8d39\u652f\u4ed8\u4f53\u68c0\u548c\u4e13\u79d1\u5c31\u8bca\u3002',faq_q2:'JMC \u4f1a\u63d0\u4f9b\u533b\u5e2b\u7684\u8bf4\u6cd5\u5417\uff1f',faq_a2:'\u4e0d\u4f1a\u3002JMC \u4e3a\u975e\u4e34\u5e8a\u4e13\u4e1a\u4eba\54',faq_q3:'\u672c\u5730\u533b\u751f\u53ef\u4ee5\u63a8\u8350\u75c5\u4eba\5417\uff1f',faq_a3:'\u8bf7\u60a8\u4ee5\u4fe1\u606f\u7684\u65b9\u5f0f\u63d0\u4f9b\u77e5\u4e8b\u3002',contact_title:'\u8054\u7cfb\u4e0e\u767b\u8bb0',label_name:'\u59d3\u540d',label_email:'\u90ae\u7bb1',label_service:'\u60f3\u8981\u7684\u670d\u52a1',opt_1:'\u4eba\u9593\u30c9\u30c3\u30af',opt_2:'PET / \u5f71\u50cf',opt_3:'\u9aa8\u79d1 / \u4e13\u79d1',opt_4:'\u65c5\u884c + \u5065\u5eb7',label_message:'\u7b80\u4ecb\u4fe1\u606f',btn_submit:'\u53d1\u9001\u8be2\u95ee',consent:'\u63d0\u4ea4\u540e\u6211\u4eec\u4f1a\u56de\u590d\u60a8\u7684\u63d0\u95ee',non_clinical_tag:'\u975e\u4e34\u5e8a\u60c5\u52a1'},
+      jp:{nav_services:'\u30b5\u30fc\u30d3\u30b9',nav_faq:'\u3088\u304f\u3042\u308b\u8cea\u554f',nav_contact:'\u304a\u554f\u3044\u5408\u308f\u305b',nav_privacy:'\u30d7\u30e9\u30a4\u30d0\u30b7\u30fc',kicker:'TRIP + HEALTH',hero_title:'\u65e5\u672c\u3078\u306e\u65c5\u3092\u4e88\u7b97\u3057\u3066\u3044\u307e\u3059\u304b\uff1f\u5065\u5eb7\u3082\u4e00\u7dd2\u306b\u6301\u3061\u5e30\u308a\u307e\u3057\u3087\u3046\u3002',hero_lead:'JMC\u306f\u65e5\u672c\u65c5\u884c\u306b\u5408\u308f\u305b\u305f\u5065\u5eb7\u8a3a\65ad\u3084\u5c02\u9580\u8a3a\7642\u3092\u7ba1\u7406\u3057\u307e\u3059\u3002',btn_get_started:'\u59cb\u3081\u308b',btn_learn_more:'\u8a73\u7d30',two_birds_bold:'\u4e00\u5ea6\u3067\u516d\u4ef6\u4e0a\u3078',two_birds_text:'\u65e5\u672c\u3067\u6bce\u4f55\u3082\u4f55\u4e8b\u3067\u3059',services_title:'\u30b5\u30fc\u30d3\u30b9',svc_ningen:'\u4eba\u9593\u30c9\u30c3\u30af',svc_ningen_p:'\u65e5\u3005\u306e\u5065\u5eb7\u8a3a\65ad\u306e\u30b3\u30fc\u30c7\u30a3\u30cd\u30fc\u30c8',svc_pet:'PET / \u9ad8\u7aef\u5f71\u50cf',svc_pet_p:'PET-CT\u3084MRI\u306a\u3069\u306e\u5f71\u50cf\u306e\u67e5\u8a3a\u306e\u5b9f\u7fd2',svc_ortho:'\u6574\u5f62\u5916\u79d1',svc_ortho_p:'\u975e\u7dca\u6025\u306e\u5c1a\u306b\u5bfe\u3057\u305f\u5c02\u79d1\u8a3a\7642\u3092\u5c4a\u3059'},
     };
   }
 </script>
