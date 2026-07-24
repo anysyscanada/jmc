@@ -1,132 +1,60 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Privacy Policy | JMC</title>
     <style>
-        :root { --navy:#102a55; --blue:#2e6eb5; --pale:#edf5fc; --ink:#1d2a3a; --muted:#5e6d7d; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif; color: var(--ink); line-height: 1.8; background: #fff; }
-
-        /* ── Header matching index.html ── */
-        header {
-            position: sticky; top: 0; width: 100%;
-            background: rgba(255,255,255,0.98);
-            border-bottom: 1px solid #eff3f6; z-index: 1000;
-        }
-        .nav-inner {
-            max-width: 1200px; margin: 0 auto; padding: 15px 20px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { text-decoration: none; color: var(--navy); font-weight: 800; font-size: 20px; }
-        .logo small { display: block; font-size: 10px; color: var(--muted); letter-spacing: 0.1em; }
-        .lang-switch button {
-            padding: 4px 10px; font-size: 11px; border: 1px solid var(--navy);
-            background: transparent; cursor: pointer; border-radius: 4px; font-weight: bold;
-            margin-left: 4px;
-        }
-        .lang-switch button.active { background: var(--navy); color: #fff; }
-
-        /* ── Lang toggle ── */
-        html[lang="ja"] .en { display: none !important; }
-        html[lang="en"] .ja { display: none !important; }
-
-        /* ── Content ── */
-        .content { width: min(860px, 90%); margin: 48px auto 70px; }
-        h1 { color: var(--navy); border-bottom: 2px solid var(--pale); padding-bottom: 13px; margin-bottom: 8px; font-size: 26px; }
-        h2 { color: var(--navy); margin-top: 38px; font-size: 21px; }
-        h3 { color: var(--navy); font-size: 17px; margin: 24px 0 8px; }
-        p { margin-top: 12px; }
-        .date { color: var(--muted); font-size: 13px; margin-bottom: 24px; display: block; }
-        .notice {
-            padding: 17px 20px; border-left: 4px solid var(--blue);
-            background: var(--pale); border-radius: 4px; margin-top: 16px;
-        }
-        .small { font-size: 13px; color: var(--muted); }
-        .back {
-            margin-top: 42px; display: inline-block; color: var(--blue);
-            text-decoration: none; font-weight: 600;
-        }
-        .back:hover { text-decoration: underline; }
-        a { color: var(--blue); }
+        :root{--navy:#102a55;--blue:#2e6eb5;--pale:#edf5fc;--ink:#1d2a3a;--muted:#5e6d7d}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:Inter, system-ui, -apple-system, "Noto Sans JP", "Helvetica Neue", Arial; color:var(--ink); line-height:1.8; background:#fff}
+        /* Header */
+        header{position:sticky;top:0;width:100%;background:rgba(255,255,255,0.98);border-bottom:1px solid #eff3f6;z-index:1000}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-weight:800;color:var(--navy);text-decoration:none}
+        .logo small{display:block;font-size:10px;color:var(--muted);letter-spacing:0.1em}
+        .lang-switch button{padding:6px 10px;border-radius:6px;border:1px solid #e6eef8;background:transparent;cursor:pointer;margin-left:6px}
+        .lang-switch button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+        /* Content */
+        .content{width:min(860px,90%);margin:48px auto 70px}
+        h1{color:var(--navy);border-bottom:2px solid var(--pale);padding-bottom:13px;margin-bottom:8px;font-size:26px}
+        h2{color:var(--navy);margin-top:38px;font-size:21px}
+        h3{color:var(--navy);font-size:17px;margin:24px 0 8px}
+        p{margin-top:12px}
+        .date{color:var(--muted);font-size:13px;margin-bottom:24px;display:block}
+        .notice{padding:17px 20px;border-left:4px solid var(--blue);background:var(--pale);border-radius:4px;margin-top:16px}
+        .small{font-size:13px;color:var(--muted)}
+        .back{margin-top:42px;display:inline-block;color:var(--blue);text-decoration:none;font-weight:600}
+        .back:hover{text-decoration:underline}
+        a{color:var(--blue)}
+        /* language visibility rules */
+        html[lang="en"] .ja, html[lang="en"] .zh { display: none !important; }
+        html[lang="ja"] .en, html[lang="ja"] .zh { display: none !important; }
+        html[lang="zh"] .en, html[lang="zh"] .ja { display: none !important; }
+        /* small screens */
+        @media(max-width:640px){.nav-inner{padding:12px}.content{margin:28px auto}}
     </style>
 </head>
 <body>
-
 <header>
     <div class="nav-inner">
-        <a href="index.html" class="logo">JMC<small>Japan Medical Concierge</small></a>
-        <div class="lang-switch">
-            <button onclick="setLang('ja')" id="btn-ja" class="active">JP</button>
-            <button onclick="setLang('en')" id="btn-en">EN</button>
+        <a href="index.html" class="logo">JMC <small>Japan Medical Concierge</small></a>
+        <div class="lang-switch" aria-label="Language switch">
+            <button id="btn-en" onclick="setLang('en')">EN</button>
+            <button id="btn-zh" onclick="setLang('zh')">简体</button>
+            <button id="btn-ja" onclick="setLang('ja')">JP</button>
         </div>
     </div>
 </header>
 
 <div class="content">
 
-    <!-- Japanese -->
-    <div class="ja">
-        <h1>個人情報保護方針</h1>
-        <span class="date">最終更新：2026年7月</span>
-        <div class="notice">
-            <strong>ご注意：</strong> JMCは医療機関ではありません。予約・書類・翻訳・渡航等の実務を調整する、非医療のコーディネーターです。本方針は、JMCが取り扱う個人情報に関するものです。医療機関が独自に保有する医療記録については、各医療機関の方針をご確認ください。
-        </div>
-
-        <h2>1. 適用法令</h2>
-        <p>JMCは、ブリティッシュコロンビア州個人情報保護法（BC PIPA）および適用される連邦・州の個人情報保護法令を遵守します。</p>
-
-        <h2>2. 収集する情報</h2>
-        <p>お問い合わせフォームや電子メール等を通じて、お名前・連絡先・渡航予定・ご希望の検査内容・予算等の情報をお預かりする場合があります。健康関連情報は、サービス提供に必要な範囲でのみ収集します。</p>
-
-        <h2>3. 利用目的</h2>
-        <p>収集した情報は、お問い合わせへの対応、検査施設・旅行手配の調整、書類・翻訳サポート、および関連する実務連絡のために使用します。広告・行動追跡・ご要望のないマーケティング目的には使用しません。</p>
-
-        <h2>4. 同意と撤回</h2>
-        <p>情報の収集・利用・開示にあたっては、目的に応じた有効な同意を取得します。お問い合わせフォームの送信は、ご連絡への対応および初期対応に必要なやり取りへの同意を示します。</p>
-        <p><strong>医療機関・旅行会社・通訳・翻訳者等の第三者に個人情報または健康関連情報を提供する前に、共有先・共有内容・目的を可能な限り明示し、明示的な同意を取得します。</strong>同意は合理的な通知をもって撤回できます。撤回は過去の適法な処理には影響せず、提供できるサービスが制限される場合があります。</p>
-
-        <h2>5. 日本への越境移転と第三者共有</h2>
-        <p>本サービスはカナダと日本をまたぐ調整を伴います。ご依頼・ご同意のもと、医療機関・日本側の医療観光運営パートナー・旅行会社・通訳・翻訳者等と情報を共有する場合があります。使用するメール・フォーム・クラウドストレージ等のサービスプロバイダーがカナダ国外で情報を処理する場合があります。</p>
-        <p>各国・地域の個人情報保護法令は異なります。医療機関や旅行会社が受領した情報は、各組織の方針および適用法令に基づき取り扱われます。JMCは共有を最小限に抑え、受領者を慎重に選定し、適切な機密保持・セキュリティへの取り組みを求めますが、他の組織が独自に保有する情報を直接管理することはできません。</p>
-
-        <h2>6. 医療機関と非医療スタッフの役割</h2>
-        <p>医療機関および医療専門職は、医療記録および健康情報の取り扱いについて独自の責任を負う場合があります。診断・治療・検査の適否・結果の解釈等の臨床的判断は、患者様と医療専門職の間で行われます。非医療のコーディネーター・通訳・翻訳者が情報にアクセスする場合は、必要最小限の範囲に限定し、機密保持を求めます。</p>
-
-        <h2>7. 保管と安全な廃棄</h2>
-        <p>情報は、特定された目的の達成、継続的なサービス提供、法的・会計上の義務の履行、または紛争対応に必要な期間のみ保管します。不要となった情報は、合理的な方法で安全に削除・廃棄または匿名化します。</p>
-
-        <h2>8. 安全管理とインシデント対応</h2>
-        <p>情報の機密性に応じた合理的な組織的・技術的・物理的安全管理措置を講じます。電子的な送受信や保管に完全な安全性を保証することはできません。管理下にある情報への不正アクセス・紛失・漏洩が発生した場合は、適用法令および指針に従い、調査・是正・記録・通知・協力の措置を講じます。</p>
-
-        <h2>9. クッキーとログデータ</h2>
-        <p>クッキーとは、ウェブサイトがブラウザに保存する小さなテキストファイルです。本ウェブサイトは、基本的な表示・設定・安全な運用に必要な技術のみを使用する場合があります。現時点では、JMCは広告クッキーや行動追跡を目的とした不要なクッキーを意図的に使用していません。</p>
-        <p>将来的にアナリティクス・埋め込みコンテンツ・広告等の非必須クッキーを導入する場合は、本方針を更新し、適用法令に従った通知と選択肢を提供します。ブラウザの設定でクッキーをブロック・削除することができますが、一部の機能が正常に動作しない場合があります。</p>
-
-        <h2>10. お客様の権利</h2>
-        <p>適用法令の範囲内で、個人情報へのアクセス・訂正の請求、利用・開示に関する情報の提供、同意の撤回、またはプライバシーに関する懸念の申し出を行うことができます。本人確認および法的例外を前提に、合理的な期間内に対応します。医療機関等の第三者が独自に保有する記録については、各組織に直接お問い合わせください。</p>
-
-        <h2>11. 未成年者</h2>
-        <p>本サービスは原則として成人を対象としています。未成年者の個人情報を取り扱う必要がある場合は、状況に応じて保護者または法定後見人から適切な同意を取得します。</p>
-
-        <h2>12. 外部ウェブサイト</h2>
-        <p>本ウェブサイトは、医療機関・旅行会社等の外部サイトへのリンクを含む場合があります。それらのコンテンツやプライバシー慣行についてJMCは責任を負いません。各サイトの方針を直接ご確認ください。</p>
-
-        <h2>13. 本方針の変更</h2>
-        <p>法令の変更、サービス内容の変更、または情報取り扱い慣行の変更を反映するため、本方針を更新する場合があります。重要な変更は、更新日とともに本ページに掲載します。</p>
-
-        <h2>14. お問い合わせ・苦情</h2>
-        <p>ご質問、アクセス・訂正の請求、同意の撤回、またはプライバシーに関するご懸念は、JMCの<a href="index.html#contact">お問い合わせフォーム</a>より「プライバシーに関するお問い合わせ」とご記入の上ご連絡ください。</p>
-        <p class="small">ブリティッシュコロンビア州情報・プライバシーコミッショナー事務所（OIPC BC）等、適用されるプライバシー監督機関にご連絡いただくことも可能です。</p>
-        <a href="index.html" class="back">← ホームに戻る</a>
-    </div>
-
     <!-- English -->
-    <div class="en">
+    <div class="en" role="region" aria-label="Privacy policy English">
         <h1>Privacy Policy</h1>
         <span class="date">Last updated: July 2026</span>
+
         <div class="notice">
             <strong>Note:</strong> JMC is not a medical clinic. We are a non-clinical coordinator handling appointments, documents, translation, and travel logistics. This policy covers personal information handled by JMC. For medical records independently held by a medical facility, please refer to that facility's own policy.
         </div>
@@ -176,19 +104,148 @@
         <h2>14. Contact and Complaints</h2>
         <p>For questions, access or correction requests, consent withdrawal, or privacy concerns, please use JMC's <a href="index.html#contact">contact form</a> and write "Privacy Inquiry" in the subject or message.</p>
         <p class="small">You may also be able to contact an applicable privacy regulator, including the Office of the Information and Privacy Commissioner for British Columbia (OIPC BC), as appropriate.</p>
+
         <a href="index.html" class="back">← Back to Home</a>
+    </div>
+
+    <!-- Simplified Chinese -->
+    <div class="zh" role="region" aria-label="隐私政策 中文(简体)">
+        <h1>隐私政策</h1>
+        <span class="date">最后更新：2026年7月</span>
+
+        <div class="notice">
+            <strong>注意：</strong> JMC 不是医疗机构。我们为非临床的协调方，负责预约、文件、翻译与旅行后勤等工作。本政策适用于 JMC 所处理的个人信息。有关医疗机构独立保存的病历，请参阅该机构的隐私政策。
+        </div>
+
+        <h2>1. 适用法律</h2>
+        <p>JMC 遵守不列颠哥伦比亚省个人信息保护法（BC PIPA）以及适用的联邦和省级隐私法规。我们承诺仅在为实现既定目的所必需的范围内，负责任地收集、使用与披露个人信息。</p>
+
+        <h2>2. 我们收集的信息</h2>
+        <p>通过我们的联系表单、电子邮件及相关通讯，我们可能会收集您的姓名、联系方式、出行计划、意向体检或服务、预算等信息。仅在提供协调服务所必需的范围内收集健康相关信息。</p>
+
+        <h2>3. 信息的用途</h2>
+        <p>我们使用所收集的信息以回复询问、与医疗机构及旅行服务提供者协调、协助文件与翻译，并进行相关的运营性沟通。我们不会将您的信息用于广告、行为画像或未经您同意的目的。</p>
+
+        <h2>4. 同意与撤回</h2>
+        <p>在收集、使用或披露个人信息之前，我们会取得与目的相符的有效同意。提交联系表单表示您同意我们就该询问进行初步沟通与必要的后续联系。</p>
+        <p><strong>在与医疗机构、旅行服务商、口译/笔译人员或其他第三方共享个人或健康相关信息之前，我们会尽可能明确告知接收方、共享内容与目的，并取得必要的明确同意。</strong>您可以在合理通知下撤回对未来处理的同意。撤回不影响已合法进行的先前处理，但可能会限制我们提供的部分服务。</p>
+
+        <h2>5. 向日本的传输与第三方共享</h2>
+        <p>本服务涉及加拿大与日本之间的协调。在您请求并同意的情况下，我们可能会将信息（在必要时包括健康相关信息）共享给日本的医疗机构、在日运营合作方、旅行服务提供者、口译/笔译人员或其他服务提供者。我们所使用的电子邮件、表单、云端存储或其他技术服务提供商可能会在加拿大境外处理信息。</p>
+        <p>各司法管辖区的隐私法律与监督不同。医疗机构或旅行服务提供者接收的信息可能会根据其自身的隐私政策与适用法律进行处理。我们会尽量减少共享、谨慎评估接收方并就必要性、机密性与安全性寻求承诺；但 JMC 无法直接控制其他组织独立持有的信息。我们不会出售或出租个人信息，亦不会在未经您同意的情况下披露，除非法律允许或要求，或为保护权利、预防欺诈或处理安全问题所必需。</p>
+
+        <h2>6. 医疗机构与非临床人员的角色</h2>
+        <p>医疗机构与持牌医疗专业人员可能对其医疗记录与健康信息实践负有独立责任。临床决策（包括诊断、治疗、检测适宜性及结果解读）由您与持牌医疗专业人员共同承担。当非临床协调员、口译或笔译人员需要访问信息时，访问仅限必要范围并受机密性要求约束。</p>
+
+        <h2>7. 保留与安全处置</h2>
+        <p>我们仅在为实现识别出的目的、提供持续服务、履行法定义务或处理争议所必需的期间内保留信息。不再需要的信息将通过合理方式安全删除、销毁或匿名化。已与第三方共享的信息的保留与删除则受该第三方自身做法约束。</p>
+
+        <h2>8. 保护措施与事件响应</h2>
+        <p>针对信息的敏感性，我们采取合理的组织、技术与物理保护措施，例如受限访问、密码控制、保密要求以及设备与文件的安全管理。没有任何电子传输或存储方式能保证绝对安全。如发生影响我们控制下信息的未授权访问、丢失或泄露，我们将按适用法律与指引评估事件并采取纠正、记录、通知及配合措施。</p>
+
+        <h2>9. Cookie 与日志数据</h2>
+        <p>Cookie 是网站在您浏览器中保存的小型文本文件。我们的网站可能使用为基本显示、设置与安全运行所必需的技术。目前 JMC 并不主动部署用于广告或行为追踪的非必要 Cookie。</p>
+        <p>若将来引入分析、嵌入内容、广告或其他非必要 Cookie，我们会更新本政策并根据适用法律提供通知与选择。您可在浏览器设置中阻止或删除 Cookie，但部分功能可能因此无法正常运作。</p>
+
+        <h2>10. 您的权利</h2>
+        <p>在适用法律范围内，您可请求访问或更正您的个人信息；查询其使用或披露情况；撤回同意；或提出隐私相关的关注。我们将在合理期限内回复，但需进行身份确认并受法律例外限制。对于医疗机构或其他第三方独立持有的记录，请直接联系该组织。</p>
+
+        <h2>11. 未成年人</h2>
+        <p>本服务主要面向成年人。若需处理未成年人的个人信息，我们将在必要时寻求监护人或法定代理人的适当同意。</p>
+
+        <h2>12. 外部网站</h2>
+        <p>本网站可能链接到医疗机构、旅行服务提供者或其他外部网站。我们不对其内容或隐私实践负责，请直接查阅其政策。</p>
+
+        <h2>13. 本政策的变更</h2>
+        <p>我们可能会根据法律变更、服务调整或信息处理实践的变化更新本政策。重要变更将公布在本页面并附上更新日期。</p>
+
+        <h2>14. 联系与投诉</h2>
+        <p>如有问题、访问或更正请求、撤回同意或隐私相关的疑虑，请使用 JMC 的 <a href="index.html#contact">联系表单</a>，并在主题或信息中写明“隐私咨询”。</p>
+        <p class="small">您亦可根据适用情况联系相关隐私监管机构，例如不列颠哥伦比亚省信息与隐私专员办公室（OIPC BC）。</p>
+
+        <a href="index.html" class="back">← 返回首页</a>
+    </div>
+
+    <!-- Japanese -->
+    <div class="ja" role="region" aria-label="プライバシーポリシー 日本語">
+        <h1>個人情報保護方針</h1>
+        <span class="date">最終更新：2026年7月</span>
+
+        <div class="notice">
+            <strong>ご注意：</strong> JMCは医療機関ではありません。予約・書類・翻訳・渡航などの実務を調整する非臨床のコーディネーターです。本方針はJMCが取り扱う個人情報に関するものです。医療機関が独自に保有する医療記録については、各医療機関の方針をご確認ください。
+        </div>
+
+        <h2>1. 適用法令</h2>
+        <p>JMCは、ブリティッシュコロンビア州個人情報保護法（BC PIPA）および適用される連邦・州のプライバシー法を順守します。収集・利用・開示は、特定した目的の範囲内で責任を持って行います。</p>
+
+        <h2>2. 収集する情報</h2>
+        <p>お問い合わせフォーム、電子メール等を通じて、氏名、連絡先、渡航予定、希望する検査・サービス、予算などの情報をお預かりする場合があります。健康情報はサービス提供に必要な範囲でのみ収集します。</p>
+
+        <h2>3. 利用目的</h2>
+        <p>収集した情報は、問い合わせへの対応、医療施設や旅行事業者との調整、書類・翻訳支援、および関連する運用上の連絡に使用します。広告や行動プロファイリング、利用者が求めていない目的には使用しません。</p>
+
+        <h2>4. 同意と撤回</h2>
+        <p>収集・利用・開示の前に、目的に応じた有効な同意を取得します。お問い合わせフォームの送信は、当該問い合わせに対する初期対応のための同意を示します。</p>
+        <p><strong>医療機関、旅行事業者、通訳・翻訳者等の第三者に個人情報または健康情報を提供する場合は、可能な限り受領者・共有内容・目的を明示し、明示的な同意を取得します。</strong>同意は合理的な通知により撤回できます。撤回は既に適法に行われた処理に影響を与えませんが、提供可能なサービスが制限されることがあります。</p>
+
+        <h2>5. 日本への越境移転と第三者共有</h2>
+        <p>本サービスはカナダと日本をまたいだ調整を伴います。ご依頼および同意に基づき、必要に応じて医療機関、日本側の運営パートナー、旅行事業者、通訳・翻訳者などと情報を共有する場合があります。利用するメール・フォーム・クラウドサービス等が国外で処理を行うことがあります。</p>
+        <p>各国・地域での個人情報保護法は異なります。医療機関や旅行事業者が受領した情報は、それぞれの方針と適用法に従って取り扱われます。JMCは共有を最小限に抑え、受領者を慎重に選定し、機密保持やセキュリティの取り組みを求めますが、第三者が独自に保有する情報を直接管理することはできません。</p>
+
+        <h2>6. 医療機関と非臨床スタッフの役割</h2>
+        <p>医療機関および医療専門職は、医療記録や健康情報の管理について独自の責任を負うことがあります。診断・治療・検査の適合性・結果の解釈などの臨床判断は、患者様と医療専門職の間で行われます。非臨床のコーディネーター、通訳、翻訳者が情報にアクセスする場合は、必要最小限に限定し機密保持を求めます。</p>
+
+        <h2>7. 保管と安全な廃棄</h2>
+        <p>情報は、特定された目的の達成、継続的なサービス提供、法的・会計上の義務の履行、または紛争対応に必要な期間のみ保管します。不要になった情報は合理的な方法で安全に削除・廃棄・匿名化します。</p>
+
+        <h2>8. 安全管理とインシデント対応</h2>
+        <p>情報の機密性に応じた合理的な組織的・技術的・物理的安全管理措置を講じます。電子的な送受信や保管に完全な安全性を保証することはできません。管理下の情報に対する不正アクセス・紛失・漏洩が発生した場合は、適用法や指針に従い調査・是正・記録・通知・協力などの対応を行います。</p>
+
+        <h2>9. クッキーとログデータ</h2>
+        <p>クッキーはウェブサイトがブラウザに保存する小さなテキストファイルです。表示、設定、セキュリティ運用に必要な技術のみを利用することがあります。現時点で JMC は広告目的や行動追跡を目的とした不要なクッキーを意図的に使用していません。</p>
+        <p>将来、分析や埋め込みコンテンツ、広告等の非必須クッキーを導入する場合は、本方針を更新し、適用法に従った通知と選択肢を提供します。ブラウザ設定でクッキーをブロック・削除できますが、一部機能が制限される可能性があります。</p>
+
+        <h2>10. お客様の権利</h2>
+        <p>適用法の範囲内で、個人情報へのアクセス・訂正の請求、利用・開示に関する情報の提供、同意の撤回、またはプライバシーに関する懸念の申し出が可能です。本人確認および法的例外を前提に、合理的な期間内に対応します。医療機関等が独自に保有する記録については、各組織へ直接お問い合わせください。</p>
+
+        <h2>11. 未成年者</h2>
+        <p>本サービスは原則として成人を対象としています。未成年者の情報を取り扱う場合は、状況に応じて保護者または法定代理人の同意を取得します。</p>
+
+        <h2>12. 外部ウェブサイト</h2>
+        <p>本サイトは医療機関や旅行事業者など外部サイトへのリンクを含むことがあります。これらのコンテンツやプライバシー慣行について JMC は責任を負いません。各サイトのポリシーを直接ご確認ください。</p>
+
+        <h2>13. 本方針の変更</h2>
+        <p>法令の変更、サービス内容の変更、または情報取り扱い慣行の変更に合わせて本方針を更新する場合があります。重要な変更は更新日とともに本ページに掲載します。</p>
+
+        <h2>14. お問い合わせ・苦情</h2>
+        <p>ご質問、アクセス・訂正の請求、同意の撤回、またはプライバシーに関するご懸念は、JMC の <a href="index.html#contact">お問い合わせフォーム</a> より「プライバシーに関するお問い合わせ」と明記してご連絡ください。</p>
+        <p class="small">必要に応じて、不列颠哥伦比亚州情報・プライバシーコミッショナー事務所（OIPC BC）等の監督機関へ連絡することも可能です。</p>
+
+        <a href="index.html" class="back">← ホームに戻る</a>
     </div>
 
 </div>
 
 <script>
     function setLang(l) {
-        document.documentElement.lang = l;
-        document.getElementById('btn-ja').classList.toggle('active', l === 'ja');
+        // set html lang attribute to help assistive tech / SEO
+        document.documentElement.lang = (l === 'ja' ? 'ja' : (l === 'zh' ? 'zh' : 'en'));
+        // toggle active class on buttons
         document.getElementById('btn-en').classList.toggle('active', l === 'en');
+        document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
+        document.getElementById('btn-ja').classList.toggle('active', l === 'ja');
+        // small accessibility focus: move focus to the visible heading
+        try {
+            const region = document.querySelector('html[lang="' + document.documentElement.lang + '"] .content > div[role="region"]');
+            if(region) region.querySelector('h1')?.focus?.();
+        } catch(e){}
     }
-    const p = new URLSearchParams(location.search).get('lang');
-    setLang(p === 'en' ? 'en' : 'ja');
+
+    // check ?lang= param, default to 'en'
+    const p = (new URLSearchParams(location.search)).get('lang');
+    const initial = (p === 'ja' || p === 'zh' || p === 'en') ? p : 'en';
+    // set initial active state
+    setLang(initial);
 </script>
 </body>
 </html>
