@@ -6,117 +6,78 @@
   <title>Japan Medical Concierge — JMC</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root{
-      --navy:#102a55;
-      --blue:#2e6eb5;
-      --gold:#d4a83a;
-      --muted:#5e6d7d;
-      --pale:#f7fbff;
-      --bg:#fff;
-    }
+    :root{--navy:#102a55;--blue:#2e6eb5;--gold:#d4a83a;--muted:#5e6d7d;--pale:#f7fbff;--bg:#fff}
     *{box-sizing:border-box;margin:0;padding:0}
-    html { scroll-behavior: smooth; }
-    body{
-      font-family: Inter, system-ui, -apple-system, "Noto Sans", "Helvetica Neue", Arial, "Noto Sans JP";
-      color:#112; line-height:1.6; background:var(--bg);
-    }
+    html{scroll-behavior:smooth}
+    body{font-family:Inter, system-ui, -apple-system, "Noto Sans", "Helvetica Neue", Arial, "Noto Sans JP";color:#112;line-height:1.6;background:var(--bg)}
 
-    /* Header / Nav */
-    header{
-      position:sticky; top:0; width:100%;
-      background:rgba(255,255,255,0.96);
-      border-bottom:1px solid #eef2f6; z-index:1200;
-    }
-    .nav { max-width:1200px; margin:0 auto; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-    .logo { font-weight:800; color:var(--navy); text-decoration:none; font-size:18px; }
-    .desktop-nav { display:flex; gap:14px; align-items:center; }
-    .desktop-nav a { color:var(--muted); text-decoration:none; font-weight:600; font-size:14px; }
-    .langs { display:flex; gap:8px; align-items:center; }
-    .lang-btn {
-      padding:6px 10px; border-radius:6px; border:1px solid #e6eef8; background:transparent; cursor:pointer; font-weight:700;
-      min-width:58px; text-align:center;
-    }
-    .lang-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+    header{position:sticky;top:0;width:100%;background:rgba(255,255,255,0.96);border-bottom:1px solid #eef2f6;z-index:1200}
+    .nav{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .logo{font-weight:800;color:var(--navy);text-decoration:none;font-size:18px}
+    .desktop-nav{display:flex;gap:14px;align-items:center}
+    .desktop-nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .langs{display:flex;gap:8px;align-items:center}
+    .lang-btn{padding:6px 10px;border-radius:6px;border:1px solid #e6eef8;background:transparent;cursor:pointer;font-weight:700;min-width:58px;text-align:center}
+    .lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .menu-btn{display:none;background:transparent;border:0;font-size:20px;cursor:pointer;color:var(--muted)}
 
-    .menu-btn { display:none; background:transparent; border:0; font-size:20px; cursor:pointer; color:var(--muted); }
+    /* HERO */
+    .hero{position:relative;overflow:visible;margin:28px auto;max-width:1200px;border-radius:12px;padding:0;min-height:320px}
+    .hero-bg{position:absolute;inset:0;z-index:0;border-radius:12px;overflow:hidden;filter:contrast(95%) brightness(82%)}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(16,42,85,0.12), rgba(16,42,85,0.26));border-radius:12px;pointer-events:none}
+    .hero-inner{position:relative;z-index:2;display:flex;gap:20px;align-items:center;padding:36px;color:#fff}
+    .hero-left{flex:1}
+    .kicker{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.12);border-radius:999px;color:rgba(255,255,255,0.95);font-weight:800;font-size:12px;margin-bottom:12px}
+    h1{font-size:30px;margin-bottom:10px;text-shadow:0 2px 8px rgba(0,0,0,0.35)}
+    p.lead{color:rgba(255,255,255,0.92);margin-bottom:16px;max-width:60ch}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:800}
+    .btn.primary{background:var(--gold);color:#122}
+    .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.28)}
 
-    /* HERO (background) */
-    .hero {
-      position:relative; overflow:visible; margin:28px auto; max-width:1200px; border-radius:12px; padding:0 0 0 0;
-      min-height:260px;
-    }
-    .hero-bg { position:absolute; inset:0; z-index:0; border-radius:12px; overflow:hidden; filter:contrast(95%) brightness(82%); }
-    .hero-bg img { width:100%; height:100%; object-fit:cover; display:block; }
-    .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(16,42,85,0.12), rgba(16,42,85,0.22)); border-radius:12px; pointer-events:none; }
-    .hero-inner {
-      position:relative; z-index:2; display:flex; gap:20px; align-items:center; padding:28px;
-      color:#fff;
-    }
-    .hero-left { flex:1; }
-    .kicker { display:inline-block; padding:6px 10px; background:rgba(255,255,255,0.12); border-radius:999px; color:rgba(255,255,255,0.95); font-weight:800; font-size:12px; margin-bottom:12px; }
-    h1 { font-size:28px; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,0.35); }
-    p.lead { color:rgba(255,255,255,0.92); margin-bottom:16px; max-width:60ch; }
-    .cta { display:flex; gap:10px; flex-wrap:wrap; }
-    .btn { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; font-weight:800; }
-    .btn.primary { background:var(--gold); color:#122; }
-    .btn.ghost { background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.28); }
+    /* hero card image removed per request - keep optional small card hidden on small screens */
+    .hero-right{width:420px;max-width:38%;border-radius:10px;overflow:hidden;box-shadow:0 8px 26px rgba(16,42,85,0.12);background:#fff}
+    .hero-right img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/2}
 
-    .hero-right { width:420px; max-width:38%; border-radius:10px; overflow:hidden; box-shadow:0 8px 26px rgba(16,42,85,0.12); background:#fff; }
-    .hero-right img { width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:3/2; }
+    .two-birds{max-width:1200px;margin:12px auto;padding:10px 18px;background:linear-gradient(90deg,#fff7e6,#fffdf6);border-left:4px solid var(--gold);color:#5b4630;border-radius:8px}
 
-    /* Two birds ribbon */
-    .two-birds { max-width:1200px; margin:12px auto; padding:10px 18px; background:linear-gradient(90deg,#fff7e6,#fffdf6); border-left:4px solid var(--gold); color:#5b4630; border-radius:8px; }
-
-    /* Services grid */
-    .services { max-width:1200px; margin:20px auto; padding:0 16px; }
-    .services h2 { color:var(--navy); margin-bottom:10px; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-    .card { border:1px solid #eef4fb; padding:14px; border-radius:10px; background:#fff; display:flex; flex-direction:column; }
-    .card h3 { font-size:17px; margin-bottom:8px; color:var(--navy); line-height:1.2; }
-    .card img { width:100%; border-radius:8px; margin:8px 0; object-fit:cover; aspect-ratio:3/2; height:160px; display:block; }
-    .card p { color:var(--muted); margin-top:6px; font-size:14px; }
+    /* Services grid - make images larger and consistent */
+    .services{max-width:1200px;margin:20px auto;padding:0 16px}
+    .services h2{color:var(--navy);margin-bottom:10px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{border:1px solid #eef4fb;padding:14px;border-radius:10px;background:#fff;display:flex;flex-direction:column}
+    .card h3{font-size:17px;margin-bottom:8px;color:var(--navy);line-height:1.2}
+    .card .img-wrap{width:100%;height:220px;border-radius:8px;overflow:hidden;margin:8px 0;background:#f6fafc}
+    .card .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+    .card p{color:var(--muted);margin-top:6px;font-size:14px}
 
     /* FAQ */
-    .faq { max-width:1200px; margin:20px auto; padding:16px; }
-    .faq h3 { margin-bottom:8px; color:var(--navy); }
-    .faq .last-updated { color:var(--muted); font-size:13px; margin-bottom:10px; }
+    .faq{max-width:1200px;margin:20px auto;padding:16px}
+    .faq h3{margin-bottom:8px;color:var(--navy)}
+    .faq .last-updated{color:var(--muted);font-size:13px;margin-bottom:10px}
 
     /* Contact */
-    .contact { max-width:900px; margin:20px auto; padding:18px; border-radius:10px; background:#fff; border:1px solid #eef4fb; }
-    .contact-grid { display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap; }
-    .contact-form { flex:1; min-width:260px; }
-    .contact-img { width:320px; border-radius:10px; overflow:hidden; flex-shrink:0; }
-    .contact-img img { width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:3/2; }
+    .contact{max-width:900px;margin:20px auto;padding:18px;border-radius:10px;background:#fff;border:1px solid #eef4fb}
+    .contact-grid{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+    .contact-form{flex:1;min-width:260px}
+    .contact-img{width:320px;border-radius:10px;overflow:hidden;flex-shrink:0}
+    .contact-img img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/2}
 
     /* Footer */
-    footer { border-top:1px solid #eef2f7; padding:18px; background:var(--bg); margin-top:18px; }
-    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; color:var(--muted); }
-    .footer-lang { display:flex; gap:8px; align-items:center; }
+    footer{border-top:1px solid #eef2f7;padding:18px;background:var(--bg);margin-top:18px}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--muted)}
+    .footer-lang{display:flex;gap:8px;align-items:center}
 
-    /* Mobile / responsive */
-    @media (max-width:1000px) {
-      .grid { grid-template-columns:1fr; }
-      .hero-right { width:48%; max-width:48%; }
-    }
-    @media (max-width:720px) {
-      .desktop-nav { display:none; }
-      .menu-btn { display:inline-block; }
-      .hero-inner { flex-direction:column; align-items:flex-start; gap:16px; }
-      .hero-right { width:100%; max-width:100%; }
-      .hero { min-height:360px; }
-      .card img { height:220px; }
-      .hero-left h1 { font-size:22px; }
-    }
+    @media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}.hero-right{width:40%}}
+    @media(max-width:720px){.desktop-nav{display:none}.menu-btn{display:inline-block}.hero-inner{flex-direction:column;align-items:flex-start;gap:16px}.hero-right{width:100%;max-width:100%}.hero{min-height:420px}.card .img-wrap{height:260px}.h1{font-size:22px}.grid{grid-template-columns:1fr}}
 
-    /* Mobile slide-in nav */
-    .mobile-nav {
-      display:none; position:fixed; top:0; right:0; height:100vh; width:300px; background:#fff; box-shadow:-8px 0 30px rgba(16,42,85,0.12); padding:18px; z-index:1400;
-      flex-direction:column;
-    }
-    .mobile-nav a { display:block; padding:12px 0; border-bottom:1px solid #f1f6fb; color:var(--navy); font-weight:700; text-decoration:none; }
-    .mobile-nav .close { align-self:flex-end; background:transparent; border:0; font-size:18px; cursor:pointer; }
-    .mobile-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.24); z-index:1300; }
-    .mobile-lang-group { margin-top:auto; padding-top:14px; border-top:1px solid #f1f6fb; display:flex; gap:8px; }
+    /* Mobile nav */
+    .mobile-nav{display:none;position:fixed;top:0;right:0;height:100vh;width:300px;background:#fff;box-shadow:-8px 0 30px rgba(16,42,85,0.12);padding:18px;z-index:1400;flex-direction:column}
+    .mobile-nav a{display:block;padding:12px 0;border-bottom:1px solid #f1f6fb;color:var(--navy);font-weight:700;text-decoration:none}
+    .mobile-nav .close{align-self:flex-end;background:transparent;border:0;font-size:18px;cursor:pointer}
+    .mobile-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.24);z-index:1300}
+    .mobile-lang-group{margin-top:auto;padding-top:14px;border-top:1px solid #f1f6fb;display:flex;gap:8px}
   </style>
 </head>
 <body>
@@ -143,18 +104,15 @@
     </div>
   </header>
 
-  <!-- Mobile nav/backdrop -->
   <div id="mobileBackdrop" class="mobile-backdrop" tabindex="-1" aria-hidden="true"></div>
   <nav id="mobileNav" class="mobile-nav" aria-hidden="true" aria-label="Mobile menu">
     <button class="close" id="closeMenu" aria-label="Close menu"><i class="fa fa-times" aria-hidden="true"></i></button>
-
     <div style="margin-top:8px">
       <a href="#services" onclick="closeMobileNav()">Services</a>
       <a href="#faq" onclick="closeMobileNav()">FAQ</a>
       <a href="#contact" onclick="closeMobileNav()">Contact</a>
       <a href="privacy.html" onclick="closeMobileNav()">Privacy</a>
     </div>
-
     <div class="mobile-lang-group" aria-label="Mobile language switch">
       <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
       <button class="lang-btn" data-lang="zh" onclick="switchLang('zh')">简体</button>
@@ -163,10 +121,9 @@
   </nav>
 
   <main>
-    <!-- Hero with background image -->
     <section class="hero" aria-label="Hero">
       <div class="hero-bg" aria-hidden="true">
-        <!-- background image file: airport.jpg -->
+        <!-- Use airport.jpg only -->
         <img src="airport.jpg" alt="Airport arrival background">
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
@@ -175,92 +132,57 @@
         <div class="hero-left">
           <div class="kicker" data-i18n="kicker">TRIP + HEALTH</div>
           <h1 data-i18n="hero_title">Already planning a trip to Japan? Come back healthier too.</h1>
-          <p class="lead" data-i18n="hero_lead">
-            JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.
-          </p>
-
+          <p class="lead" data-i18n="hero_lead">JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.</p>
           <div class="cta">
             <button class="btn primary" onclick="document.getElementById('contact').scrollIntoView()" data-i18n="btn_get_started">Get started</button>
             <button class="btn ghost" onclick="document.getElementById('services').scrollIntoView()" data-i18n="btn_learn_more">Learn more</button>
           </div>
         </div>
 
+        <!-- optional hero card kept but hidden on very small screens -->
         <div class="hero-right" aria-hidden="true">
-          <!-- foreground image: replaced with ningen_dock.jpg per your request (do not use lobby image here) -->
           <img src="ningen_dock.jpg" alt="Ningen Dock overview">
         </div>
       </div>
     </section>
 
-    <div class="two-birds" role="note">
-      <strong data-i18n="two_birds_bold">One trip, two gains:</strong>
-      <span data-i18n="two_birds_text">Enjoy Japan and take care of important health screenings or specialist visits while you’re there.</span>
-    </div>
+    <div class="two-birds" role="note"><strong data-i18n="two_birds_bold">One trip, two gains:</strong> <span data-i18n="two_birds_text">Enjoy Japan and take care of important health screenings or specialist visits while you’re there.</span></div>
 
-    <!-- Services -->
     <section id="services" class="services" aria-labelledby="services-heading">
       <h2 id="services-heading" data-i18n="services_title">Services</h2>
-
       <div class="grid" role="list">
         <article class="card" role="listitem" aria-labelledby="svc-ningen">
           <h3 id="svc-ningen" data-i18n="svc_ningen">Ningen Dock</h3>
-          <img src="ningen_dock.jpg" alt="Ningen Dock">
-          <p data-i18n="svc_ningen_p">
-            Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.
-          </p>
+          <div class="img-wrap"><img src="ningen_dock.jpg" alt="Ningen Dock"></div>
+          <p data-i18n="svc_ningen_p">Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.</p>
         </article>
 
         <article class="card" role="listitem" aria-labelledby="svc-pet">
           <h3 id="svc-pet" data-i18n="svc_pet">PET / Advanced Imaging</h3>
-          <img src="pet_scan_device.jpg" alt="PET scanner">
-          <p data-i18n="svc_pet_p">
-            Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.
-          </p>
+          <div class="img-wrap"><img src="pet_scan_device.jpg" alt="PET scanner"></div>
+          <p data-i18n="svc_pet_p">Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.</p>
         </article>
 
         <article class="card" role="listitem" aria-labelledby="svc-ortho">
           <h3 id="svc-ortho" data-i18n="svc_ortho">Orthopedic & Specialist Consultations</h3>
-          <img src="ortho_consult.jpg" alt="Orthopedic consultation">
-          <p data-i18n="svc_ortho_p">
-            Coordination of non-emergency specialist visits (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.
-          </p>
+          <div class="img-wrap"><img src="ortho_consult.jpg" alt="Orthopedic consultation"></div>
+          <p data-i18n="svc_ortho_p">Coordination of non-emergency specialist visits (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.</p>
         </article>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="faq" aria-labelledby="faq-heading">
       <h3 id="faq-heading" data-i18n="faq_title">FAQ</h3>
       <div class="last-updated" data-i18n="faq_last_updated">Last updated: 2026-07-24</div>
-
       <div>
-        <details style="margin-bottom:8px">
-          <summary><strong data-i18n="faq_q1">Do I need Japanese health insurance?</strong></summary>
-          <div style="padding:10px 6px;color:var(--muted)" data-i18n="faq_a1">
-            Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.
-          </div>
-        </details>
-
-        <details style="margin-bottom:8px">
-          <summary><strong data-i18n="faq_q2">Will JMC give medical advice?</strong></summary>
-          <div style="padding:10px 6px;color:var(--muted)" data-i18n="faq_a2">
-            No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.
-          </div>
-        </details>
-
-        <details style="margin-bottom:8px">
-          <summary><strong data-i18n="faq_q3">Can my local doctor refer a patient?</strong></summary>
-          <div style="padding:10px 6px;color:var(--muted)" data-i18n="faq_a3">
-            We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.
-          </div>
-        </details>
+        <details style="margin-bottom:8px"><summary><strong data-i18n="faq_q1">Do I need Japanese health insurance?</strong></summary><div style="padding:10px 6px;color:var(--muted)" data-i18n="faq_a1">Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.</div></details>
+        <details style="margin-bottom:8px"><summary><strong data-i18n="faq_q2">Will JMC give medical advice?</strong></summary><div style="padding:10px 6px;color:var(--muted)" data-i18n="faq_a2">No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.</div></details>
+        <details style="margin-bottom:8px"><summary><strong data-i18n="faq_q3">Can my local doctor refer a patient?</strong></summary><div style="padding:10px 6px;color:var(--muted)" data-i18n="faq_a3">We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.</div></details>
       </div>
     </section>
 
-    <!-- Contact / Intake -->
     <section id="contact" class="contact" aria-labelledby="contact-heading">
       <h3 id="contact-heading" data-i18n="contact_title">Contact & Intake</h3>
-
       <div class="contact-grid">
         <form id="contactForm" class="contact-form" onsubmit="return handleSubmit(event)" novalidate>
           <label data-i18n="label_name">Full name <span style="color:#c0392b">*</span></label><br>
@@ -287,15 +209,10 @@
             <button type="reset" class="btn" style="background:#f6f8fa;border:1px solid #eef4fb">Reset</button>
           </div>
 
-          <p style="color:var(--muted);font-size:13px;margin-top:8px" data-i18n="consent">
-            By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.
-          </p>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px" data-i18n="consent">By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.</p>
         </form>
 
-        <div class="contact-img" aria-hidden="true">
-          <!-- contact image remains the lobby photo as requested for contact -->
-          <img src="jmc_coordination_lobby.jpg" alt="JMC coordination lobby">
-        </div>
+        <div class="contact-img" aria-hidden="true"><img src="jmc_coordination_lobby.jpg" alt="JMC coordination lobby"></div>
       </div>
     </section>
   </main>
@@ -318,162 +235,26 @@
   </footer>
 
   <script>
-    /* ---------- Mobile nav ---------- */
     const mobileNav = document.getElementById('mobileNav');
     const mobileBackdrop = document.getElementById('mobileBackdrop');
     document.getElementById('openMenu').addEventListener('click', openMobileNav);
     document.getElementById('closeMenu').addEventListener('click', closeMobileNav);
     mobileBackdrop.addEventListener('click', closeMobileNav);
+    function openMobileNav(){mobileNav.style.display='flex';mobileBackdrop.style.display='block';mobileNav.setAttribute('aria-hidden','false');mobileBackdrop.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closeMobileNav(){mobileNav.style.display='none';mobileBackdrop.style.display='none';mobileNav.setAttribute('aria-hidden','true');mobileBackdrop.setAttribute('aria-hidden','true');document.body.style.overflow='auto'}
+    function closeMobileNavOnLink(){closeMobileNav()} 
+    window.closeMobileNav=closeMobileNavOnLink;
 
-    function openMobileNav(){
-      mobileNav.style.display = 'flex';
-      mobileBackdrop.style.display = 'block';
-      mobileNav.setAttribute('aria-hidden', 'false');
-      mobileBackdrop.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+    const i18n={en:{nav_services:'Services',nav_faq:'FAQ',nav_contact:'Contact',nav_privacy:'Privacy',kicker:'TRIP + HEALTH',hero_title:'Already planning a trip to Japan? Come back healthier too.',hero_lead:'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.',btn_get_started:'Get started',btn_learn_more:'Learn more',two_birds_bold:'One trip, two gains:',two_birds_text:'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.',services_title:'Services',svc_ningen:'Ningen Dock',svc_ningen_p:'Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.',svc_pet:'PET / Advanced Imaging',svc_pet_p:'Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.',svc_ortho:'Orthopedic & Specialist Consultations',svc_ortho_p:'Coordination of non-emergency specialist visits (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.',faq_title:'FAQ',faq_last_updated:'Last updated: 2026-07-24',faq_q1:'Do I need Japanese health insurance?',faq_a1:'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.',faq_q2:'Will JMC give medical advice?',faq_a2:'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.',faq_q3:'Can my local doctor refer a patient?',faq_a3:'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.',contact_title:'Contact & Intake',label_name:'Full name',label_email:'Email',label_service:'I am interested in (check all that apply)',opt_1:'Ningen Dock (screening)',opt_2:'PET / Imaging',opt_3:'Orthopedic / Specialist',opt_4:'Trip + Health package',label_message:'Brief message / dates in Japan',btn_submit:'Send inquiry',consent:'By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.',non_clinical_tag:'Non-clinical coordination service'},zh:{nav_services:'服务项目',nav_faq:'常见问题',nav_contact:'联络',nav_privacy:'隐私',kicker:'旅行 + 健康',hero_title:'已在计划去日本吗？顺便把健康也照顾好。',hero_lead:'JMC 为您在日本行程中安排体检与专家就诊的协调服务 — 包括行程配合、翻译与本地支援。',btn_get_started:'开始咨询',btn_learn_more:'了解更多',two_birds_bold:'一程两得：',two_birds_text:'享受日本旅行，同时完成重要的体检或专科就诊。',services_title:'服务项目',svc_ningen:'人間ドック',svc_ningen_p:'为早期发现与健康维持设计的综合体检，可为多日或单日安排。典型项目包含血液与尿液检验、心电图、胸部X光、腹部超声、肝功能检测与医师会诊。可选加项：高级血液项目、肿瘤标志物与专科会诊。我们安排符合您的行程并协助翻译与报告交付。',svc_pet:'PET / 高端影像',svc_pet_p:'安排 PET-CT、MRI 等高级影像，通常比当地等待时间更快。我们处理检查前须知、影像预约、并协助取得影像与正式报告的电子拷贝。',svc_ortho:'骨科与专科就诊',svc_ortho_p:'协调非紧急专科就诊（骨科、耳鼻喉、皮肤科等），整理既有影像与病历、安排口译协助，并在有建议的后续处置或治疗时继续跟进。',faq_title:'常见问题',faq_last_updated:'最後更新：2026-07-24',faq_q1:'需要日本健康保险吗？',faq_a1:'大多数旅客体检或专科就诊为自费。如您持有日本国民健康保险，请告知，我们会协助确认。',faq_q2:'JMC 会提供医疗建议吗？',faq_a2:'不会。JMC 是非临床协调方。日本的医院与医师负责审阅与医疗决策。',faq_q3:'我的本地医生可以转介病人吗？',faq_a3:'请将此视为对病人的资讯选项；避免使用商业转介或分润等字眼。若病人愿意继续，其会直接联系 JMC。',contact_title:'联系与登记',label_name:'姓名',label_email:'电子邮件',label_service:'希望咨询的服务',opt_1:'人間ドック（体检）',opt_2:'PET / 影像',opt_3:'骨科 / 专科',opt_4:'旅行 + 健康 套装',label_message:'简短留言 / 在日日期',btn_submit:'发送咨询',consent:'提交后您同意 JMC 就本次咨询与您联络。我们不提供医疗建议。',non_clinical_tag:'非临床协调服务'},jp:{nav_services:'サービス',nav_faq:'よくある質問',nav_contact:'お問い合わせ',nav_privacy:'プライバシー',kicker:'TRIP + HEALTH',hero_title:'日本へのご旅行を予定していますか？帰国時にはより健康に。',hero_lead:'JMC は滞在中の健診や専門医受診を行程に合わせて調整する非臨床のコーディネートサービスです（通訳・日程調整・報告書受領のサポート）。',btn_get_started:'相談を始める',btn_learn_more:'詳しく見る',two_birds_bold:'一度の旅で二つ得る：',two_birds_text:'日本を楽しみながら、必要な健診や専門受診を済ませましょう。',services_title:'サービス',svc_ningen:'人間ドック',svc_ningen_p:'早期発見・健康管理のための総合健診（1日または複数日）の手配。通常項目：採血・尿検査、心電図、胸部X線、腹部超音波、肝機能検査、医師による所見。オプション：高度血液検査、腫瘍マーカー、専門医の追加診察。旅行日程に合わせて調整し、翻訳と報告書の受け取りをサポートします。',svc_pet:'PET / 高度画像検査',svc_pet_p:'PET-CT、MRI などの高度画像検査を迅速に手配します。事前指示、検査予約、画像・報告書の電子データ入手をサポートします。',svc_ortho:'整形外科・専門診療',svc_ortho_p:'非緊急の専門診療（整形外科、耳鼻咽喉科、皮膚科等）を滞在中に手配。既往の画像・病歴を収集し、通訳付きの診察をアレンジ、必要な後続対応のフォローを行います。',faq_title:'よくある質問',faq_last_updated:'最終更新：2026-07-24',faq_q1:'日本の健康保険は必要ですか？',faq_a1:'多くの場合、健診や専門受診は全額自己負担です。日本の国民健康保険をお持ちの場合はお知らせください。対応可否を確認します。',faq_q2:'JMC は医療アドバイスをしますか？',faq_a2:'いいえ。JMC は非臨床のコーディネーターです。医療的判断は日本の医師・病院が行います。',faq_q3:'現地の医師から紹介できますか？',faq_a3:'紹介を目的とした商業的な表現は避け、情報提供の選択肢として扱っていただくようお願いします。患者様が希望する場合は患者様ご本人が JMC に直接ご連絡ください。',contact_title:'お問い合わせ・受付',label_name:'氏名',label_email:'メール',label_service:'ご希望のサービス',opt_1:'人間ドック（検診）',opt_2:'PET / 画像検査',opt_3:'整形外科 / 専門',opt_4:'旅行 + 健康 パッケージ',label_message:'簡単なメッセージ / 滞在日程',btn_submit:'送信する',consent:'送信により、JMC がこのお問い合わせにつきご連絡することに同意したものとみなします。医療アドバイスは行いません。',non_clinical_tag:'非臨床のコーディネーションサービス'}};
+    let currentLang='en';
+    function switchLang(lang){if(!i18n[lang])lang='en';currentLang=lang;document.documentElement.lang=(lang==='jp')?'ja':(lang==='zh'?'zh':'en');document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(i18n[lang][key]!==undefined)el.textContent=i18n[lang][key]});document.querySelectorAll('.lang-btn').forEach(btn=>{btn.classList.toggle('active',btn.getAttribute('data-lang')===lang||btn.id===(lang+'Btn'))});['enBtn','zhBtn','jpBtn'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.toggle('active',el.getAttribute('data-lang')===lang)});
     }
-    function closeMobileNav(){
-      mobileNav.style.display = 'none';
-      mobileBackdrop.style.display = 'none';
-      mobileNav.setAttribute('aria-hidden', 'true');
-      mobileBackdrop.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = 'auto';
-    }
-    function closeMobileNavOnLink(){
-      // used inline via onclick attributes on mobile links
-      closeMobileNav();
-    }
-    window.closeMobileNav = closeMobileNavOnLink;
-
-    /* ---------- i18n data (fallback translations included) ---------- */
-    const i18n = {
-      en: {
-        nav_services: 'Services', nav_faq: 'FAQ', nav_contact: 'Contact', nav_privacy: 'Privacy',
-        kicker: 'TRIP + HEALTH', hero_title: 'Already planning a trip to Japan? Come back healthier too.',
-        hero_lead: 'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.',
-        btn_get_started: 'Get started', btn_learn_more: 'Learn more', two_birds_bold: 'One trip, two gains:',
-        two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.',
-        services_title: 'Services',
-        svc_ningen: 'Ningen Dock', svc_ningen_p: 'Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.',
-        svc_pet: 'PET / Advanced Imaging', svc_pet_p: 'Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.',
-        svc_ortho: 'Orthopedic & Specialist Consultations', svc_ortho_p: 'Coordination of non-emergency specialist visits (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.',
-        faq_title: 'FAQ', faq_last_updated: 'Last updated: 2026-07-24',
-        faq_q1: 'Do I need Japanese health insurance?', faq_a1: 'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.',
-        faq_q2: 'Will JMC give medical advice?', faq_a2: 'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.',
-        faq_q3: 'Can my local doctor refer a patient?', faq_a3: 'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.',
-        contact_title: 'Contact & Intake', label_name: 'Full name', label_email: 'Email', label_service: 'I am interested in (check all that apply)',
-        opt_1: 'Ningen Dock (screening)', opt_2: 'PET / Imaging', opt_3: 'Orthopedic / Specialist', opt_4: 'Trip + Health package',
-        label_message: 'Brief message / dates in Japan', btn_submit: 'Send inquiry', consent: 'By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.',
-        non_clinical_tag: 'Non-clinical coordination service'
-      },
-      zh: {
-        nav_services: '服务项目', nav_faq: '常见问题', nav_contact: '联络', nav_privacy: '隐私',
-        kicker: '旅行 + 健康', hero_title: '已在计划去日本吗？顺便把健康也照顾好。',
-        hero_lead: 'JMC 为您在日本行程中安排体检与专家就诊的协调服务 — 包括行程配合、翻译与本地支援。',
-        btn_get_started: '开始咨询', btn_learn_more: '了解更多', two_birds_bold: '一程两得：',
-        two_birds_text: '享受日本旅行，同时完成重要的体检或专科就诊。',
-        services_title: '服务项目',
-        svc_ningen: '人間ドック', svc_ningen_p: '为早期发现与健康维持设计的综合体检，可为多日或单日安排。典型项目包含血液与尿液检验、心电图、胸部X光、腹部超声、肝功能检测与医师会诊。可选加项：高级血液项目、肿瘤标志物与专科会诊。我们安排符合您的行程并协助翻译与报告交付。',
-        svc_pet: 'PET / 高端影像', svc_pet_p: '安排 PET-CT、MRI 等高级影像，通常比当地等待时间更快。我们处理检查前须知、影像预约、并协助取得影像与正式报告的电子拷贝。',
-        svc_ortho: '骨科与专科就诊', svc_ortho_p: '协调非紧急专科就诊（骨科、耳鼻喉、皮肤科等），整理既有影像与病历、安排口译协助，并在有建议的后续处置或治疗时继续跟进。',
-        faq_title: '常见问题', faq_last_updated: '最後更新：2026-07-24',
-        faq_q1: '需要日本健康保险吗？', faq_a1: '大多数旅客体检或专科就诊为自费。如您持有日本国民健康保险，请告知，我们会协助确认。',
-        faq_q2: 'JMC 会提供医疗建议吗？', faq_a2: '不会。JMC 是非临床协调方。日本的医院与医师负责审阅与医疗决策。',
-        faq_q3: '我的本地医生可以转介病人吗？', faq_a3: '请将此视为对病人的资讯选项；避免使用商业转介或分润等字眼。若病人愿意继续，其会直接联系 JMC。',
-        contact_title: '联系与登记', label_name: '姓名', label_email: '电子邮件', label_service: '希望咨询的服务',
-        opt_1: '人間ドック（体检）', opt_2: 'PET / 影像', opt_3: '骨科 / 专科', opt_4: '旅行 + 健康 套装',
-        label_message: '简短留言 / 在日日期', btn_submit: '发送咨询', consent: '提交后您同意 JMC 就本次咨询与您联络。我们不提供医疗建议。',
-        non_clinical_tag: '非临床协调服务'
-      },
-      jp: {
-        nav_services: 'サービス', nav_faq: 'よくある質問', nav_contact: 'お問い合わせ', nav_privacy: 'プライバシー',
-        kicker: 'TRIP + HEALTH', hero_title: '日本へのご旅行を予定していますか？帰国時にはより健康に。',
-        hero_lead: 'JMC は滞在中の健診や専門医受診を行程に合わせて調整する非臨床のコーディネートサービスです（通訳・日程調整・報告書受領のサポート）。',
-        btn_get_started: '相談を始める', btn_learn_more: '詳しく見る', two_birds_bold: '一度の旅で二つ得る：',
-        two_birds_text: '日本を楽しみながら、必要な健診や専門受診を済ませましょう。',
-        services_title: 'サービス',
-        svc_ningen: '人間ドック', svc_ningen_p: '早期発見・健康管理のための総合健診（1日または複数日）の手配。通常項目：採血・尿検査、心電図、胸部X線、腹部超音波、肝機能検査、医師による所見。オプション：高度血液検査、腫瘍マーカー、専門医の追加診察。旅行日程に合わせて調整し、翻訳と報告書の受け取りをサポートします。',
-        svc_pet: 'PET / 高度画像検査', svc_pet_p: 'PET-CT、MRI などの高度画像検査を迅速に手配します。事前指示、検査予約、画像・報告書の電子データ入手をサポートします。',
-        svc_ortho: '整形外科・専門診療', svc_ortho_p: '非緊急の専門診療（整形外科、耳鼻咽喉科、皮膚科等）を滞在中に手配。既往の画像・病歴を収集し、通訳付きの診察をアレンジ、必要な後続対応のフォローを行います。',
-        faq_title: 'よくある質問', faq_last_updated: '最終更新：2026-07-24',
-        faq_q1: '日本の健康保険は必要ですか？', faq_a1: '多くの場合、健診や専門受診は全額自己負担です。日本の国民健康保険をお持ちの場合はお知らせください。対応可否を確認します。',
-        faq_q2: 'JMC は医療アドバイスをしますか？', faq_a2: 'いいえ。JMC は非臨床のコーディネーターです。医療的判断は日本の医師・病院が行います。',
-        faq_q3: '現地の医師から紹介できますか？', faq_a3: '紹介を目的とした商業的な表現は避け、情報提供の選択肢として扱っていただくようお願いします。患者様が希望する場合は患者様ご本人が JMC に直接ご連絡ください。',
-        contact_title: 'お問い合わせ・受付', label_name: '氏名', label_email: 'メール', label_service: 'ご希望のサービス',
-        opt_1: '人間ドック（検診）', opt_2: 'PET / 画像検査', opt_3: '整形外科 / 専門', opt_4: '旅行 + 健康 パッケージ',
-        label_message: '簡単なメッセージ / 滞在日程', btn_submit: '送信する', consent: '送信により、JMC がこのお問い合わせにつきご連絡することに同意したものとみなします。医療アドバイスは行いません。',
-        non_clinical_tag: '非臨床のコーディネーションサービス'
-      }
-    };
-
-    /* ---------- language switching ---------- */
-    let currentLang = 'en';
-
-    function switchLang(lang){
-      if(!i18n[lang]) lang = 'en';
-      currentLang = lang;
-      // set document language attribute
-      document.documentElement.lang = (lang === 'jp') ? 'ja' : (lang === 'zh' ? 'zh' : 'en');
-
-      // populate all elements with data-i18n
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if(i18n[lang][key] !== undefined) {
-          el.textContent = i18n[lang][key];
-        }
-      });
-
-      // update active states for all language buttons (header, mobile, footer)
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang || btn.id === (lang + 'Btn'));
-      });
-      // ensure header-specific buttons reflect active state too
-      ['enBtn','zhBtn','jpBtn'].forEach(id => {
-        const el = document.getElementById(id);
-        if(el) el.classList.toggle('active', el.getAttribute('data-lang') === lang);
-      });
-    }
-
-    // Wire header language buttons (they carry ids and data-lang)
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      // header buttons have ids, mobile/footer buttons call switchLang inline; ensure all work
-      if(!btn.onclick) {
-        btn.addEventListener('click', () => switchLang(btn.getAttribute('data-lang')));
-      }
-    });
-
-    // initialize UI language
+    document.querySelectorAll('.lang-btn').forEach(btn=>{if(!btn.onclick){btn.addEventListener('click',()=>switchLang(btn.getAttribute('data-lang')))}});
     switchLang('en');
 
-    /* ---------- contact form validation/submit (demo) ---------- */
-    function validateForm(nameVal, emailVal) {
-      let isValid = true;
-      const nameError = document.getElementById('nameError');
-      const emailError = document.getElementById('emailError');
-      if(!nameVal) { nameError.style.display = 'block'; isValid = false; } else { nameError.style.display = 'none'; }
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if(!emailVal || !emailPattern.test(emailVal)) { emailError.style.display = 'block'; isValid = false; } else { emailError.style.display = 'none'; }
-      return isValid;
-    }
-
-    function handleSubmit(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      if(!validateForm(name, email)) return false;
-
-      // This is a demo placeholder — replace with your real submission endpoint.
-      alert((i18n[currentLang] && i18n[currentLang].btn_submit ? i18n[currentLang].btn_submit : 'Send inquiry') + ' — demo');
-      e.target.reset();
-      return false;
-    }
-
-    /* Accessibility: close mobile nav with Escape */
-    document.addEventListener('keydown', (ev) => {
-      if(ev.key === 'Escape') {
-        closeMobileNav();
-      }
-    });
+    function validateForm(nameVal,emailVal){let isValid=true;const nameError=document.getElementById('nameError');const emailError=document.getElementById('emailError');if(!nameVal){nameError.style.display='block';isValid=false}else{nameError.style.display='none'}const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!emailVal||!emailPattern.test(emailVal)){emailError.style.display='block';isValid=false}else{emailError.style.display='none'}return isValid}
+    function handleSubmit(e){e.preventDefault();const name=document.getElementById('name').value.trim();const email=document.getElementById('email').value.trim();if(!validateForm(name,email))return false;alert((i18n[currentLang]&&i18n[currentLang].btn_submit?i18n[currentLang].btn_submit:'Send inquiry')+' — demo');e.target.reset();return false}
+    document.addEventListener('keydown',ev=>{if(ev.key==='Escape'){closeMobileNav()}});
   </script>
 </body>
 </html>
