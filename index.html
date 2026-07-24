@@ -164,38 +164,11 @@
       </div>
     </section>
 
+    <!-- FAQ: localized content only for this section; rest of page unchanged -->
     <section id="faq" class="faq" aria-labelledby="faq-heading">
       <h3 id="faq-heading" data-i18n="faq_title">FAQ</h3>
-      <div class="list">
-        <details>
-          <summary>[Q] Do I need Japanese health insurance?</summary>
-          <div style="padding-top:8px;color:var(--muted)">Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, tell us and we'll advise on coverage and billing implications.</div>
-        </details>
-
-        <details>
-          <summary>[Q] Will JMC provide medical advice or diagnoses?</summary>
-          <div style="padding-top:8px;color:var(--muted)">No. JMC is a non-clinical coordinator. Japanese hospitals and physicians review medical records and make clinical decisions. JMC supports logistics, translation, appointment booking, and report delivery only.</div>
-        </details>
-
-        <details>
-          <summary>[Q] How long before my trip should I contact JMC?</summary>
-          <div style="padding-top:8px;color:var(--muted)">For routine ningen dock screenings, contact us 4–8 weeks before travel. For specialist consultations or imaging (PET, MRI), contact us as early as 8–12 weeks to secure preferred appointment times.</div>
-        </details>
-
-        <details>
-          <summary>[Q] What documents do I need to prepare?</summary>
-          <div style="padding-top:8px;color:var(--muted)">Bring any recent medical records, imaging (CD or digital files), medication lists, and your passport. We can assist with secure electronic transfer of records to Japanese hospitals when needed.</div>
-        </details>
-
-        <details>
-          <summary>[Q] Are interpreter services provided?</summary>
-          <div style="padding-top:8px;color:var(--muted)">Yes. We provide interpreter support (Japanese-English-Chinese) for appointments and report explanations when requested.</div>
-        </details>
-
-        <details>
-          <summary>[Q] Can local Canadian doctors refer patients through JMC?</summary>
-          <div style="padding-top:8px;color:var(--muted)">We ask local clinicians to present JMC as an informational option to patients rather than as a commercial referral. Patients should contact JMC directly if they want assistance—this avoids regulatory and liability concerns.</div>
-        </details>
+      <div class="list" id="faq-list">
+        <!-- items will be populated by localized FAQ data -->
       </div>
     </section>
 
@@ -245,6 +218,7 @@
   </footer>
 
   <script>
+    /* Mobile nav open / close */
     const mobileNav = document.getElementById('mobileNav');
     const mobileBackdrop = document.getElementById('mobileBackdrop');
     document.getElementById('openMenu').addEventListener('click', openMobileNav);
@@ -255,13 +229,117 @@
     function closeMobileNavOnLink(){closeMobileNav()} 
     window.closeMobileNav=closeMobileNavOnLink;
 
-    const i18n={en:{nav_services:'Services',nav_faq:'FAQ',nav_contact:'Contact',nav_privacy:'Privacy',kicker:'TRIP + HEALTH',hero_title:'Already planning a trip to Japan? Come back healthier too.',hero_lead:'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.',btn_get_started:'Get started',btn_learn_more:'Learn more',two_birds_bold:'One trip, two gains:',two_birds_text:'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.',services_title:'Services',svc_ningen:'Ningen Dock',svc_ningen_p:'Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.',svc_pet:'PET / Advanced Imaging',svc_pet_p:'Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.',svc_ortho:'Orthopedic & Specialist Consultations',svc_ortho_p:'Coordination of non-emergency specialist visits (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.',faq_title:'FAQ',faq_last_updated:'Last updated: 2026-07-24',faq_q1:'Do I need Japanese health insurance?',faq_a1:'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.',faq_q2:'Will JMC give medical advice?',faq_a2:'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.',contact_title:'Contact & Intake',label_name:'Full name',label_email:'Email',label_service:'I am interested in (check all that apply)',opt_1:'Ningen Dock (screening)',opt_2:'PET / Imaging',opt_3:'Orthopedic / Specialist',opt_4:'Trip + Health package',label_message:'Brief message / dates in Japan',btn_submit:'Send inquiry',consent:'By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.',non_clinical_tag:'Non-clinical coordination service'},zh:{nav_services:'服务',nav_faq:'常见问题',nav_contact:'联系',nav_privacy:'隐私',kicker:'旅行＋健康',hero_title:'已经计划去日本旅行？顺便把健康检查安排上吧。',hero_lead:'JMC 协调与您日本行程相配的健康筛查与专家会诊 — 行程安排、翻译与当地支持一应俱全。',btn_get_started:'开始咨询',btn_learn_more:'了解更多',two_birds_bold:'一趟旅行，两项收获：',two_birds_text:'在日本旅行的同时完成重要的健康筛查或专家就诊。',services_title:'服务',svc_ningen:'人間ドック / 健康体检',svc_ningen_p:'提供单日或多日的全面健康体检（人間ドック），涵盖血液与尿液检查、心电图、胸片、腹部超声、肝功能等。可选项目包括高级血项、肿瘤标志物与专科会诊。我们按您的行程安排检查时间并提供翻译与报告交付支持。',svc_pet:'PET / 高级影像',svc_pet_p:'安排 PET-CT、MRI 等高级影像检查，通常比国内等待时间更短。我们负责术前说明、影像会诊协调，并协助获取影像与正式报告的电子版。',svc_ortho:'骨科与专科会诊',svc_ortho_p:'协调非紧急的专科门诊（骨科、耳鼻喉、皮肤科等）。我们整理既往影像与病历，安排翻译支持的会诊，并在需要进一步治疗时跟进后续流程。',faq_title:'常见问题',faq_last_updated:'更新日期: 2026-07-24',faq_q1:'我需要日本健康保险吗？',faq_a1:'大多数旅客自费支付筛查与专科门诊费用。如持有日本国民健康保险，请告知，我们会提供相应建议。',faq_q2:'JMC 会提供医疗建议吗？',faq_a2:'不会。JMC 是非临床协调服务；日本的医院与医生会审阅病历并作出医疗决定。',contact_title:'联系与咨询',label_name:'姓名',label_email:'电子邮件',label_service:'我对以下服务感兴趣（可多选）',opt_1:'人間ドック（体检）',opt_2:'PET / 影像',opt_3:'骨科 / 专科',opt_4:'旅行＋健康 套餐',label_message:'简短信息 / 在日日期',btn_submit:'发送咨询',consent:'提交即表示您同意 JMC 就此咨询与您联系。我们不提供医疗建议。',non_clinical_tag:'非临床协调服务'},jp:{nav_services:'サービス',nav_faq:'よくある質問',nav_contact:'お問い合わせ',nav_privacy:'プライバシー',kicker:'TRIP + HEALTH',hero_title:'日本旅行の予定がありますか？ 帰国時に健康も整えましょう。',hero_lead:'JMCは日本での行程に合わせた健康診断や専門医受診の手配を行います — ロジスティクス、通訳、現地サポートを提供します。',btn_get_started:'始める',btn_learn_more:'詳細を見る',two_birds_bold:'一度の旅で二つの得：',two_birds_text:'日本滞在中に重要な健康診断や専門医の受診を行いましょう。',services_title:'サービス',svc_ningen:'人間ドック',svc_ningen_p:'日帰りまたは複数日にわたる包括的な人間ドックを提供します。一般的な項目：血液・尿検査、心電図、胸部X線、腹部超音波、肝機能検査、医師の診察など。オプションで高度血液検査や腫瘍マーカー、専門医受診も可能です。旅行日程に合わせて調整し、通訳と報告書受渡しをサポートします。',svc_pet:'PET / 高度画像診断',svc_pet_p:'PET-CT、MRIなどの高度画像検査を手配します。国内より早い予約が可能な場合があります。検査前説明、画像診断医との相談、検査画像・報告書の電子版取得を支援します。',svc_ortho:'整形外科・専門診療',svc_ortho_p:'非緊急の専門外来（整形外科、耳鼻咽喉科、皮膚科等）を調整します。既往の画像や診療記録を整理し、通訳付きの受診を手配。治療や処置が推奨された場合の次の手続きもフォローします。',faq_title:'よくある質問',faq_last_updated:'最終更新日: 2026-07-24',faq_q1:'日本の健康保険は必要ですか？',faq_a1:'多くの旅行者は検査や専門外来を自費で受けます。日本の国民健康保険をお持ちの場合はお知らせください。対応を案内します。',faq_q2:'JMCは医療アドバイスをしますか？',faq_a2:'いいえ。JMCは非臨床のコーディネーターです。診療は日本の医師・病院が判断します。',contact_title:'お問い合わせ',label_name:'お名前',label_email:'メールアドレス',label_service:'興味のあるサービス（複数選択可）',opt_1:'人間ドック（健診）',opt_2:'PET / 画像検査',opt_3:'整形外科 / 専門診療',opt_4:'旅行＋健康パッケージ',label_message:'簡単なご希望・日本滞在日程',btn_submit:'送信',consent:'送信により、本件に関してJMCがご連絡することに同意したものとみなします。医療アドバイスは行いません。',non_clinical_tag:'非臨床のコーディネートサービス'}};
+    /* --- i18n object (unchanged except FAQ content localized below) --- */
+    const i18n = {
+      en: {
+        nav_services: 'Services', nav_faq: 'FAQ', nav_contact: 'Contact', nav_privacy: 'Privacy',
+        kicker: 'TRIP + HEALTH',
+        hero_title: 'Already planning a trip to Japan? Come back healthier too.',
+        hero_lead: 'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.',
+        btn_get_started: 'Get started', btn_learn_more: 'Learn more',
+        two_birds_bold: 'One trip, two gains:', two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.',
+        services_title: 'Services',
+        svc_ningen: 'Ningen Dock', svc_ningen_p: 'Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.',
+        svc_pet: 'PET / Advanced Imaging', svc_pet_p: 'Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.',
+        svc_ortho: 'Orthopedic & Specialist Consultations', svc_ortho_p: 'Coordination of non-emergency specialist visits (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.',
+        contact_title: 'Contact & Intake', label_name: 'Full name', label_email: 'Email', label_service: 'I am interested in (check all that apply)',
+        opt_1: 'Ningen Dock (screening)', opt_2: 'PET / Imaging', opt_3: 'Orthopedic / Specialist', opt_4: 'Trip + Health package',
+        label_message: 'Brief message / dates in Japan', btn_submit: 'Send inquiry',
+        consent: 'By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.',
+        non_clinical_tag: 'Non-clinical coordination service'
+      },
+      zh: {
+        nav_services: '服务', nav_faq: '常见问题', nav_contact: '联系', nav_privacy: '隐私',
+        kicker: '旅行＋健康',
+        hero_title: '已经计划去日本旅行？顺便把健康检查安排上吧。',
+        hero_lead: 'JMC 协调与您日本行程相配的健康筛查与专家会诊 — 行程安排、翻译与当地支持一应俱全。',
+        btn_get_started: '开始咨询', btn_learn_more: '了解更多',
+        two_birds_bold: '一趟旅行，两项收获：', two_birds_text: '在日本旅行的同时完成重要的健康筛查或专家就诊。',
+        services_title: '服务',
+        svc_ningen: '人間ドック / 健康体检', svc_ningen_p: '提供单日或多日的全面健康体检（人間ドック），涵盖血液与尿液检查、心电图、胸片、腹部超声、肝功能等。可选项目包括高级血项、肿瘤标志物与专科会诊。我们按您的行程安排检查时间并提供翻译与报告交付支持。',
+        svc_pet: 'PET / 高级影像', svc_pet_p: '安排 PET-CT、MRI 等高级影像检查，通常比国内等待时间更短。我们负责术前说明、影像会诊协调，并协助获取影像与正式报告的电子版。',
+        svc_ortho: '骨科与专科会诊', svc_ortho_p: '协调非紧急的专科门诊（骨科、耳鼻喉、皮肤科等）。我们整理既往影像与病历，安排翻译支持的会诊，并在需要进一步治疗时跟进后续流程。',
+        contact_title: '联系与咨询', label_name: '姓名', label_email: '电子邮件', label_service: '我对以下服务感兴趣（可多选）',
+        opt_1: '人間ドック（体检）', opt_2: 'PET / 影像', opt_3: '骨科 / 专科', opt_4: '旅行＋健康 套餐',
+        label_message: '简短信息 / 在日日期', btn_submit: '发送咨询',
+        consent: '提交即表示您同意 JMC 就此咨询与您联系。我们不提供医疗建议。',
+        non_clinical_tag: '非临床协调服务'
+      },
+      jp: {
+        nav_services: 'サービス', nav_faq: 'よくある質問', nav_contact: 'お問い合わせ', nav_privacy: 'プライバシー',
+        kicker: 'TRIP + HEALTH',
+        hero_title: '日本旅行の予定がありますか？ 帰国時に健康も整えましょう。',
+        hero_lead: 'JMCは日本での行程に合わせた健康診断や専門医受診の手配を行います — ロジスティクス、通訳、現地サポートを提供します。',
+        btn_get_started: '始める', btn_learn_more: '詳細を見る',
+        two_birds_bold: '一度の旅で二つの得：', two_birds_text: '日本滞在中に重要な健康診断や専門医の受診を行いましょう。',
+        services_title: 'サービス',
+        svc_ningen: '人間ドック', svc_ningen_p: '日帰りまたは複数日にわたる包括的な人間ドックを提供します。一般的な項目：血液・尿検査、心電図、胸部X線、腹部超音波、肝機能検査、医師の診察など。オプションで高度血液検査や腫瘍マーカー、専門医受診も可能です。旅行日程に合わせて調整し、通訳と報告書受渡しをサポートします。',
+        svc_pet: 'PET / 高度画像診断', svc_pet_p: 'PET-CT、MRIなどの高度画像検査を手配します。国内より早い予約が可能な場合があります。検査前説明、画像診断医との相談、検査画像・報告書の電子版取得を支援します。',
+        svc_ortho: '整形外科・専門診療', svc_ortho_p: '非緊急の専門外来（整形外科、耳鼻咽喉科、皮膚科等）を調整します。既往の画像や診療記録を整理し、通訳付きの受診を手配。治療や処置が推奨された場合の次の手続きもフォローします。',
+        contact_title: 'お問い合わせ', label_name: 'お名前', label_email: 'メールアドレス', label_service: '興味のあるサービス（複数選択可）',
+        opt_1: '人間ドック（健診）', opt_2: 'PET / 画像検査', opt_3: '整形外科 / 専門診療', opt_4: '旅行＋健康パッケージ',
+        label_message: '簡単なご希望・日本滞在日程', btn_submit: '送信',
+        consent: '送信により、本件に関してJMCがご連絡することに同意したものとみなします。医療アドバイスは行いません。',
+        non_clinical_tag: '非臨床のコーディネートサービス'
+      }
+    };
 
+    /* Localized FAQ content: only FAQ entries handled here */
+    const localizedFaq = {
+      en: [
+        {q: 'Do I need Japanese health insurance?', a: 'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, tell us and we\'ll advise on coverage and billing implications.'},
+        {q: 'Will JMC provide medical advice or diagnoses?', a: 'No. JMC is a non-clinical coordinator. Japanese hospitals and physicians review medical records and make clinical decisions. JMC supports logistics, translation, appointment booking, and report delivery only.'},
+        {q: 'How long before my trip should I contact JMC?', a: 'For routine ningen dock screenings, contact us 4–8 weeks before travel. For specialist consultations or imaging (PET, MRI), contact us as early as 8–12 weeks to secure preferred appointment times.'},
+        {q: 'What documents do I need to prepare?', a: 'Bring any recent medical records, imaging (CD or digital files), medication lists, and your passport. We can assist with secure electronic transfer of records to Japanese hospitals when needed.'},
+        {q: 'Are interpreter services provided?', a: 'Yes. We provide interpreter support (Japanese-English-Chinese) for appointments and report explanations when requested.'},
+        {q: 'Can local Canadian doctors provide informational referrals?', a: 'We ask local clinicians to present JMC as an informational option to patients rather than as a commercial referral. Patients should contact JMC directly if they want assistance.'}
+      ],
+      zh: [
+        {q: '我需要日本健康保险吗？', a: '大多数旅客自费支付筛查与专科门诊费用。如持有日本国民健康保险，请告知，我们会提供相应建议。'},
+        {q: 'JMC 会提供医疗建议或诊断吗？', a: '不会。JMC 是非临床的协调服务；日本的医院与医生会审阅病历并作出医疗决定。JMC 仅负责行程安排、翻译、预约和报告交付。'},
+        {q: '我应该在旅行前多久联系 JMC？', a: '常规人間ドック请在旅行前 4–8 周联系。对专科会诊或影像（PET、MRI），建议尽早在 8–12 周前联系以确保合适的预约时间。'},
+        {q: '我需要准备哪些文件？', a: '请携带近期的就诊记录、影像（光盘或电子文件）、用药清单与护照。如需，我们可协助安全传输病历至日本医院。'},
+        {q: '是否提供口译服务？', a: '是的。我们可按需提供日英中口译支持，协助就诊与报告说明。'},
+        {q: '加拿大本地医生可以提供信息性转介吗？', a: '我们建议本地医师将 JMC 作为信息选项告知病人，而非商业性转介。如病人愿意继续，病人应直接联系 JMC。'}
+      ],
+      jp: [
+        {q: '日本の健康保険は必要ですか？', a: '多くの旅行者は検査や専門外来を自費で受けます。日本の国民健康保険をお持ちの場合はお知らせください。対応を案内します。'},
+        {q: 'JMCは医療アドバイスや診断を行いますか？', a: 'いいえ。JMCは非臨床のコーディネーターです。診療は日本の医師・病院が判断します。JMCはロジスティクス、通訳、予約手配、報告書の受渡しを支援します。'},
+        {q: '渡航の何週間前に連絡すべきですか？', a: '通常の人間ドックは渡航の4～8週間前、専門診療やPET/MRI等の高度検査は8～12週間前のご連絡を推奨します。'},
+        {q: 'どの書類を用意すればよいですか？', a: '最近の診療記録、画像（CDまたは電子ファイル）、服薬リスト、パスポートをご用意ください。必要に応じて日本の病院への安全な電子送付を支援します。'},
+        {q: '通訳サービスはありますか？', a: 'はい。必要に応じて日英中の通訳を手配し、受診や報告書の説明をサポートします。'},
+        {q: 'カナダの医師は情報提供的に紹介できますか？', a: '本サービスは商業的紹介ではなく情報提供として患者さんに案内いただくようお願いします。進める場合は患者さんご本人が直接JMCにご連絡ください。'}
+      ]
+    };
+
+    function renderFaq(lang){
+      const container=document.getElementById('faq-list');
+      container.innerHTML='';
+      const items=localizedFaq[lang]||localizedFaq['en'];
+      items.forEach(it=>{
+        const d=document.createElement('details');
+        const s=document.createElement('summary');
+        s.textContent=it.q;
+        const div=document.createElement('div');
+        div.style.paddingTop='8px';div.style.color='var(--muted)';div.textContent=it.a;
+        d.appendChild(s);d.appendChild(div);container.appendChild(d);
+      });
+    }
+
+    /* language switch (updates both static i18n keys and FAQ localized content) */
     let currentLang='en';
-    function switchLang(lang){if(!i18n[lang])lang='en';currentLang=lang;document.documentElement.lang=(lang==='jp')?'ja':(lang==='zh'?'zh':'en');document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(i18n[lang][key]!==undefined)el.textContent=i18n[lang][key]});document.querySelectorAll('.lang-btn').forEach(btn=>{btn.classList.toggle('active',btn.getAttribute('data-lang')===lang)});}
+    function switchLang(lang){
+      if(!i18n[lang])lang='en';
+      currentLang=lang;document.documentElement.lang=(lang==='jp')?'ja':(lang==='zh'?'zh':'en');
+      document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(i18n[lang]&&i18n[lang][key]!==undefined)el.textContent=i18n[lang][key]});
+      document.querySelectorAll('.lang-btn').forEach(btn=>{btn.classList.toggle('active',btn.getAttribute('data-lang')===lang)});
+      renderFaq(lang);
+    }
+
     document.querySelectorAll('.lang-btn').forEach(btn=>{if(!btn.onclick){btn.addEventListener('click',()=>switchLang(btn.getAttribute('data-lang')))}});
     switchLang('en');
 
+    /* form validation & submit (unchanged) */
     function validateForm(nameVal,emailVal){let isValid=true;const nameError=document.getElementById('nameError');const emailError=document.getElementById('emailError');if(!nameVal){nameError.style.display='block';isValid=false}else{nameError.style.display='none'}const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!emailVal||!emailPattern.test(emailVal)){emailError.style.display='block';isValid=false}else{emailError.style.display='none'}return isValid}
     function handleSubmit(e){e.preventDefault();const name=document.getElementById('name').value.trim();const email=document.getElementById('email').value.trim();if(!validateForm(name,email))return false;alert((i18n[currentLang]&&i18n[currentLang].btn_submit?i18n[currentLang].btn_submit:'Send inquiry')+' — demo');e.target.reset();return false}
     document.addEventListener('keydown',ev=>{if(ev.key==='Escape'){closeMobileNav()}});
