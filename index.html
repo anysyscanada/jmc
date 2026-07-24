@@ -1104,81 +1104,300 @@
 </head>
 <body>
 
-<footer>
-  <div class="footer-grid">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --jmc-navy: #1a3a5c;
+    --jmc-text: #cdd8e3;
+    --jmc-accent: #5b8db8;
+    --jmc-muted: #78909c;
+  }
 
-    <!-- Column 1: Identity & Location -->
-    <div class="footer-col">
-      <h4>Japan Medical Concierge</h4>
-      <p>
-        <span class="ja">カナダ在住者のための日本医療コーディネートサービス。</span>
-        <span class="en">Medical coordination services for residents in Canada seeking care in Japan.</span>
-      </p>
-      <p>
-        <strong>📍</strong><br>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  }
+
+  footer {
+    background: var(--jmc-navy);
+    color: var(--jmc-text);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ── Top section ── */
+  .footer-top {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 40px 40px;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  /* Brand block – left, wider */
+  .footer-brand {
+    flex: 2;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    padding-right: 60px;
+  }
+
+  .footer-brand .logo-text {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+
+  .footer-brand .tagline-ja {
+    font-size: 13px;
+    color: var(--jmc-text);
+    margin-bottom: 4px;
+  }
+
+  .footer-brand .tagline-en {
+    font-size: 11.5px;
+    color: var(--jmc-muted);
+    margin-bottom: 20px;
+  }
+
+  .footer-brand .location {
+    font-size: 12.5px;
+    color: var(--jmc-text);
+    margin-top: 16px;
+  }
+
+  .footer-brand .location span.ja { display: block; }
+  .footer-brand .location span.en { display: block; font-size: 11px; color: var(--jmc-muted); }
+
+  /* Right side: Menu + Hours side by side */
+  .footer-right {
+    flex: 3;
+    display: flex;
+    gap: 50px;
+  }
+
+  .footer-col { flex: 1; }
+
+  .footer-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #fff;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* Menu links */
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    text-decoration: none;
+    color: var(--jmc-text);
+    transition: color 0.2s;
+    font-size: 13px;
+  }
+  .footer-col ul li a:hover { color: #fff; }
+  .footer-col ul li a .ja { display: block; font-size: 13px; }
+  .footer-col ul li a .en { display: block; font-size: 10.5px; color: var(--jmc-muted); }
+
+  /* Hours */
+  .hours-block { font-size: 12.5px; }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .hours-row:last-of-type { border-bottom: none; }
+
+  .hours-row .day {
+    color: #fff;
+    font-size: 12px;
+    flex: 1;
+  }
+
+  .hours-row .day .sub {
+    display: block;
+    font-size: 10px;
+    color: var(--jmc-muted);
+    font-weight: 400;
+  }
+
+  .hours-row .time {
+    color: var(--jmc-text);
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .hours-row .time .sub {
+    display: block;
+    font-size: 10px;
+    color: var(--jmc-muted);
+  }
+
+  .badge-24 {
+    display: inline-block;
+    background: rgba(91,141,184,0.3);
+    color: #90caf9;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .pt-note {
+    margin-top: 12px;
+    font-size: 10px;
+    color: var(--jmc-muted);
+  }
+
+  /* ── Bottom bar ── */
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 18px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .copyright { font-size: 11px; color: var(--jmc-muted); }
+
+  .disclaimer {
+    max-width: 560px;
+    font-size: 10px;
+    color: var(--jmc-muted);
+    text-align: right;
+    line-height: 1.55;
+  }
+
+  .disclaimer .ja { display: block; margin-bottom: 3px; }
+  .disclaimer .en { display: block; }
+
+  @media (max-width: 860px) {
+    .footer-top { flex-direction: column; gap: 36px; }
+    .footer-brand { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 28px; }
+    .footer-right { flex-wrap: wrap; }
+    .footer-bottom { flex-direction: column; }
+    .disclaimer { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<footer>
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <div class="logo-text">Japan Medical Concierge</div>
+      <div class="tagline-ja">カナダ在住者のための日本医療コーディネートサービス</div>
+      <div class="tagline-en">Bilingual medical coordination for residents in Canada seeking care in Japan.</div>
+      <div class="location">
+        <span>📍</span>
         <span class="ja">カナダ、BC州バーナビー</span>
         <span class="en">Burnaby, British Columbia, Canada</span>
-      </p>
+      </div>
     </div>
 
-    <!-- Column 2: Menu (matches nav) -->
-    <div class="footer-col">
-      <h4>Menu</h4>
-      <ul>
-        <li><a href="#about"><span class="ja">JMCについて</span><span class="en">About</span></a></li>
-        <li><a href="#ningen-dock"><span class="ja">人間ドック</span><span class="en">Ningen Dock</span></a></li>
-        <li><a href="#pet-scan"><span class="ja">PET検査</span><span class="en">PET Scan</span></a></li>
-        <li><a href="#flow"><span class="ja">ご利用の流れ</span><span class="en">Flow</span></a></li>
-        <li><a href="#faq"><span class="ja">よくある質問</span><span class="en">FAQ</span></a></li>
-        <li><a href="#contact"><span class="ja">お問い合わせ</span><span class="en">Contact</span></a></li>
-      </ul>
+    <div class="footer-right">
+
+      <!-- Menu -->
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#about"><span class="ja">JMCについて</span><span class="en">About</span></a></li>
+          <li><a href="#ningen-dock"><span class="ja">人間ドック</span><span class="en">Ningen Dock</span></a></li>
+          <li><a href="#pet-scan"><span class="ja">PET検査</span><span class="en">PET Scan</span></a></li>
+          <li><a href="#flow"><span class="ja">ご利用の流れ</span><span class="en">Flow</span></a></li>
+          <li><a href="#faq"><span class="ja">よくある質問</span><span class="en">FAQ</span></a></li>
+          <li><a href="#contact"><span class="ja">お問い合わせ</span><span class="en">Contact</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <div class="hours-block">
+
+          <div class="hours-row">
+            <div class="day">
+              お問い合わせ
+              <span class="sub">Inquiries</span>
+            </div>
+            <div class="time">
+              <span class="badge-24">24 / 7</span>
+            </div>
+          </div>
+
+          <div class="hours-row" style="margin-top:10px;">
+            <div class="day">
+              月〜金
+              <span class="sub">Mon – Fri</span>
+            </div>
+            <div class="time">
+              8:30 am – 5:00 pm
+            </div>
+          </div>
+
+          <div class="hours-row">
+            <div class="day">
+              土・日
+              <span class="sub">Sat / Sun</span>
+            </div>
+            <div class="time">
+              休み
+              <span class="sub">Closed</span>
+            </div>
+          </div>
+
+          <div class="hours-row">
+            <div class="day">
+              祝日
+              <span class="sub">Stat Holidays</span>
+            </div>
+            <div class="time">
+              休み
+              <span class="sub">Closed</span>
+            </div>
+          </div>
+
+          <p class="pt-note">* 太平洋時間 / Pacific Time (PT)</p>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Column 3: Hours -->
-    <div class="footer-col">
-      <h4>Hours</h4>
-      <p>
-        <span class="ja"><strong>お問い合わせ受付</strong></span>
-        <span class="en"><strong>Inquiries</strong></span>
-        <span class="status-badge">24 / 7 ONLINE</span>
-      </p>
-
-      <table class="hours-table">
-        <tr>
-          <td colspan="2">
-            <span class="ja" style="display:block; margin: 8px 0 4px; font-weight:600; color:#fff;">営業時間 / Office Hours</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="day">月〜金 / Mon – Fri</td>
-          <td class="time">8:30 am – 5:00 pm</td>
-        </tr>
-        <tr>
-          <td class="day">土日 / Sat – Sun</td>
-          <td class="time"><span class="ja" style="display:inline;">休み</span> / Closed</td>
-        </tr>
-        <tr>
-          <td class="day">祝日 / Stat Holidays</td>
-          <td class="time"><span class="ja" style="display:inline;">休み</span> / Closed</td>
-        </tr>
-      </table>
-      <p style="margin-top:10px; font-size:10px; color:var(--jmc-muted);">
-        * 太平洋時間 / Pacific Time (PT)
-      </p>
-    </div>
-
   </div>
 
+  <!-- Bottom bar -->
   <div class="footer-bottom">
-    <div class="copyright">
-      © 2026 JMC - Japan Medical Concierge. All Rights Reserved.
-    </div>
+    <div class="copyright">© 2026 JMC – Japan Medical Concierge. All Rights Reserved.</div>
     <div class="disclaimer">
-      <span class="ja">JMCは非医療のコーディネートサービスです。医療的な診断、助言、治療は行いません。すべての医療判断は医師によって行われます。</span>
+      <span class="ja">JMCは非医療のコーディネートサービスです。医療的な診断・助言・治療は行いません。すべての医療判断は医師によって行われます。</span>
       <span class="en">JMC is a non-clinical coordination service and does not provide medical advice, diagnosis, or treatment. All clinical decisions are made by licensed physicians.</span>
     </div>
   </div>
 </footer>
+
+</body>
+</html>
+
+
 
 </body>
 </html>
