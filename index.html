@@ -48,15 +48,21 @@
     .card .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
     .card p{color:var(--muted);margin-top:6px;font-size:14px}
 
+    /* Distinct section styles */
+    section {padding-top:26px;padding-bottom:26px}
+    .section-standout{background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);box-shadow:0 6px 18px rgba(16,42,85,0.03);border-radius:12px;padding:22px;margin:18px auto;max-width:1200px}
+
     /* FAQ */
-    .faq{max-width:1200px;margin:20px auto;padding:16px}
+    .faq{max-width:1200px;margin:10px auto;padding:0 16px}
+    .faq .inner{padding:18px;border-radius:10px;background:linear-gradient(180deg,#f8fbff,#ffffff);border:1px solid #e6f0fb}
     .faq h3{margin-bottom:8px;color:var(--navy)}
     .faq .list{display:grid;gap:8px}
-    .faq details{background:#fff;border:1px solid #eef4fb;padding:10px;border-radius:8px}
+    .faq details{background:#fff;border:1px solid #eef4fb;padding:12px;border-radius:8px}
     .faq summary{cursor:pointer;font-weight:700}
 
     /* Contact */
-    .contact{max-width:900px;margin:20px auto;padding:18px;border-radius:10px;background:#fff;border:1px solid #eef4fb}
+    .contact{max-width:900px;margin:10px auto;padding:0 16px}
+    .contact .inner{display:flex;gap:18px;align-items:flex-start;background:linear-gradient(180deg,#fffefc,#ffffff);padding:18px;border-radius:10px;border:1px solid #efe9df}
     .contact-grid{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
     .contact-form{flex:1;min-width:260px}
     .contact-img{width:320px;border-radius:10px;overflow:hidden;flex-shrink:0}
@@ -86,7 +92,6 @@
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#faq" data-i18n="nav_faq">FAQ</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
-        <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
       </nav>
 
       <div style="display:flex;align-items:center;gap:12px">
@@ -108,7 +113,6 @@
       <a href="#services" onclick="closeMobileNav()">Services</a>
       <a href="#faq" onclick="closeMobileNav()">FAQ</a>
       <a href="#contact" onclick="closeMobileNav()">Contact</a>
-      <a href="privacy.html" onclick="closeMobileNav()">Privacy</a>
     </div>
     <div class="mobile-lang-group" aria-label="Mobile language switch">
       <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
@@ -121,7 +125,7 @@
     <section class="hero" aria-label="Hero">
       <div class="hero-bg" aria-hidden="true">
         <!-- airport.jpg only -->
-        <img src="airport.jpg" alt="Airport arrival background">
+        <img src="https://placehold.co/1200x600" alt="Airport arrival background">
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -139,26 +143,26 @@
       </div>
     </section>
 
-    <div class="two-birds" role="note"><strong data-i18n="two_birds_bold">One trip, two gains:</strong> <span data-i18n="two_birds_text">Enjoy Japan and take care of important health screenings or specialist visits while you’re there.</span></div>
+    <div class="two-birds" role="note"><strong data-i18n="two_birds_bold">One trip, two gains:</strong> <span data-i18n="two_birds_text">Enjoy Japan and take care of important health screenings or specialist visits while youre there.</span></div>
 
     <section id="services" class="services" aria-labelledby="services-heading">
       <h2 id="services-heading" data-i18n="services_title">Services</h2>
       <div class="grid" role="list">
         <article class="card" role="listitem" aria-labelledby="svc-ningen">
           <h3 id="svc-ningen" data-i18n="svc_ningen">Ningen Dock</h3>
-          <div class="img-wrap"><img src="ningen_dock.jpg" alt="Ningen Dock"></div>
+          <div class="img-wrap"><img src="https://placehold.co/600x400" alt="Ningen Dock"></div>
           <p data-i18n="svc_ningen_p">Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.</p>
         </article>
 
         <article class="card" role="listitem" aria-labelledby="svc-pet">
           <h3 id="svc-pet" data-i18n="svc_pet">PET / Advanced Imaging</h3>
-          <div class="img-wrap"><img src="pet_scan_device.jpg" alt="PET scanner"></div>
+          <div class="img-wrap"><img src="https://placehold.co/600x400" alt="PET scanner"></div>
           <p data-i18n="svc_pet_p">Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.</p>
         </article>
 
         <article class="card" role="listitem" aria-labelledby="svc-ortho">
           <h3 id="svc-ortho" data-i18n="svc_ortho">Orthopedic & Specialist Consultations</h3>
-          <div class="img-wrap"><img src="ortho_consult.jpg" alt="Orthopedic consultation"></div>
+          <div class="img-wrap"><img src="https://placehold.co/600x400" alt="Orthopedic consultation"></div>
           <p data-i18n="svc_ortho_p">Coordination of non-emergency specialist visits (orthopedics, ENT, dermatology, etc.) while you are in Japan. We collect and organize prior imaging and records, arrange interpreter-supported consultations, and follow up on next-step logistics when treatments or procedures are recommended.</p>
         </article>
       </div>
@@ -166,44 +170,52 @@
 
     <!-- FAQ: localized content only for this section; rest of page unchanged -->
     <section id="faq" class="faq" aria-labelledby="faq-heading">
-      <h3 id="faq-heading" data-i18n="faq_title">FAQ</h3>
-      <div class="list" id="faq-list">
-        <!-- items will be populated by localized FAQ data -->
+      <div class="section-standout">
+        <div class="inner">
+          <h3 id="faq-heading" data-i18n="faq_title">FAQ</h3>
+          <div class="list" id="faq-list">
+            <!-- items will be populated by localized FAQ data -->
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="contact" aria-labelledby="contact-heading">
-      <h3 id="contact-heading" data-i18n="contact_title">Contact & Intake</h3>
-      <div class="contact-grid">
-        <form id="contactForm" class="contact-form" onsubmit="return handleSubmit(event)" novalidate>
-          <label data-i18n="label_name">Full name <span style="color:#c0392b">*</span></label><br>
-          <input id="name" name="name" type="text" required style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px" placeholder="">
-          <div id="nameError" style="color:#c0392b;font-size:14px;display:none">Name is required</div>
+      <div class="section-standout">
+        <div class="inner contact-inner">
+          <h3 id="contact-heading" data-i18n="contact_title">Contact & Intake</h3>
+          <div class="contact-grid">
+            <form id="contactForm" class="contact-form" onsubmit="return handleSubmit(event)" novalidate>
+              <label data-i18n="label_name">Full name <span style="color:#c0392b">*</span></label><br>
+              <input id="name" name="name" type="text" required style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px" placeholder="">
+              <div id="nameError" style="color:#c0392b;font-size:14px;display:none">Name is required</div>
 
-          <label data-i18n="label_email">Email <span style="color:#c0392b">*</span></label><br>
-          <input id="email" name="email" type="email" required style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px">
-          <div id="emailError" style="color:#c0392b;font-size:14px;display:none">Valid email is required</div>
+              <label data-i18n="label_email">Email <span style="color:#c0392b">*</span></label><br>
+              <input id="email" name="email" type="email" required style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px">
+              <div id="emailError" style="color:#c0392b;font-size:14px;display:none">Valid email is required</div>
 
-          <label data-i18n="label_service">I am interested in (check all that apply)</label><br>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0">
-            <label><input type="checkbox" name="services" value="ningen"> <span data-i18n="opt_1">Ningen Dock (screening)</span></label>
-            <label><input type="checkbox" name="services" value="pet"> <span data-i18n="opt_2">PET / Imaging</span></label>
-            <label><input type="checkbox" name="services" value="ortho"> <span data-i18n="opt_3">Orthopedic / Specialist</span></label>
-            <label><input type="checkbox" name="services" value="package"> <span data-i18n="opt_4">Trip + Health package</span></label>
+              <label data-i18n="label_service">I am interested in (check all that apply)</label><br>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0">
+                <label><input type="checkbox" name="services" value="ningen"> <span data-i18n="opt_1">Ningen Dock (screening)</span></label>
+                <label><input type="checkbox" name="services" value="pet"> <span data-i18n="opt_2">PET / Imaging</span></label>
+                <label><input type="checkbox" name="services" value="ortho"> <span data-i18n="opt_3">Orthopedic / Specialist</span></label>
+                <label><input type="checkbox" name="services" value="package"> <span data-i18n="opt_4">Trip + Health package</span></label>
+              </div>
+
+              <label data-i18n="label_message">Brief message / dates in Japan</label>
+              <textarea id="message" name="message" style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px" rows="4"></textarea>
+
+              <div style="display:flex;gap:10px;margin-top:8px">
+                <button type="submit" class="btn primary" data-i18n="btn_submit">Send inquiry</button>
+                <button type="reset" class="btn" style="background:#f6f8fa;border:1px solid #eef4fb">Reset</button>
+              </div>
+
+              <p style="color:var(--muted);font-size:13px;margin-top:8px" data-i18n="consent">By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.</p>
+            </form>
+
+            <div class="contact-img" aria-hidden="true"><img src="https://placehold.co/600x400" alt="JMC coordination lobby"></div>
           </div>
-
-          <label data-i18n="label_message">Brief message / dates in Japan</label>
-          <textarea id="message" name="message" style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px" rows="4"></textarea>
-
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button type="submit" class="btn primary" data-i18n="btn_submit">Send inquiry</button>
-            <button type="reset" class="btn" style="background:#f6f8fa;border:1px solid #eef4fb">Reset</button>
-          </div>
-
-          <p style="color:var(--muted);font-size:13px;margin-top:8px" data-i18n="consent">By submitting you agree JMC may contact you about this inquiry. We do not provide medical advice.</p>
-        </form>
-
-        <div class="contact-img" aria-hidden="true"><img src="jmc_coordination_lobby.jpg" alt="JMC coordination lobby"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -211,9 +223,6 @@
   <footer>
     <div class="footer-inner">
       <div>© Japan Medical Concierge — Vancouver • Toronto • Calgary</div>
-      <div style="display:flex;align-items:center;gap:12px">
-        <a href="privacy.html" style="color:var(--muted);text-decoration:none">Privacy Policy</a>
-      </div>
     </div>
   </footer>
 
@@ -237,7 +246,7 @@
         hero_title: 'Already planning a trip to Japan? Come back healthier too.',
         hero_lead: 'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.',
         btn_get_started: 'Get started', btn_learn_more: 'Learn more',
-        two_birds_bold: 'One trip, two gains:', two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.',
+        two_birds_bold: 'One trip, two gains:', two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while youre there.',
         services_title: 'Services',
         svc_ningen: 'Ningen Dock', svc_ningen_p: 'Comprehensive, multi-day or single-day medical checkups (ningen dock) designed for early detection and health maintenance. Typical elements include blood and urine tests, ECG, chest X-ray, abdominal ultrasound, liver function tests, and physician review. Optional add-ons: advanced blood panels, tumor markers, and specialist consultations. We coordinate timing to fit your travel schedule and assist with translations and report delivery.',
         svc_pet: 'PET / Advanced Imaging', svc_pet_p: 'Scheduling for PET-CT, MRI, and other advanced imaging with faster appointment lead times than typical domestic waits. We handle pre-test instructions, arrange radiology consultations where needed, and help obtain digital copies of imaging and formal reports for your records or for review by your local physician after your trip.',
@@ -263,7 +272,7 @@
         opt_1: '人間ドック（体检）', opt_2: 'PET / 影像', opt_3: '骨科 / 专科', opt_4: '旅行＋健康 套餐',
         label_message: '简短信息 / 在日日期', btn_submit: '发送咨询',
         consent: '提交即表示您同意 JMC 就此咨询与您联系。我们不提供医疗建议。',
-        non_clinical_tag: '非临床协调服务'
+        non_clinical_tag: '非臨床协调服务'
       },
       jp: {
         nav_services: 'サービス', nav_faq: 'よくある質問', nav_contact: 'お問い合わせ', nav_privacy: 'プライバシー',
