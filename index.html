@@ -27,7 +27,7 @@
         .services{max-width:1200px;margin:30px auto;padding:0 22px}
         .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
         .card{border:1px solid #eef4fb;padding:16px;border-radius:10px;background:#fff}
-        .card h3{margin-bottom:8px;color:var(--navy)}
+        .card h3{font-size:18px;margin-bottom:8px;color:var(--navy);line-height:1.3}
         .conditions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
         .cond{padding:10px;border-radius:8px;background:#fbfdff;border:1px solid #eef6ff;font-size:14px}
         .about{max-width:1200px;margin:30px auto;padding:22px;border-radius:10px;background:#fbfbfd;border:1px solid #eef2f7}
@@ -80,7 +80,7 @@
         <h2 style="color:var(--navy);margin-bottom:12px" data-i18n="services_title">Services</h2>
         <div class="grid">
             <div class="card">
-                <h3 data-i18n="svc_ningen">Ningen Dock (Comprehensive Health Screening)</h3>
+                <h3 data-i18n="svc_ningen">Ningen Dock — Comprehensive Screening</h3>
                 <img id="imgScreening1" src="https://placehold.co/600x400?text=Screening" alt="screening" style="width:100%;border-radius:8px;margin:8px 0;object-fit:cover" />
                 <p style="color:var(--muted)">Full-body checkups tailored to your schedule. Typical components: blood tests, ECG, abdominal ultrasound, chest X-ray, optional advanced imaging and specialist review. Ideal for annual check-ups and early detection of common conditions.</p>
                 <ul style="margin-top:8px;color:var(--muted)">
@@ -148,9 +148,11 @@
         <form id="contactForm" onsubmit="return handleSubmit(event)">
             <label data-i18n="label_name">Full name <span class="required">*</span></label><br>
             <input id="name" type="text" required style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px" placeholder="" />
+            <div id="nameError" style="color:#c0392b;font-size:14px;display:none;">Name is required</div>
 
             <label data-i18n="label_email">Email <span class="required">*</span></label><br>
             <input id="email" type="email" required style="width:100%;padding:10px;margin:8px 0;border:1px solid #eef4fb;border-radius:8px" />
+            <div id="emailError" style="color:#c0392b;font-size:14px;display:none;">Valid email is required</div>
 
             <label data-i18n="label_service">I am interested in (check all that apply)</label><br>
             <div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0">
@@ -181,7 +183,7 @@
 <script>
     const i18n = {
         en: {
-            kicker: 'TRIP + HEALTH', hero_title: 'Already planning a trip to Japan? Come back healthier too.', hero_lead: 'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.', btn_get_started: 'Get started', btn_learn_more: 'Learn more', hero_image_title: 'Plan. Travel. Screen.', hero_image_sub: '(Replace with travel + clinic photo)', two_birds_bold: 'One trip, two gains:', two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.', services_title: 'Services', svc_ningen: 'Ningen Dock (Comprehensive Health Screening)', svc_pet: 'PET / Advanced Imaging', svc_ortho: 'Orthopedic & Specialist Consultations', about_title: 'About Japan Medical Concierge', about_text: 'JMC is a non-clinical coordination service based in Vancouver that helps Canadian residents integrate health screenings and specialist consultations into their Japan trip. We handle scheduling, document translation, travel-friendly appointment coordination, and on-ground support in Japan. Japanese hospitals independently review clinical cases and decide on care — JMC only coordinates logistics.', side_title: 'Regions served', faq_title: 'FAQ', faq_q1: 'Do I need Japanese health insurance?', faq_a1: 'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.', faq_q2: 'Will JMC give medical advice?', faq_a2: 'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.', faq_q3: 'Can my local doctor refer a patient?', faq_a3: 'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.', contact_title: 'Contact & Intake', label_name: 'Full name', label_email: 'Email', label_service: 'Service interested in', opt_1: 'Ningen Dock (screening)', opt_2: 'PET / Imaging', opt_3: 'Orthopedic / Specialist', opt_4: 'Trip + Health package', label_message: 'Brief message / dates in Japan', btn_submit: 'Send inquiry'
+            kicker: 'TRIP + HEALTH', hero_title: 'Already planning a trip to Japan? Come back healthier too.', hero_lead: 'JMC coordinates health screenings and specialist consultations that fit into your Japan itinerary — seamless logistics, translation, and local support.', btn_get_started: 'Get started', btn_learn_more: 'Learn more', hero_image_title: 'Plan. Travel. Screen.', hero_image_sub: '(Replace with travel + clinic photo)', two_birds_bold: 'One trip, two gains:', two_birds_text: 'Enjoy Japan and take care of important health screenings or specialist visits while you’re there.', services_title: 'Services', svc_ningen: 'Ningen Dock — Comprehensive Screening', svc_pet: 'PET / Advanced Imaging', svc_ortho: 'Orthopedic & Specialist Consultations', about_title: 'About Japan Medical Concierge', about_text: 'JMC is a non-clinical coordination service based in Vancouver that helps Canadian residents integrate health screenings and specialist consultations into their Japan trip. We handle scheduling, document translation, travel-friendly appointment coordination, and on-ground support in Japan. Japanese hospitals independently review clinical cases and decide on care — JMC only coordinates logistics.', side_title: 'Regions served', faq_title: 'FAQ', faq_q1: 'Do I need Japanese health insurance?', faq_a1: 'Most travellers pay 100% self-pay for screenings and specialist visits. If you hold Japanese national insurance, let us know and we will advise.', faq_q2: 'Will JMC give medical advice?', faq_a2: 'No. JMC is a non-clinical coordinator. Hospitals and physicians in Japan review records and make medical decisions.', faq_q3: 'Can my local doctor refer a patient?', faq_a3: 'We ask local physicians to treat this as an informational option for patients; avoid language implying commercial referral relationships. Patients contact JMC directly if they wish to proceed.', contact_title: 'Contact & Intake', label_name: 'Full name', label_email: 'Email', label_service: 'Service interested in', opt_1: 'Ningen Dock (screening)', opt_2: 'PET / Imaging', opt_3: 'Orthopedic / Specialist', opt_4: 'Trip + Health package', label_message: 'Brief message / dates in Japan', btn_submit: 'Send inquiry'
         },
         zh: {
             kicker: '旅行 + 健康', hero_title: '已经在计划去日本了？顺便把健康也带回来。', hero_lead: 'JMC 为您在日本行程中安排高精度健康检查与专科就诊，一站式协调、翻译与本地支援。', btn_get_started: '开始咨询', btn_learn_more: '了解更多', hero_image_title: '计划。旅行。检查。', hero_image_sub: '（请替换为旅行＋诊所照片）', two_birds_bold: '一趟行程，两重收获：', two_birds_text: '既享受日本之旅，也在旅途中完成重要健康检查或专科就诊。', services_title: '服务项目', svc_ningen: '人間ドック（综合体检）', svc_pet: 'PET / 高端影像', svc_ortho: '骨科与专科诊疗协调', about_title: '关于 Japan Medical Concierge', about_text: 'JMC 是一家位于温哥华的非临床协调服务，帮助加拿大居民在日本行程中安排体检与专科就诊。我们负责预约、资料翻译、行程友好的就诊安排以及日本现场支援。日本的医院将独立审阅病例并决定临床处理—JMC 仅负责后勤协调。', side_title: '服务地区', faq_title: '常见问题', faq_q1: '需要日本健康保险吗？', faq_a1: '大多数旅客需自费支付体检与专科就诊费用。如果您持有日本国民健康保险，请告知，我们会协助确认。', faq_q2: 'JMC 会提供医疗建议吗？', faq_a2: '不会。JMC 为非临床协调方。日本医院与医师将审阅病历并做出医疗决定。', faq_q3: '本地医生可以把病人推荐给你们吗？', faq_a3: '请本地医师将此视为提供患者的资讯性选项；避免使用商业推荐或合作等措辞。若患者愿意继续，将由患者直接联系 JMC。', contact_title: '联系与登记', label_name: '姓名', label_email: '电子邮件', label_service: '想咨询的服务', opt_1: '人間ドック（体检）', opt_2: 'PET / 影像', opt_3: '骨科/专科', opt_4: '旅行 + 健康 套餐', label_message: '简短信息 / 日本行程日期', btn_submit: '发送询问'
@@ -204,15 +206,31 @@
 
     switchLang('en');
 
+    function validateForm(nameVal, emailVal){
+        let isValid = true;
+        if(!nameVal){
+            document.getElementById('nameError').style.display = 'block';
+            isValid = false;
+        }else{
+            document.getElementById('nameError').style.display = 'none';
+        }
+        if(!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){
+            document.getElementById('emailError').style.display = 'block';
+            isValid = false;
+        }else{
+            document.getElementById('emailError').style.display = 'none';
+        }
+        return isValid;
+    }
+
     function handleSubmit(e){
         e.preventDefault();
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
+        const isValid = validateForm(name, email);
+        if(!isValid) return false;
+
         const services = Array.from(document.querySelectorAll('input[name=services]:checked')).map(i=>i.value);
-        if(!name || !email){
-            alert('Please fill required fields');
-            return false;
-        }
         const payload = {name,email,services,message:document.getElementById('message').value};
         console.log('Contact payload',payload);
         alert('Inquiry sent — we will contact you shortly (demo).');
