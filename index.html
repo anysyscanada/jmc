@@ -20,7 +20,7 @@
     .menu-toggle{display:none;background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer}
 
     /* Hero uses CDN-hosted uploaded image to avoid local path issues */
-    .hero{position:relative;border-radius:14px;overflow:hidden;min-height:420px;display:flex;align-items:center;color:#fff;padding:48px;margin-bottom:28px;background-size:cover;background-position:center 35%}
+    .hero{position:relative;border-radius:14px;overflow:hidden;min-height:420px;display:flex;align-items:center;color:#fff;padding:48px;margin-bottom:28px;background-size:cover;background-position:center 30%}
     .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(16,42,85,0.28), rgba(16,42,85,0.58));z-index:0}
     .hero-inner{max-width:800px;position:relative;z-index:1}
     .hero-tag{background:rgba(255,255,255,0.15);padding:8px 16px;border-radius:999px;display:inline-block;font-weight:800;font-size:13px;margin-bottom:16px}
@@ -29,17 +29,21 @@
     .btn-primary{background:var(--gold);color:#07202a;padding:14px 28px;border-radius:10px;font-weight:800;border:0;cursor:pointer;text-decoration:none;display:inline-block;transition:0.2s}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(212,168,58,0.3)}
 
-    .services-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-bottom:28px;align-items:start}
-    .card{background:#fff;border-radius:12px;padding:32px;border:1px solid #eef4fb;box-shadow:0 8px 24px rgba(16,42,85,0.06)}
+    /* Updated layout: Services card contains What We Handle on the right */
+    .services-wrapper{display:flex;gap:28px;margin-bottom:28px}
+    .services-card{flex:1;background:#fff;border-radius:12px;padding:32px;border:1px solid #eef4fb;box-shadow:0 8px 24px rgba(16,42,85,0.06);display:flex;gap:24px;align-items:flex-start}
+    .services-left{flex:1;min-width:260px}
+    .services-right{width:360px;flex-shrink:0}
+
     .services-heading{font-size:32px;color:var(--navy);font-weight:900;margin:0 0 12px 0}
     .services-title{font-size:18px;font-weight:500;margin-bottom:20px;color:var(--muted)}
     .services-p{color:#334155;line-height:1.7;margin-bottom:16px;font-size:16px}
 
-    .feature-list{display:flex;flex-direction:row;gap:12px;flex-wrap:wrap}
-    .feature-card{flex:1 1 180px;background:#f8fbff;border-radius:10px;padding:18px;display:flex;gap:12px;align-items:center;border:1px solid #e6f0fb}
-    .feature-card i{color:var(--navy);font-size:28px;width:36px}
+    .feature-list{display:flex;flex-direction:column;gap:12px}
+    .feature-card{background:#f8fbff;border-radius:10px;padding:14px;display:flex;gap:12px;align-items:center;border:1px solid #e6f0fb}
+    .feature-card i{color:var(--navy);font-size:22px;width:36px}
     .feature-card .fc-text{display:flex;flex-direction:column}
-    .feature-card .fc-text strong{font-size:18px;color:var(--navy);font-weight:800}
+    .feature-card .fc-text strong{font-size:16px;color:var(--navy);font-weight:800}
     .feature-card .fc-text span{font-size:14px;color:#64748b}
 
     .faq-box{margin-bottom:28px;overflow:hidden}
@@ -52,6 +56,7 @@
     .faq-a{display:none;padding-top:12px;font-size:16px;line-height:1.6;color:#475569}
     .faq-a.open{display:block}
 
+    .card{background:#fff;border-radius:12px;border:1px solid #eef4fb;box-shadow:0 8px 24px rgba(16,42,85,0.06)}
     .inquiry-section{max-width:none;margin:0 auto 28px auto;width:100%}
     .inquiry-inner{max-width:780px;margin:0 auto}
     .form-group{margin-bottom:20px}
@@ -63,16 +68,17 @@
     .checkbox-item input{width:auto}
     footer{padding:32px 0;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
 
-    @media (max-width:980px){
-      .services-grid{grid-template-columns:1fr}
-      .hero-title{font-size:34px}
-      .inquiry-section{padding:20px}
-      .feature-card{flex:1 1 45%}
-      .faq-q{font-weight:600}
+    @media (max-width:1100px){
+      /* At narrower widths allow right column to shrink but not below a point */
+      .services-right{width:320px}
+    }
+    @media (max-width:900px){
+      /* When space gets tight, stack the right column below the left */
+      .services-card{flex-direction:column}
+      .services-right{width:100%;flex-shrink:1}
     }
     @media (max-width:680px){
       .feature-card{flex:1 1 100%}
-      .feature{width:100%}
       .faq-q{font-weight:500}
     }
     @media (max-width:880px){
@@ -110,21 +116,23 @@
       </div>
     </section>
 
-    <div class="services-grid" id="services">
-      <div class="card">
-        <h2 class="services-heading" data-key="services.heading">Services</h2>
-        <div class="services-title" data-key="services.title">Seamless health coordination during your Japan visit</div>
-        <p class="services-p" data-key="s.p1">We arrange appointments at accredited screening centres and university hospitals, manage translations and logistics, and deliver English-language reports suitable for follow-up back home.</p>
-        <p class="services-p" data-key="s.p2"><strong>Pilot packages:</strong> half-day and one-day options including medical record review, on-site coordination, and a summary report.</p>
-        <p class="services-p" style="font-size:14px;color:#64748b" data-key="s.p3">Note: All clinical decisions are made by the treating Japanese physicians.</p>
-      </div>
-      <div class="card">
-        <h2 class="services-heading" data-key="wh.title">What We Handle</h2>
-        <div class="feature-list">
-          <div class="feature-card"><i class="fa-solid fa-calendar-check"></i><div class="fc-text"><strong data-key="wh.f1.t">Appointments</strong><span data-key="wh.f1.s">Booking at accredited centres</span></div></div>
-          <div class="feature-card"><i class="fa-solid fa-language"></i><div class="fc-text"><strong data-key="wh.f2.t">Interpretation</strong><span data-key="wh.f2.s">Coordination and translation</span></div></div>
-          <div class="feature-card"><i class="fa-solid fa-file-medical"></i><div class="fc-text"><strong data-key="wh.f3.t">Reports</strong><span data-key="wh.f3.s">English summary reports</span></div></div>
-          <div class="feature-card"><i class="fa-solid fa-car"></i><div class="fc-text"><strong data-key="wh.f4.t">Logistics</strong><span data-key="wh.f4.s">Local transport & coordination</span></div></div>
+    <div class="services-wrapper" id="services">
+      <div class="services-card">
+        <div class="services-left">
+          <h2 class="services-heading" data-key="services.heading">Services</h2>
+          <div class="services-title" data-key="services.title">Seamless health coordination during your Japan visit</div>
+          <p class="services-p" data-key="s.p1">We arrange appointments at accredited screening centres and university hospitals, manage translations and logistics, and deliver English-language reports suitable for follow-up back home.</p>
+          <p class="services-p" data-key="s.p2"><strong>Pilot packages:</strong> half-day and one-day options including medical record review, on-site coordination, and a summary report.</p>
+          <p class="services-p" style="font-size:14px;color:#64748b" data-key="s.p3">Note: All clinical decisions are made by the treating Japanese physicians.</p>
+        </div>
+        <div class="services-right">
+          <h3 class="services-heading" style="font-size:20px;margin:0 0 12px 0" data-key="wh.title">What We Handle</h3>
+          <div class="feature-list">
+            <div class="feature-card"><i class="fa-solid fa-calendar-check"></i><div class="fc-text"><strong data-key="wh.f1.t">Appointments</strong><span data-key="wh.f1.s">Booking at accredited centres</span></div></div>
+            <div class="feature-card"><i class="fa-solid fa-language"></i><div class="fc-text"><strong data-key="wh.f2.t">Interpretation</strong><span data-key="wh.f2.s">Coordination and translation</span></div></div>
+            <div class="feature-card"><i class="fa-solid fa-file-medical"></i><div class="fc-text"><strong data-key="wh.f3.t">Reports</strong><span data-key="wh.f3.s">English summary reports</span></div></div>
+            <div class="feature-card"><i class="fa-solid fa-car"></i><div class="fc-text"><strong data-key="wh.f4.t">Logistics</strong><span data-key="wh.f4.s">Local transport & coordination</span></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -136,7 +144,7 @@
       <div id="faqList"></div>
     </div>
 
-    <div class="card inquiry-section" id="contact" style="padding:32px">
+    <div class="card inquiry-section" id="contact" style="padding:32px;display:block">
       <div class="inquiry-inner">
         <h2 class="services-heading" id="inquiryTitle" data-key="inq.h">Inquiry</h2>
         <p style="color:var(--muted);margin-bottom:25px" data-key="inq.sub">Usually we will get back to you within 48 hours. Please fill in the form below.</p>
@@ -203,7 +211,7 @@
       },
       jp: {
         'nav.services':'サービス','nav.faq':'よくある質問','nav.inquiry':'お問い合わせ',
-        'hero.tag':'旅行 ＋ 健康','hero.title':'日本へのご旅行を予定していますか？ 健康になって帰りましょう。','hero.sub':'JMCは、日本の滞在予定に合わせた健康診断や専門医の診察をコーディネートします。翻訳、移動、現地サポートをシームレスに提供します。','hero.cta':'お問い合わせ',
+        'hero.tag':'旅行 ＋ 健康','hero.title':'日本旅行のご予定は?帰りは、健康もお土産に。','hero.sub':'JMCは、日本の滞在予定に合わせた健康診断や専門医の診察をコーディネートします。翻訳、移動、現地サポートをシームレスに提供します。','hero.cta':'お問い合わせ',
         'services.heading':'サービス内容','services.title':'日本滞在中のシームレスな健康管理サポート','s.p1':'認定された検診センターや大学病院での予約手配、通訳や移動の管理、帰国後のフォローに適した英語の報告書を提供します。','s.p2':'パイロットパッケージ：半日および1日のオプション。事前の病歴確認、現地での調整、サマリーレポートが含まれます。','s.p3':'※臨床的な判断はすべて日本の担当医によって行われます。','wh.title':'対応内容','wh.f1.t':'受診予約','wh.f1.s':'認定施設の予約手配','wh.f2.t':'医療通訳','wh.f2.s':'通訳調整と翻訳','wh.f3.t':'診断レポート','wh.f3.s':'英語のサマリー報告書','wh.f4.t':'ロジスティクス','wh.f4.s':'現地での移動・訪問調整','faq.header':'よくあるご質問',
         'inq.h':'お問い合わせ','inq.sub':'通常48時間以内に返信いたします。以下のフォームにご記入ください。','f.name':'氏名（フルネーム）*','f.email':'メールアドレス *','f.phone':'電話番号','f.subject':'お問い合わせ内容','f.method':'ご希望の連絡方法','m.call':'電話','m.email':'メール','m.text':'テキスト（SMS）','m.any':'いずれの方法でも可','f.agree':'送信することで、プライバシーポリシーに同意したものとみなされます。','f.btn':'送信する','foot':'© ジャパンメディカルコンシェルジュ 2026. 全著作権所有'
       }
@@ -212,7 +220,7 @@
     // FAQ data (restored)
     const faqs = [
       { q: { en: "Do Japanese hospitals provide English-speaking doctors and staff?", jp: "日本の病院に英語対応の医師やスタッフはいますか？" }, a: { en: "Many advanced medical centers have English-speaking specialists. However, general administrative staff and nurses usually communicate in Japanese. JMC assists by providing certified medical interpreters to prevent communication errors.", jp: "高度医療センターの多くには英語対応の専門医がいますが、受付や看護スタッフは日本語のみの場合が多いです。JMCは医療通訳の手配を行い、円滑なコミュニケーションをサポートします。" } },
-      { q: { en: "Can I get my medical documents and certificates issued in English?", jp: "英語の診断書や報告書を発行してもらえますか？" }, a: { en: "Yes — hospitals can issue official medical certificates and screening results in English for a fee. Request these in advance. JMC also provides English summary reports for follow-ups.", jp: "はい。事前に依頼すれば有料で英語の書類を発行可能です。JMCは帰国後のフォローアップに役立つ英語のサマリーレポートも作成いたします。" } },
+      { q: { en: "Can I get my medical documents and certificates issued in English?", jp: "英語の診断書や報告書を発行してもえますか？" }, a: { en: "Yes — hospitals can issue official medical certificates and screening results in English for a fee. Request these in advance. JMC also provides English summary reports for follow-ups.", jp: "はい。事前に依頼すれば有料で英語の書類を発行可能です。JMCは帰国後のフォローアップに役立つ英語のサマリーレポートも作成いたします。" } },
       { q: { en: "Can I use international travel insurance for screenings?", jp: "旅行保険で検診はカバーされますか？" }, a: { en: "Standard travel insurance rarely covers elective screenings (Ningen Dock). Most facilities operate on a self-pay basis for international clients.", jp: "一般的な旅行保険は任意の検診をカバーしません。ほとんどの施設で自費診療となる場合があります。" } },
       { q: { en: "Do I need a special visa to travel to Japan for medical reasons?", jp: "医療目的での受診には特別なビザが必要ですか？" }, a: { en: "Short screenings usually fit a tourist visa. Prolonged treatment or surgery requires a Medical Stay Visa, which JMC can help facilitate.", jp: "短期間の検診は通常、観光ビザで問題ありません。長期治療や手術には医療滞在ビザが必要となる場合があり、JMCは手続きをサポートできます。" } },
       { q: { en: "What documents should I bring to my appointment?", jp: "受診当日に持参すべきものは何ですか？" }, a: { en: "Bring your passport, current medications, prior medical records, and any relevant imaging reports (USB/CD if available).", jp: "パスポート、現在服用中の薬、以前の病歴、および関連する画像データ（USBやCD）を持参してください。" } }
